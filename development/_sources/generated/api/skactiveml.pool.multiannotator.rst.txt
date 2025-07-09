@@ -1,0 +1,26 @@
+:mod:`skactiveml.pool.multiannotator`
+=====================================
+
+.. automodule:: skactiveml.pool.multiannotator
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   pool.multiannotator.IntervalEstimationThreshold
+   pool.multiannotator.IntervalEstimationAnnotModel
+   pool.multiannotator.SingleAnnotatorWrapper
+
