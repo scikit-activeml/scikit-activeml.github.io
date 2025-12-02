@@ -21,10 +21,15 @@ jobs:
           git clone --single-branch https://github.com/scikit-activeml/scikit-activeml.git
       - name: Install dependencies
         run: |
-          sudo apt-get install pandoc ffmpeg
+          sudo apt-get -qq update
+          sudo apt-get install pandoc
+          sudo apt-get install ghostscript
+          sudo apt-get install ffmpeg
           python -m pip install --upgrade pip
-          pip install -r scikit-activeml/requirements.txt -r scikit-activeml/requirements_max.txt
-          pip install -r scikit-activeml/requirements_extra.txt
+          pip install --upgrade -r scikit-activeml/requirements.txt
+          pip install --upgrade -r scikit-activeml/requirements_opt.txt
+          pip install --upgrade -r scikit-activeml/requirements_extra.txt
+          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
       - name: Insert Version number and save current version
         run: |
           cd scikit-activeml
