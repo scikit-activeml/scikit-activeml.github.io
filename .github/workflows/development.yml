@@ -23,7 +23,6 @@ jobs:
           git clone -b development --single-branch https://github.com/scikit-activeml/scikit-activeml.git
       - name: Install dependencies
         run: |
-          sudo apt-get -qq update
           sudo apt-get install pandoc
           sudo apt-get install ghostscript
           sudo apt-get install ffmpeg
