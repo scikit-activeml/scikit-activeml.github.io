@@ -1,0 +1,37 @@
+﻿CrowdLayerClassifier
+====================
+
+.. currentmodule:: skactiveml.classifier.multiannotator
+
+.. autoclass:: skactiveml.classifier.multiannotator.CrowdLayerClassifier
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CrowdLayerClassifier.fit
+      ~CrowdLayerClassifier.get_metadata_routing
+      ~CrowdLayerClassifier.get_params
+      ~CrowdLayerClassifier.initialize
+      ~CrowdLayerClassifier.partial_fit
+      ~CrowdLayerClassifier.predict
+      ~CrowdLayerClassifier.predict_proba
+      ~CrowdLayerClassifier.score
+      ~CrowdLayerClassifier.set_fit_request
+      ~CrowdLayerClassifier.set_params
+      ~CrowdLayerClassifier.set_predict_proba_request
+      ~CrowdLayerClassifier.set_predict_request
+      ~CrowdLayerClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.classifier.multiannotator.CrowdLayerClassifier:
+
+.. minigallery:: skactiveml.classifier.multiannotator.CrowdLayerClassifier
+   :add-heading:

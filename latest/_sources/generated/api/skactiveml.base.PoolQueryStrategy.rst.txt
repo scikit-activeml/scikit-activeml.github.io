@@ -1,0 +1,28 @@
+﻿PoolQueryStrategy
+=================
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.PoolQueryStrategy
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PoolQueryStrategy.get_metadata_routing
+      ~PoolQueryStrategy.get_params
+      ~PoolQueryStrategy.query
+      ~PoolQueryStrategy.set_params
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.base.PoolQueryStrategy:
+
+.. minigallery:: skactiveml.base.PoolQueryStrategy
+   :add-heading:

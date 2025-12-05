@@ -1,0 +1,35 @@
+﻿SkorchRegressor
+===============
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.SkorchRegressor
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkorchRegressor.fit
+      ~SkorchRegressor.get_metadata_routing
+      ~SkorchRegressor.get_params
+      ~SkorchRegressor.initialize
+      ~SkorchRegressor.partial_fit
+      ~SkorchRegressor.predict
+      ~SkorchRegressor.score
+      ~SkorchRegressor.set_fit_request
+      ~SkorchRegressor.set_params
+      ~SkorchRegressor.set_predict_request
+      ~SkorchRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.regressor.SkorchRegressor:
+
+.. minigallery:: skactiveml.regressor.SkorchRegressor
+   :add-heading:

@@ -1,0 +1,28 @@
+﻿RandomSampling
+==============
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.RandomSampling
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RandomSampling.get_metadata_routing
+      ~RandomSampling.get_params
+      ~RandomSampling.query
+      ~RandomSampling.set_params
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.pool.RandomSampling:
+
+.. minigallery:: skactiveml.pool.RandomSampling
+   :add-heading:

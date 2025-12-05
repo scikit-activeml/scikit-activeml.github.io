@@ -1,0 +1,1875 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skactiveml.classifier._wrapper &#8212; scikit-activeml latest documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/skactiveml/classifier/_wrapper';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'latest';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../../_static/filter_examples.js?v=52a8636b"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/latest/_modules/skactiveml/classifier/_wrapper.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="latest" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml latest documentation - Home"/>
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml latest documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">skactiveml.classifier._wrapper</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for skactiveml.classifier._wrapper</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Wrapper for scikit-learn classifiers to deal with missing labels and labels</span>
+<span class="sd">from multiple annotators.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Author: Marek Herde &lt;marek.herde@uni-kassel.de&gt;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetaEstimatorMixin</span><span class="p">,</span> <span class="n">is_classifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils.validation</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">check_is_fitted</span><span class="p">,</span>
+    <span class="n">check_array</span><span class="p">,</span>
+    <span class="n">has_fit_parameter</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">check_consistent_length</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">NotFittedError</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkactivemlClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">rand_argmin</span><span class="p">,</span>
+    <span class="n">MISSING_LABEL</span><span class="p">,</span>
+    <span class="n">ExtLabelEncoder</span><span class="p">,</span>
+    <span class="n">is_labeled</span><span class="p">,</span>
+    <span class="n">check_random_state</span><span class="p">,</span>
+    <span class="n">check_equal_missing_label</span><span class="p">,</span>
+    <span class="n">check_classifier_params</span><span class="p">,</span>
+    <span class="n">check_type</span><span class="p">,</span>
+    <span class="n">check_scalar</span><span class="p">,</span>
+    <span class="n">match_signature</span><span class="p">,</span>
+    <span class="n">check_n_features</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">successful_skorch_torch_import</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkorchMixin</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_criterion_tuple_aware</span>
+
+    <span class="n">successful_skorch_torch_import</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="SklearnClassifier">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SklearnClassifier.html#skactiveml.classifier.SklearnClassifier">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SklearnClassifier</span><span class="p">(</span><span class="n">SkactivemlClassifier</span><span class="p">,</span> <span class="n">MetaEstimatorMixin</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sklearn Classifier</span>
+
+<span class="sd">    Implementation of a wrapper class for `scikit-learn` classifiers such that</span>
+<span class="sd">    missing labels can be handled. Therefore, samples with missing labels are</span>
+<span class="sd">    filtered.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    estimator : sklearn.base.ClassifierMixin with predict_proba method</span>
+<span class="sd">        The `scikit-learn` classifier to be wrapped.</span>
+<span class="sd">    include_unlabeled_samples : bool, default=False</span>
+<span class="sd">        - If `False`, only labeled samples are passed to the `fit` method of</span>
+<span class="sd">          the `estimator`.</span>
+<span class="sd">        - If `True`, all samples including the unlabeled ones are passed to</span>
+<span class="sd">          the `fit` method of the `estimator`. Ensure that your `estimator`</span>
+<span class="sd">          is able to handle unlabeled samples marked by `missing_label`.</span>
+<span class="sd">          Otherwise, `missing_label` is interpreted as a regular class label.</span>
+<span class="sd">          Note that semi-supervised classifiers of `sklearn` expect</span>
+<span class="sd">          `missing_label=-1`.</span>
+<span class="sd">    classes : array-like of shape (n_classes,), default=None</span>
+<span class="sd">        Holds the label for each class. If `None`, the classes are determined</span>
+<span class="sd">        during `fit`.</span>
+<span class="sd">    missing_label : scalar or string or np.nan or None, default=np.nan</span>
+<span class="sd">        Value to represent a missing label.</span>
+<span class="sd">    cost_matrix : array-like of shape (n_classes, n_classes)</span>
+<span class="sd">        Cost matrix with `cost_matrix[i,j]` indicating cost of predicting class</span>
+<span class="sd">        `classes[j]` for a sample of class `classes[i]`. Can be only set, if</span>
+<span class="sd">        `classes` is not `None`.</span>
+<span class="sd">    random_state : int or RandomState instance or None, default=None</span>
+<span class="sd">        Determines random number for `predict` method. Pass an int for</span>
+<span class="sd">        reproducible results across multiple method calls.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    classes_ : numpy.ndarray of shape (n_classes,)</span>
+<span class="sd">        Holds the label for each class after fitting.</span>
+<span class="sd">    cost_matrix_ : numpy.ndarray of shape (classes, classes)</span>
+<span class="sd">        Cost matrix with `cost_matrix_[i,j]` indicating cost of predicting</span>
+<span class="sd">        class `classes_[j]` for a sample of class `classes_[i]`.</span>
+<span class="sd">    estimator_ : sklearn.base.ClassifierMixin with predict_proba method</span>
+<span class="sd">        The scikit-learn classifier after calling the `fit` method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">estimator</span><span class="p">,</span>
+        <span class="n">include_unlabeled_samples</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+        <span class="n">cost_matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span><span class="p">,</span>
+            <span class="n">cost_matrix</span><span class="o">=</span><span class="n">cost_matrix</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">estimator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">include_unlabeled_samples</span> <span class="o">=</span> <span class="n">include_unlabeled_samples</span>
+
+<div class="viewcode-block" id="SklearnClassifier.fit">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SklearnClassifier.html#skactiveml.classifier.SklearnClassifier.fit">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;fit&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit the model using `X` as training data and `y` as class labels.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            The feature matrix representing the samples.</span>
+<span class="sd">        y : array-like of shape (n_samples,) or (n_samples, n_outputs)</span>
+<span class="sd">            It contains the class labels of the training samples. Missing</span>
+<span class="sd">            labels are represented the attribute `self.missing_label_`. In case</span>
+<span class="sd">            of multiple labels per sample (i.e., n_outputs &gt; 1), the samples</span>
+<span class="sd">            are duplicated.</span>
+<span class="sd">        sample_weight : array-like of shape (n_samples,) or\</span>
+<span class="sd">                (n_samples, n_outputs)</span>
+<span class="sd">            It contains the weights of the training samples&#39; class labels. It</span>
+<span class="sd">            must have the same shape as `y`.</span>
+<span class="sd">        fit_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `fit` method of the `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self: SklearnClassifier,</span>
+<span class="sd">            The `SklearnClassifier` fitted on the training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span>
+            <span class="n">fit_function</span><span class="o">=</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SklearnClassifier.partial_fit">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SklearnClassifier.html#skactiveml.classifier.SklearnClassifier.partial_fit">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;partial_fit&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">partial_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Partially fitting the model using `X` as training data and `y` as</span>
+<span class="sd">        class labels.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            The feature matrix representing the samples.</span>
+<span class="sd">        y : array-like of shape (n_samples,) or (n_samples, n_outputs)</span>
+<span class="sd">            It contains the class labels of the training samples. Missing</span>
+<span class="sd">            labels are represented the attribute `self.missing_label_`. In case</span>
+<span class="sd">            of multiple labels per sample (i.e., n_outputs &gt; 1), the samples</span>
+<span class="sd">            are duplicated.</span>
+<span class="sd">        sample_weight : array-like of shape (n_samples,) or\</span>
+<span class="sd">                (n_samples, n_outputs)</span>
+<span class="sd">            It contains the weights of the training samples&#39; class labels. It</span>
+<span class="sd">            must have the same shape as `y`.</span>
+<span class="sd">        fit_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `partial_fit` method of the</span>
+<span class="sd">            `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self : SklearnClassifier,</span>
+<span class="sd">            The `SklearnClassifier` is fitted on the training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span>
+            <span class="n">fit_function</span><span class="o">=</span><span class="s2">&quot;partial_fit&quot;</span><span class="p">,</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SklearnClassifier.predict">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SklearnClassifier.html#skactiveml.classifier.SklearnClassifier.predict">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;predict&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return class label predictions for the input data `X`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            Input samples.</span>
+<span class="sd">        predict_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `predict` method of the</span>
+<span class="sd">            `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        y_pred :  numpy.ndarray of shape (n_samples,)</span>
+<span class="sd">            Predicted class labels of the input samples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">predict_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span> <span class="o">|</span> <span class="n">predict_dict</span><span class="p">))</span>
+        <span class="n">check_n_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_fitted_</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+                <span class="n">costs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix_</span><span class="p">)</span>
+                <span class="n">y_pred</span> <span class="o">=</span> <span class="n">rand_argmin</span><span class="p">(</span>
+                    <span class="n">costs</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state_</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_state_</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">)),</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span>
+            <span class="p">)</span>
+            <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_le</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_pred</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">y_pred</span></div>
+
+
+<div class="viewcode-block" id="SklearnClassifier.predict_proba">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SklearnClassifier.html#skactiveml.classifier.SklearnClassifier.predict_proba">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;predict_proba&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return probability estimates for the input data `X`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            Input samples.</span>
+<span class="sd">        predict_proba_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `predict_proba` method of the</span>
+<span class="sd">            `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        P : array-like of shape (n_samples, classes)</span>
+<span class="sd">            The class probabilities of the input samples. Classes are ordered</span>
+<span class="sd">            according to the attribute `self.classes_`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">predict_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span> <span class="o">|</span> <span class="n">predict_dict</span><span class="p">))</span>
+        <span class="n">check_n_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_fitted_</span><span class="p">:</span>
+            <span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_kwargs</span><span class="p">)</span>
+            <span class="c1"># map the predicted classes to self.classes</span>
+            <span class="k">if</span> <span class="n">P</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">):</span>
+                <span class="n">P_ext</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">)))</span>
+                <span class="n">est_classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">classes_</span>
+                <span class="n">indices_est</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">est_classes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">class_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">est_classes</span><span class="p">[</span><span class="n">indices_est</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">P_ext</span><span class="p">[:,</span> <span class="n">class_indices</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_indices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">P</span>
+                <span class="n">P</span> <span class="o">=</span> <span class="n">P_ext</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">P</span><span class="p">)):</span>
+                <span class="k">return</span> <span class="n">P</span>
+
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Since the &#39;base_estimator&#39; could not be fitted when&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot; calling the `fit` method, the class label &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;distribution`_label_counts=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_label_counts</span><span class="si">}</span><span class="s2">` is used to &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;make the predictions.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_label_counts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">)])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label_counts</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_label_counts</span><span class="p">),</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fit_function</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">):</span>
+        <span class="c1"># Check input parameters.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;allow_nd&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+            <span class="n">check_X_dict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span><span class="p">,</span>
+            <span class="n">reset</span><span class="o">=</span><span class="n">fit_function</span> <span class="o">==</span> <span class="s2">&quot;fit&quot;</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;n_features_in_&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Check whether estimator is a valid classifier.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_classifier</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39; must be a scikit-learn &quot;</span>
+                <span class="s2">&quot;classifier.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Check boolean flag.</span>
+        <span class="n">check_type</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">include_unlabeled_samples</span><span class="p">,</span>
+            <span class="s2">&quot;include_unlabeled_samples&quot;</span><span class="p">,</span>
+            <span class="nb">bool</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Check whether estimator can deal with cost matrix.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;predict_proba&quot;</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;cost_matrix&#39; can be only set, if &#39;estimator&#39;&quot;</span>
+                <span class="s2">&quot;implements &#39;predict_proba&#39;.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;estimator_&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">fit_function</span> <span class="o">!=</span> <span class="s2">&quot;partial_fit&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+        <span class="c1"># count labels per class</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_unlabeled_samples</span><span class="p">:</span>
+            <span class="n">is_included</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_included</span> <span class="o">=</span> <span class="n">is_labeled</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_label_counts</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">is_included</span><span class="p">]</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_le</span><span class="o">.</span><span class="n">classes_</span><span class="p">))</span>
+        <span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">is_included</span><span class="p">]</span>
+            <span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">is_included</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+            <span class="n">y_train_inv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_le</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">is_included</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;There is no labeled data.&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span>
+                <span class="ow">not</span> <span class="n">has_fit_parameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;sample_weight&quot;</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="p">):</span>
+                <span class="k">if</span> <span class="n">fit_function</span> <span class="o">==</span> <span class="s2">&quot;partial_fit&quot;</span><span class="p">:</span>
+                    <span class="n">fit_kwargs</span><span class="p">[</span><span class="s2">&quot;classes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">partial_fit</span><span class="p">(</span>
+                        <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train_inv</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span>
+                    <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">fit_function</span> <span class="o">==</span> <span class="s2">&quot;fit&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train_inv</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">fit_function</span> <span class="o">==</span> <span class="s2">&quot;partial_fit&quot;</span><span class="p">:</span>
+                    <span class="n">fit_kwargs</span><span class="p">[</span><span class="s2">&quot;classes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span>
+                    <span class="n">fit_kwargs</span><span class="p">[</span><span class="s2">&quot;sample_weight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample_weight</span><span class="p">[</span><span class="n">is_included</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">partial_fit</span><span class="p">(</span>
+                        <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span>
+                        <span class="n">y</span><span class="o">=</span><span class="n">y_train_inv</span><span class="p">,</span>
+                        <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">fit_function</span> <span class="o">==</span> <span class="s2">&quot;fit&quot;</span><span class="p">:</span>
+                    <span class="n">fit_kwargs</span><span class="p">[</span><span class="s2">&quot;sample_weight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample_weight</span><span class="p">[</span><span class="n">is_included</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train_inv</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_fitted_</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_fitted_</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;The &#39;base_estimator&#39; could not be fitted because of&quot;</span>
+                <span class="s2">&quot; &#39;</span><span class="si">{}</span><span class="s2">&#39;. Therefore, the class labels of the samples &quot;</span>
+                <span class="s2">&quot;are counted and will be used to make predictions. &quot;</span>
+                <span class="s2">&quot;The class label distribution is `_label_counts=</span><span class="si">{}</span><span class="s2">`.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">e</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label_counts</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__sklearn_is_fitted__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;is_fitted_&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">NotFittedError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># set attributes that would be set by the fit function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_fitted_</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;allow_nd&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;estimator_&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SlidingWindowClassifier">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SlidingWindowClassifier.html#skactiveml.classifier.SlidingWindowClassifier">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SlidingWindowClassifier</span><span class="p">(</span><span class="n">SkactivemlClassifier</span><span class="p">,</span> <span class="n">MetaEstimatorMixin</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sliding Window Classifier</span>
+
+<span class="sd">    Implementation of a wrapper class for `SkactivemlClassifier` such that the</span>
+<span class="sd">    number of training samples can be limited to the latest `window_size`</span>
+<span class="sd">    samples. Furthermore, saves `X`, `y` and `sample_weight`, enabling the use</span>
+<span class="sd">    of a `partial_fit` for any classifier.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    estimator : sklearn.base.SkactivemlClassifier</span>
+<span class="sd">        The classifier to be wrapped. If this classifier already implements a</span>
+<span class="sd">        `partial_fit`, this method will be overwritten by this wrapper using</span>
+<span class="sd">        the sliding window approach.</span>
+<span class="sd">    classes : array-like of shape (n_classes,), default=None</span>
+<span class="sd">        Holds the label for each class. If `None`, `classes` are determined</span>
+<span class="sd">        during the fit.</span>
+<span class="sd">    missing_label : scalar or string or np.nan or None, default=np.nan</span>
+<span class="sd">        Value to represent a missing label.</span>
+<span class="sd">    cost_matrix : array-like of shape (n_classes, n_classes)</span>
+<span class="sd">        Cost matrix with `cost_matrix[i,j]` indicating cost of predicting class</span>
+<span class="sd">        `classes[j]` for a sample of class `classes[i]`. Can be only set, if</span>
+<span class="sd">        `classes` is not none.</span>
+<span class="sd">    window_size : int, default=None,</span>
+<span class="sd">        Value to represent the estimator sliding window size for X, y and</span>
+<span class="sd">        sample weight. If `None` the window is unrestricted in its size.</span>
+<span class="sd">    only_labeled : bool, default=False</span>
+<span class="sd">        If `True`, unlabeled samples are discarded.</span>
+<span class="sd">    random_state : int or RandomState instance or None, default=None</span>
+<span class="sd">        Determines random number for `predict` method. Pass an int for</span>
+<span class="sd">        reproducible results across multiple method calls.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">estimator</span><span class="p">,</span>
+        <span class="n">classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+        <span class="n">cost_matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">window_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">only_labeled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span><span class="p">,</span>
+            <span class="n">cost_matrix</span><span class="o">=</span><span class="n">cost_matrix</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">estimator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">only_labeled</span> <span class="o">=</span> <span class="n">only_labeled</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window_size</span> <span class="o">=</span> <span class="n">window_size</span>
+
+<div class="viewcode-block" id="SlidingWindowClassifier.fit">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SlidingWindowClassifier.html#skactiveml.classifier.SlidingWindowClassifier.fit">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;fit&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit the model using `X` as training data and `y` as class labels.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            The feature matrix representing the samples.</span>
+<span class="sd">        y : array-like of shape (n_samples,) or (n_samples, n_outputs)</span>
+<span class="sd">            It contains the class labels of the training samples. Missing</span>
+<span class="sd">            labels are represented the attribute `self.missing_label_`. In case</span>
+<span class="sd">            of multiple labels per sample (i.e., n_outputs &gt; 1), the samples</span>
+<span class="sd">            are duplicated.</span>
+<span class="sd">        sample_weight : array-like of shape (n_samples,) or\</span>
+<span class="sd">                (n_samples, n_outputs)</span>
+<span class="sd">            It contains the weights of the training samples&#39; class labels. It</span>
+<span class="sd">            must have the same shape as `y`.</span>
+<span class="sd">        fit_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `fit` method of the `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self: SlidingWindowClassifier,</span>
+<span class="sd">            The `SlidingWindowClassifier` is fitted on the training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check whether estimator is a valid classifier.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="n">SkactivemlClassifier</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39; must be a SkactivemlClassifier&quot;</span>
+                <span class="s2">&quot;classifier.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;allow_nd&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+            <span class="n">check_X_dict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_samples</span><span class="p">(</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_train_</span><span class="p">)</span>
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_train_</span><span class="p">)</span>
+        <span class="n">sample_weight_train</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sample_weight_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight_train</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SlidingWindowClassifier.partial_fit">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SlidingWindowClassifier.html#skactiveml.classifier.SlidingWindowClassifier.partial_fit">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;fit&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">partial_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Partially fitting the model using `X` as training data and `y` as</span>
+<span class="sd">        class labels. If `base_estimator` has no `partial_fit` function use</span>
+<span class="sd">        `fit` with the sliding window for X, y and sample_weight.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            The feature matrix representing the samples.</span>
+<span class="sd">        y : array-like of shape (n_samples,) or (n_samples, n_outputs)</span>
+<span class="sd">            It contains the class labels of the training samples. Missing</span>
+<span class="sd">            labels are represented the attribute `self.missing_label_`. In case</span>
+<span class="sd">            of multiple labels per sample (i.e., n_outputs &gt; 1), the samples</span>
+<span class="sd">            are duplicated.</span>
+<span class="sd">        sample_weight : array-like of shape (n_samples,) or\</span>
+<span class="sd">                (n_samples, n_outputs)</span>
+<span class="sd">            It contains the weights of the training samples&#39; class labels. It</span>
+<span class="sd">            must have the same shape as `y`.</span>
+<span class="sd">        fit_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `fit` method of the `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self : SlidingWindowClassifier,</span>
+<span class="sd">            The SlidingWindowClassifier is fitted on the training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check whether estimator is a valid classifier.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="n">SkactivemlClassifier</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39; must be a SkactivemlClassifier.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;allow_nd&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+            <span class="n">check_X_dict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_samples</span><span class="p">(</span><span class="s2">&quot;partial_fit&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_train_</span><span class="p">)</span>
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_train_</span><span class="p">)</span>
+        <span class="n">sample_weight_train</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sample_weight_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight_train</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fit_func</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;X_train_&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">X_train_</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_size</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;y_train_&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y_train_</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_size</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;sample_weight_train_&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_size</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_labeled</span><span class="p">:</span>
+            <span class="n">is_lbld</span> <span class="o">=</span> <span class="n">is_labeled</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span><span class="p">)</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">is_lbld</span><span class="p">]</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">is_lbld</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">sample_weight</span><span class="p">[</span><span class="n">is_lbld</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sample_weight</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># reset the window if fit is called otherwise extend the window with</span>
+        <span class="c1"># the given data</span>
+        <span class="k">if</span> <span class="n">fit_func</span> <span class="o">==</span> <span class="s2">&quot;fit&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">X_train_</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y_train_</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">window_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X_train_</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_train_</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sample_weight_train_</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">):</span>
+        <span class="c1"># Check whether estimator can deal with cost matrix.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;predict_proba&quot;</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;cost_matrix&#39; can be only set, if &#39;estimator&#39;&quot;</span>
+                <span class="s2">&quot;implements &#39;predict_proba&#39;.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;estimator_&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">has_fit_parameter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;sample_weight&quot;</span><span class="p">):</span>
+            <span class="n">fit_kwargs</span><span class="p">[</span><span class="s2">&quot;sample_weight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample_weight</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_validate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">check_X_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># super._validate_data is not called because training with partial fit</span>
+        <span class="c1"># with only one single available class in y leads to an error if</span>
+        <span class="c1"># self.classes is not set, even though self.classes has no function in</span>
+        <span class="c1"># this class.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">window_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">window_size</span><span class="p">,</span>
+                <span class="s2">&quot;window_size&quot;</span><span class="p">,</span>
+                <span class="nb">int</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">only_labeled</span><span class="p">,</span> <span class="s2">&quot;only_labeled&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+
+        <span class="n">check_y_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;ensure_2d&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;ensure_all_finite&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Check input parameters.</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_dict</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">check_X_dict</span><span class="p">[</span><span class="s2">&quot;ensure_2d&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">check_X_dict</span><span class="p">)</span>
+        <span class="n">check_consistent_length</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_dict</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">.</span><span class="n">shape</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;`y` has the shape </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> and `sample_weight` has the &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;shape </span><span class="si">{</span><span class="n">sample_weight</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">. Both need to have &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;identical shapes.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Check common classifier parameters.</span>
+        <span class="n">check_classifier_params</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">cost_matrix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equiv</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">cost_matrix</span>
+            <span class="p">)</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;cost_matrix&#39; and estimator.cost_matrix must be equal. &quot;</span>
+                <span class="s2">&quot;Got </span><span class="si">{}</span><span class="s2"> is not equal to </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">cost_matrix</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="c1"># self.missing_label is not testet completly and</span>
+        <span class="c1"># needs to be checked for the general test.</span>
+        <span class="c1"># if general test is removed, remove this check.</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">is_labeled</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span><span class="p">)</span>
+
+        <span class="n">check_equal_missing_label</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">missing_label</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># if self.classes=None or self.estimator.classes=None then no checks</span>
+        <span class="c1"># are done if general test is removed it should be checked again</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">classes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">classes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equiv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">classes</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;classes&#39; and estimator.classes must be equal. &quot;</span>
+                <span class="s2">&quot;Got </span><span class="si">{}</span><span class="s2"> is not equal to </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">classes</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Store and check random state.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">random_state_</span> <span class="o">=</span> <span class="n">check_random_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span>
+
+<div class="viewcode-block" id="SlidingWindowClassifier.predict">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SlidingWindowClassifier.html#skactiveml.classifier.SlidingWindowClassifier.predict">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;predict&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return class label predictions for the input data `X`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            Input samples.</span>
+<span class="sd">        predict_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `predict` method of the</span>
+<span class="sd">            `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        y_pred : numpy.ndarray shape (n_samples,)</span>
+<span class="sd">            Predicted class labels of the input samples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SlidingWindowClassifier.predict_proba">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SlidingWindowClassifier.html#skactiveml.classifier.SlidingWindowClassifier.predict_proba">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;predict_proba&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return probability estimates for the input data `X`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            Input samples.</span>
+<span class="sd">        predict_proba_kwargs : dict-like</span>
+<span class="sd">            Further parameters as input to the `predict_proba` method of the</span>
+<span class="sd">            `estimator`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        P : numpy.ndarray shape (n_samples, classes)</span>
+<span class="sd">            The class probabilities of the input samples `X`. Classes are</span>
+<span class="sd">            ordered according to the attribute `self.classes_`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">proba</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">proba</span></div>
+
+
+<div class="viewcode-block" id="SlidingWindowClassifier.predict_freq">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SlidingWindowClassifier.html#skactiveml.classifier.SlidingWindowClassifier.predict_freq">[docs]</a>
+    <span class="nd">@match_signature</span><span class="p">(</span><span class="s2">&quot;estimator&quot;</span><span class="p">,</span> <span class="s2">&quot;predict_freq&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict_freq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_freq_kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return class frequency estimates for the test samples `X`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            Test samples whose class frequencies are to be estimated.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        F : numpy.ndarray of shape (n_samples, classes)</span>
+<span class="sd">            The class frequency estimates of the test samples `X`. Classes are</span>
+<span class="sd">            ordered according to the attribute `self.classes_`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">predict_freq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_freq_kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">freq</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;estimator_&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="n">successful_skorch_torch_import</span><span class="p">:</span>
+
+<div class="viewcode-block" id="SkorchClassifier">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SkorchClassifier.html#skactiveml.classifier.SkorchClassifier">[docs]</a>
+    <span class="k">class</span><span class="w"> </span><span class="nc">SkorchClassifier</span><span class="p">(</span><span class="n">SkactivemlClassifier</span><span class="p">,</span> <span class="n">SkorchMixin</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;SkorchClassifier</span>
+
+<span class="sd">        Implement a classification wrapper class to make it possible to use</span>
+<span class="sd">        `torch` with `skactiveml`. This is achieved by providing a wrapper</span>
+<span class="sd">        around `torch` that has a `skactiveml` interface and can handle</span>
+<span class="sd">        missing labels. This wrapper is based on the open-source library</span>
+<span class="sd">        `skorch` [1]_.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Adjust your `criterion` and `module.forward` outputs consistently.</span>
+<span class="sd">        See the documentation of the parameters `forward_outputs` and</span>
+<span class="sd">        `criterion_output_keys` for further details.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        module : torch.nn.Module.__class__ or torch.nn.Module</span>
+<span class="sd">            A PyTorch `torch.nn.Module`. In general, the uninstantiated class</span>
+<span class="sd">            should be passed, although instantiated modules will also work.</span>
+<span class="sd">        criterion : torch.nn.Module or torch.nn.Module.__class__, \</span>
+<span class="sd">                default=torch.nn.CrossEntropyLoss</span>
+<span class="sd">            The loss (criterion) used to optimize the module.</span>
+
+<span class="sd">            - If a class (subclass of `torch.nn.Module`) is passed</span>
+<span class="sd">              (e.g. `torch.nn.CrossEntropyLoss`), it is instantiated</span>
+<span class="sd">              internally.</span>
+<span class="sd">            - If an instance is passed (e.g. `torch.nn.CrossEntropyLoss()`),</span>
+<span class="sd">              that instance (or a wrapped copy of it) is used.</span>
+
+<span class="sd">            By default, `torch.nn.CrossEntropyLoss` is used as criterion.</span>
+<span class="sd">        forward_outputs : dict[str, tuple[int, Callable | None]] or None,\</span>
+<span class="sd">                default=None</span>
+<span class="sd">            Dictionary that describes how to get and post-process the outputs</span>
+<span class="sd">            of `module.forward` for prediction. This parameter replaces the</span>
+<span class="sd">            functionality of `predict_nonlinearity` in a `skorch.net.NeuralNet`</span>
+<span class="sd">            (see documentation of `neural_net_param_dict`).</span>
+
+<span class="sd">            Given `raw_outputs = module.forward(x)`, each entry</span>
+<span class="sd">            `name -&gt; (idx, transform)` in `forward_outputs` is interpreted as:</span>
+
+<span class="sd">            - `idx` : int</span>
+<span class="sd">              Index into `raw_outputs` (0-based).</span>
+<span class="sd">            - `transform` : callable or `None`</span>
+<span class="sd">              If not `None`, it is applied to the selected raw tensor</span>
+<span class="sd">              `raw_outputs[idx]`. Otherwise, the raw tensor is used.</span>
+
+<span class="sd">            This allows multiple named outputs to reference the same raw tensor</span>
+<span class="sd">            with different transforms, for example::</span>
+
+<span class="sd">                forward_outputs = {</span>
+<span class="sd">                    &quot;proba&quot;:  (0, torch.nn.Softmax(dim=-1)),  # probabilities</span>
+<span class="sd">                    &quot;logits&quot;: (0, None),                      # raw scores</span>
+<span class="sd">                    &quot;emb&quot;:    (1, None),                      # embeddings</span>
+<span class="sd">                }</span>
+
+<span class="sd">            The first entry in `forward_outputs` defines the primary</span>
+<span class="sd">            scores used for prediction:</span>
+
+<span class="sd">            - In `predict_proba`, the transformed first output is</span>
+<span class="sd">              interpreted as class probabilities `P`.</span>
+<span class="sd">            - In `predict`, the class probabilities `P` returned by</span>
+<span class="sd">              `predict_proba` are used to infer class label predictions.</span>
+
+<span class="sd">            If `forward_outputs` is `None`, a sensible default is chosen</span>
+<span class="sd">            for common single-output classifiers based on the `criterion`:</span>
+
+<span class="sd">            - If `criterion` is `torch.nn.CrossEntropyLoss`, it is</span>
+<span class="sd">              assumed that `module.forward` returns logits and the</span>
+<span class="sd">              effective mapping is::</span>
+
+<span class="sd">                  {&quot;proba&quot;: (0, torch.nn.Softmax(dim=-1))}</span>
+
+<span class="sd">            - If `criterion` is `torch.nn.NLLLoss`, it is assumed that</span>
+<span class="sd">              `module.forward` returns log-probabilities and the effective</span>
+<span class="sd">              mapping is::</span>
+
+<span class="sd">                  {&quot;proba&quot;: (0, torch.exp)}</span>
+
+<span class="sd">            - For all other criteria, a single-output module is assumed to</span>
+<span class="sd">              already produce values in probability space, and the effective</span>
+<span class="sd">              mapping is::</span>
+
+<span class="sd">                  {&quot;proba&quot;: (0, None)}</span>
+
+<span class="sd">        criterion_output_keys : str or sequence of str or None, default=None</span>
+<span class="sd">            Name or names of the forward outputs that are passed to the</span>
+<span class="sd">            loss / criterion during training. Use this when</span>
+<span class="sd">            `module.forward` returns multiple outputs</span>
+<span class="sd">            (e.g. `(logits, embeddings, ...)`), but the criterion expects</span>
+<span class="sd">            a single tensor input or a specific tuple of inputs.</span>
+
+<span class="sd">            The names must refer to keys of the effective `forward_outputs`</span>
+<span class="sd">            mapping. If `criterion_output_keys` is not `None` and</span>
+<span class="sd">            `forward_outputs` is `None`, a `ValueError` is raised</span>
+<span class="sd">            because the names cannot be resolved.</span>
+
+<span class="sd">            - If a `str`, the corresponding named output of</span>
+<span class="sd">              `module.forward` (i.e., the raw tensor selected via its</span>
+<span class="sd">              index in `forward_outputs` before applying the transform)</span>
+<span class="sd">              is passed to the criterion (e.g. `&quot;logits&quot;` to use only the</span>
+<span class="sd">              class scores).</span>
+<span class="sd">            - If a sequence of `str`, the selected named outputs are passed to</span>
+<span class="sd">              the criterion in that order. Each raw forward output index may</span>
+<span class="sd">              appear at most once: using multiple names that resolve to the</span>
+<span class="sd">              same underlying index (e.g. `&quot;proba&quot;` and `&quot;logits&quot;` both</span>
+<span class="sd">              pointing to index 0) is not allowed and results in a</span>
+<span class="sd">              `ValueError`.</span>
+<span class="sd">            - If `None`, the first output defined by the effective</span>
+<span class="sd">              `forward_outputs` mapping is used as criterion input.</span>
+
+<span class="sd">            To pass all distinct forward outputs to the criterion in the</span>
+<span class="sd">            same order as `forward_outputs`, choose one representative name</span>
+<span class="sd">            per raw output index and set, for example::</span>
+
+<span class="sd">                # assuming that each key refers to a different raw index</span>
+<span class="sd">                criterion_output_keys = tuple(forward_outputs.keys())</span>
+
+<span class="sd">            If `forward_outputs` contains multiple names that refer to the</span>
+<span class="sd">            same raw output index (aliases such as `&quot;proba&quot;` and `&quot;logits&quot;`</span>
+<span class="sd">            both mapping to index 0), you must select at most one name per</span>
+<span class="sd">            raw index in `criterion_output_keys`.</span>
+<span class="sd">        neural_net_param_dict : dict, default=None</span>
+<span class="sd">            Additional arguments for `skorch.net.NeuralNet`. If</span>
+<span class="sd">            `neural_net_param_dict` is `None`, no additional arguments are</span>
+<span class="sd">            added. `module`, `criterion`, and `predict_nonlinearity` are not</span>
+<span class="sd">            allowed in this dictionary.</span>
+<span class="sd">        sample_dtype : str or type, default=np.float32</span>
+<span class="sd">            Dtype to which input samples are cast inside the estimator. If set</span>
+<span class="sd">            to `None`, the input dtype is preserved. The encoded label data</span>
+<span class="sd">            type is always  `np.int64`.</span>
+<span class="sd">        include_unlabeled_samples : bool, default=False</span>
+<span class="sd">            - If `False`, only labeled samples are passed to the `fit` method</span>
+<span class="sd">              of the estimator.</span>
+<span class="sd">            - If `True`, all samples including the unlabeled ones are passed to</span>
+<span class="sd">              the `fit` method of the estimator. Ensure that the `criterion`</span>
+<span class="sd">              is able to handle unlabeled samples marked by `missing_label`.</span>
+<span class="sd">              Otherwise, `missing_label` is interpreted as a regular class</span>
+<span class="sd">              label.</span>
+<span class="sd">        classes : array-like of shape (n_classes,), default=None</span>
+<span class="sd">            Holds the label for each class. If `None`, the classes are</span>
+<span class="sd">            determined during the fit.</span>
+<span class="sd">        missing_label : scalar or str or np.nan or None, default=np.nan</span>
+<span class="sd">            Value to represent a missing label.</span>
+<span class="sd">        cost_matrix : array-like of shape (n_classes, n_classes)</span>
+<span class="sd">            Cost matrix with `cost_matrix[i, j]` indicating the cost of</span>
+<span class="sd">            predicting class `classes[j]` for a sample of class</span>
+<span class="sd">            `classes[i]`. Can only be set if `classes` is not `None`.</span>
+<span class="sd">        random_state : int or RandomState instance or None, default=None</span>
+<span class="sd">            Determines random number generation for methods that rely on</span>
+<span class="sd">            randomness (e.g. `predict` for stochastic models). Pass an int for</span>
+<span class="sd">            reproducible results across multiple method calls.</span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        .. [1] Marian Tietz, Thomas J. Fan, Daniel Nouri, Benjamin Bossan, and</span>
+<span class="sd">           skorch Developers. skorch: A scikit-learn compatible neural network</span>
+<span class="sd">           library that wraps PyTorch, July 2017.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">module</span><span class="p">,</span>
+            <span class="n">criterion</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">,</span>
+            <span class="n">forward_outputs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">criterion_output_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">neural_net_param_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">sample_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+            <span class="n">include_unlabeled_samples</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">cost_matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">SkorchClassifier</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+                <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+                <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span><span class="p">,</span>
+                <span class="n">cost_matrix</span><span class="o">=</span><span class="n">cost_matrix</span><span class="p">,</span>
+                <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="o">=</span> <span class="n">module</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span> <span class="o">=</span> <span class="n">criterion</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forward_outputs</span> <span class="o">=</span> <span class="n">forward_outputs</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">criterion_output_keys</span> <span class="o">=</span> <span class="n">criterion_output_keys</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">neural_net_param_dict</span> <span class="o">=</span> <span class="n">neural_net_param_dict</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sample_dtype</span> <span class="o">=</span> <span class="n">sample_dtype</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">include_unlabeled_samples</span> <span class="o">=</span> <span class="n">include_unlabeled_samples</span>
+
+<div class="viewcode-block" id="SkorchClassifier.fit">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SkorchClassifier.html#skactiveml.classifier.SkorchClassifier.fit">[docs]</a>
+        <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Initialize and fit the module.</span>
+
+<span class="sd">            If the module was already initialized, by calling fit, the module</span>
+<span class="sd">            will be re-initialized (unless `warm_start` is True).</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : matrix-like, shape (n_samples, n_features)</span>
+<span class="sd">                Training data set, usually complete, i.e. including the labeled</span>
+<span class="sd">                and unlabeled samples</span>
+<span class="sd">            y : array-like of shape (n_samples, )</span>
+<span class="sd">                Labels of the training data set (possibly including unlabeled</span>
+<span class="sd">                ones indicated by self.missing_label)</span>
+<span class="sd">            fit_params : dict-like</span>
+<span class="sd">                Further parameters as input to the &#39;fit&#39; method of the</span>
+<span class="sd">                `skorch.net.NeuralNet`.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            self: SkorchClassifier,</span>
+<span class="sd">                `SkorchClassifier` object fitted on the training data.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SkorchClassifier.partial_fit">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SkorchClassifier.html#skactiveml.classifier.SkorchClassifier.partial_fit">[docs]</a>
+        <span class="k">def</span><span class="w"> </span><span class="nf">partial_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Fit the module without re-initialization.</span>
+
+<span class="sd">            If the module was already initialized, by calling `partial_fit`,</span>
+<span class="sd">            the module will not be re-initialized again.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : matrix-like, shape (n_samples, n_features)</span>
+<span class="sd">                Training data set, usually complete, i.e. including the labeled</span>
+<span class="sd">                and unlabeled samples</span>
+<span class="sd">            y : array-like of shape (n_samples, )</span>
+<span class="sd">                Labels of the training data set (possibly including unlabeled</span>
+<span class="sd">                ones indicated by `self.missing_label`)</span>
+<span class="sd">            fit_params : dict-like</span>
+<span class="sd">                Further parameters as input to the &#39;partial_fit&#39; method of the</span>
+<span class="sd">                `skorch.net.NeuralNet`.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            self: SkorchClassifier</span>
+<span class="sd">                `SkorchClassifier` object fitted on the training data.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="s2">&quot;partial_fit&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SkorchClassifier.predict">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SkorchClassifier.html#skactiveml.classifier.SkorchClassifier.predict">[docs]</a>
+        <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">extra_outputs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return class predictions for the test samples `X`.</span>
+
+<span class="sd">            By default, this method returns only the predicted classes</span>
+<span class="sd">            `y_pred`. The predictions are obtained via the class probabilities</span>
+<span class="sd">            `P` outputted by `predict_proba`. If `extra_outputs` is provided,</span>
+<span class="sd">            a tuple is returned whose first element is `y_pred` and whose</span>
+<span class="sd">            remaining elements are the requested additional forward outputs,</span>
+<span class="sd">            in the order specified by `extra_outputs`.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : array-like of shape (n_samples, ...)</span>
+<span class="sd">                Test samples.</span>
+<span class="sd">            extra_outputs : None or str or or sequence of str, default=None</span>
+<span class="sd">                Names of additional outputs to return next to `y_pred`. The</span>
+<span class="sd">                names must be a subset of the keys of the effective</span>
+<span class="sd">                `forward_outputs` mapping.</span>
+
+<span class="sd">                For example, if::</span>
+
+<span class="sd">                    self.forward_outputs = {</span>
+<span class="sd">                        &quot;proba&quot;:  (0, torch.nn.Softmax(dim=-1)),</span>
+<span class="sd">                        &quot;logits&quot;: (0, None),</span>
+<span class="sd">                        &quot;emb&quot;:    (1, None),</span>
+<span class="sd">                    }</span>
+
+<span class="sd">                then valid values for `extra_outputs` include `&quot;emb&quot;` or</span>
+<span class="sd">                `[&quot;emb&quot;, &quot;logits&quot;]`.</span>
+
+<span class="sd">                - If `extra_outputs is None`, only `y_pred` is returned.</span>
+<span class="sd">                - If `extra_outputs` is a string, e.g. `&quot;emb&quot;`, the</span>
+<span class="sd">                  return value is `(y_pred, emb)`.</span>
+<span class="sd">                - If `extra_outputs` is a sequence of strings, the return</span>
+<span class="sd">                  value is `(y_pred, out_1, out_2, ...)`, where `out_i`</span>
+<span class="sd">                  corresponds to the i-th name in `extra_outputs`.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            y_pred : numpy.ndarray of shape (n_samples,)</span>
+<span class="sd">                Predicted class labels of the test samples.</span>
+<span class="sd">            *extras : numpy.ndarray, optional</span>
+<span class="sd">                Additional outputs. Only present if `extra_outputs` is not</span>
+<span class="sd">                `None`. In that case, the method returns a single tuple whose</span>
+<span class="sd">                first element is `y_pred` and whose remaining elements</span>
+<span class="sd">                (`extras`) correspond to the requested forward outputs in the</span>
+<span class="sd">                order given by `extra_outputs`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+                <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+                <span class="n">extra_outputs</span><span class="o">=</span><span class="n">extra_outputs</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SkorchClassifier.predict_proba">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.classifier.SkorchClassifier.html#skactiveml.classifier.SkorchClassifier.predict_proba">[docs]</a>
+        <span class="k">def</span><span class="w"> </span><span class="nf">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">extra_outputs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return class probability estimates for the test samples `X`.</span>
+
+<span class="sd">            By default, this method returns only the predicted class</span>
+<span class="sd">            probabilities `P`. If `extra_outputs` is provided, a tuple is</span>
+<span class="sd">            returned whose first element is `y_pred` and whose remaining</span>
+<span class="sd">            elements are the requested additional forward outputs, in the</span>
+<span class="sd">            order specified by `extra_outputs`.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : array-like of shape (n_samples, ...)</span>
+<span class="sd">                Test samples.</span>
+<span class="sd">            extra_outputs : None or str or sequence of str, default=None</span>
+<span class="sd">                Names of additional outputs to return next to `P`. The names</span>
+<span class="sd">                must be a subset of the keys of the effective `forward_outputs`</span>
+<span class="sd">                mapping.</span>
+
+<span class="sd">                For example, if::</span>
+
+<span class="sd">                    self.forward_outputs = {</span>
+<span class="sd">                        &quot;proba&quot;:  (0, torch.nn.Softmax(dim=-1)),</span>
+<span class="sd">                        &quot;logits&quot;: (0, None),</span>
+<span class="sd">                        &quot;emb&quot;:    (1, None),</span>
+<span class="sd">                    }</span>
+
+<span class="sd">                then valid values for `extra_outputs` include `&quot;emb&quot;` or</span>
+<span class="sd">                `[&quot;emb&quot;, &quot;logits&quot;]`.</span>
+
+<span class="sd">                - If `extra_outputs is None`, only `P` is returned.</span>
+<span class="sd">                - If `extra_outputs` is a string, e.g. `&quot;logits&quot;`, the</span>
+<span class="sd">                  return value is `(P, logits)`.</span>
+<span class="sd">                - If `extra_outputs` is a sequence of strings, the return</span>
+<span class="sd">                  value is `(P, out_1, out_2, ...)`, where `out_i`</span>
+<span class="sd">                  corresponds to the i-th name in `extra_outputs`.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            P : numpy.ndarray of shape (n_samples, n_classes)</span>
+<span class="sd">                Class probabilities of the test samples. Classes are ordered</span>
+<span class="sd">                according to `self.classes_`.</span>
+<span class="sd">            *extras : numpy.ndarray, optional</span>
+<span class="sd">                Additional outputs. Only present if `extra_outputs` is not</span>
+<span class="sd">                `None`. In that case, the method returns a single tuple whose</span>
+<span class="sd">                first element is `P` and whose remaining elements</span>
+<span class="sd">                (`extras`) correspond to the requested forward outputs in the</span>
+<span class="sd">                order given by `extra_outputs`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c1"># Initialize module, if not done yet.</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;neural_net_&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+
+            <span class="c1"># Check input parameters.</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span><span class="p">)</span>
+            <span class="n">check_n_features</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;n_features_in_&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Resolve effective forward_outputs (either user-provided or</span>
+            <span class="c1"># defaulted based on the criterion).</span>
+            <span class="n">forward_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_forward_outputs</span><span class="p">()</span>
+
+            <span class="c1"># Forward propagation whose return values depends on the request</span>
+            <span class="c1"># ones.</span>
+            <span class="n">fw_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_with_named_outputs</span><span class="p">(</span>
+                <span class="n">X</span><span class="p">,</span> <span class="n">forward_outputs</span><span class="o">=</span><span class="n">forward_outputs</span><span class="p">,</span> <span class="n">extra_outputs</span><span class="o">=</span><span class="n">extra_outputs</span>
+            <span class="p">)</span>
+
+            <span class="c1"># First element is expected to be the class probabilities.</span>
+            <span class="n">P</span> <span class="o">=</span> <span class="n">fw_out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fw_out</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">fw_out</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_fallbacks</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">fw_out</span></div>
+
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_effective_forward_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return the effective `forward_outputs` mapping.</span>
+
+<span class="sd">            If the user did not specify `forward_outputs`, choose a reasonable</span>
+<span class="sd">            default for common criteria (e.g., `nn.CrossEntropyLoss`) and a</span>
+<span class="sd">            simple single-output module.</span>
+
+<span class="sd">            The returned mapping has the form::</span>
+
+<span class="sd">                {name: (idx, transform)}</span>
+
+<span class="sd">            where `idx` is the index into the tuple returned by</span>
+<span class="sd">            `module.forward` (0-based) and `transform` is a callable or</span>
+<span class="sd">            `None`. For the defaults below, a single-output module is assumed,</span>
+<span class="sd">            i.e., `idx == 0`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c1"># User explicitly provided a mapping: trust it.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_outputs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_outputs</span>
+
+            <span class="c1"># No explicit mapping: handle common single-output cases.</span>
+            <span class="n">crit_cls</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">criterion</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+                <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span><span class="o">.</span><span class="vm">__class__</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">crit_cls</span> <span class="ow">is</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">:</span>
+                <span class="c1"># Single-output network returning logits.</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;proba&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))}</span>
+
+            <span class="k">if</span> <span class="n">crit_cls</span> <span class="ow">is</span> <span class="n">nn</span><span class="o">.</span><span class="n">NLLLoss</span><span class="p">:</span>
+                <span class="c1"># Module returns log-probabilities.</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;proba&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">)}</span>
+
+            <span class="c1"># Fallback: treat the single forward output as already in</span>
+            <span class="c1"># probability space. Caller is responsible for making this true.</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;proba&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)}</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_net_parts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Assemble and validate network components.</span>
+
+<span class="sd">            Implementations should perform any optional checks or normalization</span>
+<span class="sd">            of constructor/init parameters (e.g., shape consistency, dtype</span>
+<span class="sd">            checks, wrapping criteria), then return the ready-to-use pieces for</span>
+<span class="sd">            `skorch.NeuralNet`.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : array-like of shape (n_samples, ...), default=None</span>
+<span class="sd">                Input samples for optional validation.</span>
+<span class="sd">            y : array-like of shape (n_samples, ...), default=None</span>
+<span class="sd">                Target values for optional validation.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            module : torch.nn.Module.__class__ or torch.nn.Module</span>
+<span class="sd">                A PyTorch `torch.nn.Module`. In general, the uninstantiated</span>
+<span class="sd">                class should be passed, although instantiated modules will also</span>
+<span class="sd">                work.</span>
+<span class="sd">            criterion : torch.nn.Module.__class__</span>
+<span class="sd">                The uninitialized criterion (loss) used to optimize the module.</span>
+<span class="sd">            params : dict</span>
+<span class="sd">                Keyword arguments (excluding `predict_non_linearity`) for</span>
+<span class="sd">                `skorch.NeuralNet` construction. Must be a mapping and may be</span>
+<span class="sd">                empty.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">criterion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span>
+            <span class="n">criterion</span> <span class="o">=</span> <span class="n">make_criterion_tuple_aware</span><span class="p">(</span>
+                <span class="n">criterion</span><span class="o">=</span><span class="n">criterion</span><span class="p">,</span>
+                <span class="n">criterion_output_keys</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">criterion_output_keys</span><span class="p">,</span>
+                <span class="n">forward_outputs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_effective_forward_outputs</span><span class="p">(),</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">,</span>
+                <span class="n">criterion</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">neural_net_param_dict</span> <span class="ow">or</span> <span class="p">{},</span>
+            <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_validate_data_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return kwargs forwarded to `_validate_data`.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            kwargs : dict or None</span>
+<span class="sd">                Keyword arguments consumed by `_validate_data`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;ensure_min_samples&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;ensure_min_features&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;allow_nd&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_dtype</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="n">check_type</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">include_unlabeled_samples</span><span class="p">,</span>
+                <span class="s2">&quot;include_unlabeled_samples&quot;</span><span class="p">,</span>
+                <span class="nb">bool</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;check_X_dict&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span><span class="p">}</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_return_training_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return only samples and labels required for training.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : array-like of shape (n_samples, ...)</span>
+<span class="sd">                Input samples.</span>
+<span class="sd">            y : array-like of shape (n_samples, ...)</span>
+<span class="sd">                Targets with unlabeled entries following the subclass&#39;</span>
+<span class="sd">                convention.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            X_train : ndarray or None</span>
+<span class="sd">                Training samples or `None` if none exist.</span>
+<span class="sd">            y_train : ndarray or None</span>
+<span class="sd">                Training labels or `None` if none exist.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_unlabeled_samples</span><span class="p">:</span>
+                <span class="n">is_included</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">is_included</span> <span class="o">=</span> <span class="n">is_labeled</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">is_included</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">is_included</span><span class="p">]</span>
+                <span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">is_included</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_fallbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Initialize label/cost fallbacks if the classifier was not fitted</span>
+<span class="sd">            before.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            P : array-like of shape (n_samples, n_classes)</span>
+<span class="sd">                Class-probability array used only to infer `n_classes` when</span>
+<span class="sd">                `self.classes` is `None`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">random_state_</span> <span class="o">=</span> <span class="n">check_random_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_le&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_le</span> <span class="o">=</span> <span class="n">ExtLabelEncoder</span><span class="p">(</span>
+                    <span class="n">classes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span> <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">y_dummy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">y_dummy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_le</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">y_dummy</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_le</span><span class="o">.</span><span class="n">classes_</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cost_matrix_&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix_</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span> <span class="ow">is</span> <span class="kc">None</span>
+                    <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_matrix</span>
+                <span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

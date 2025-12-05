@@ -1,0 +1,1436 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skactiveml.classifier.multiannotator._annot_mix_classifier &#8212; scikit-activeml latest documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/skactiveml/classifier/multiannotator/_annot_mix_classifier';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'latest';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../../../_static/filter_examples.js?v=52a8636b"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/latest/_modules/skactiveml/classifier/multiannotator/_annot_mix_classifier.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="latest" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml latest documentation - Home"/>
+    <img src="../../../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml latest documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">skactiveml.classifier.multiannotator._annot_mix_classifier</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for skactiveml.classifier.multiannotator._annot_mix_classifier</h1><div class="highlight"><pre>
+<span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils.validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">check_array</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="kn">import</span> <span class="n">KLDivLoss</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="kn">import</span> <span class="n">functional</span> <span class="k">as</span> <span class="n">F</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_collate</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">...base</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkactivemlClassifier</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">...utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">MISSING_LABEL</span><span class="p">,</span>
+        <span class="n">check_n_features</span><span class="p">,</span>
+        <span class="n">check_scalar</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">._utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">_MultiAnnotatorClassificationModule</span><span class="p">,</span>
+        <span class="n">_SkorchMultiAnnotatorClassifier</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="AnnotMixClassifier">
+<a class="viewcode-back" href="../../../../generated/api/skactiveml.classifier.multiannotator.AnnotMixClassifier.html#skactiveml.classifier.multiannotator.AnnotMixClassifier">[docs]</a>
+    <span class="k">class</span><span class="w"> </span><span class="nc">AnnotMixClassifier</span><span class="p">(</span><span class="n">_SkorchMultiAnnotatorClassifier</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Annot-Mix</span>
+
+<span class="sd">        Annot-Mix [1]_ trains a multi-annotator classifier using an extension</span>
+<span class="sd">        of MixUp [2]_. The main idea is to apply MixUp not only to samples</span>
+<span class="sd">        and class labels, but to sample–annotator pairs: it convexly combines</span>
+<span class="sd">        inputs and their annotator-specific noisy labels and trains a one-stage</span>
+<span class="sd">        model that jointly estimates the true label distribution and each</span>
+<span class="sd">        annotator’s reliability. In this way, Annot-Mix can handle multiple,</span>
+<span class="sd">        potentially conflicting labels per sample while using MixUp-style</span>
+<span class="sd">        regularization to become more robust to label noise.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        clf_module : nn.Module or nn.Module.__class__</span>
+<span class="sd">            A PyTorch module as classification model outputting logits for</span>
+<span class="sd">            samples as input. In general, the uninstantiated class should</span>
+<span class="sd">            be passed, although instantiated modules will also work. The</span>
+<span class="sd">            `forward` module must return logits as first element and optional</span>
+<span class="sd">            sample embeddings as</span>
+<span class="sd">            second element. If no sample embeddings are returned, the</span>
+<span class="sd">            implementation uses the original samples.</span>
+<span class="sd">        alpha : float, default=0.5</span>
+<span class="sd">            MixUp concentration parameter. The mix coefficient `lambda` is</span>
+<span class="sd">            drawn from `Beta(alpha, alpha)`. Use `alpha=0` to disable MixUp.</span>
+<span class="sd">        annotator_embed_dim : int, default=16</span>
+<span class="sd">            Dimensionality of the annotator embedding used to model</span>
+<span class="sd">            annotator-specific behavior.</span>
+<span class="sd">        sample_embed_dim : int, default=0</span>
+<span class="sd">            Dimensionality of an optional learnable sample-embedding used to</span>
+<span class="sd">            model sample-specific behavior of each annotator. If</span>
+<span class="sd">            `sample_embed_dim=0`, the annotator performances are only</span>
+<span class="sd">            modeled as class-specific.</span>
+<span class="sd">        hidden_dim : int or None, default=None</span>
+<span class="sd">            Hidden size of the fusion multi-layer perceptron that propagates</span>
+<span class="sd">            sample and annotator representations. If `None`, a sensible</span>
+<span class="sd">            default is used, which depends on the other input parameters.</span>
+<span class="sd">            Note that this parameter has no effect for `n_hidden_layers=0`.</span>
+<span class="sd">        n_hidden_layers : int, default=0</span>
+<span class="sd">            Number of hidden layers in the fusion multi-layer perceptron.</span>
+<span class="sd">        hidden_dropout : float, default=0.1</span>
+<span class="sd">            Dropout probability applied in the fusion multi-layer perceptron.</span>
+<span class="sd">            Note that this parameter has no effect for `n_hidden_layers=0`.</span>
+<span class="sd">        eta : float in (0, 1), default=0.9</span>
+<span class="sd">            Prior annotator performance, i.e., the probability of obtaining a</span>
+<span class="sd">            correct annotation from an arbitrary annotator for an arbitrary</span>
+<span class="sd">            sample of an arbitrary class.</span>
+<span class="sd">        n_annotators : int, default=None</span>
+<span class="sd">            Number of annotators. If `n_annotators=None`, the number of</span>
+<span class="sd">            annotators is inferred by the shape of `y` during training.</span>
+<span class="sd">        neural_net_param_dict : dict, default=None</span>
+<span class="sd">            Additional arguments for `skorch.net.NeuralNet`. If</span>
+<span class="sd">            `neural_net_param_dict` is `None`, no extra arguments are added.</span>
+<span class="sd">            `module`, `criterion`, `predict_nonlinearity`, and `train_split`</span>
+<span class="sd">            are not allowed in this dictionary.</span>
+<span class="sd">        sample_dtype : str or type, default=np.float32</span>
+<span class="sd">            Dtype to which input samples are cast inside the estimator. If set</span>
+<span class="sd">            to `None`, the input dtype is preserved.</span>
+<span class="sd">        classes : array-like of shape (n_classes,), default=None</span>
+<span class="sd">            Holds the label for each class. If `None`, the classes are</span>
+<span class="sd">            determined during the fit.</span>
+<span class="sd">        missing_label : scalar or string or np.nan or None, default=np.nan</span>
+<span class="sd">            Value to represent a missing label.</span>
+<span class="sd">        cost_matrix : array-like of shape (n_classes, n_classes), default=None</span>
+<span class="sd">            Cost matrix with `cost_matrix[i,j]` indicating cost of predicting</span>
+<span class="sd">            class `classes[j]` for a sample of class `classes[i]`. Can be only</span>
+<span class="sd">            set, if `classes` is not `None`.</span>
+<span class="sd">        random_state : int or RandomState instance or None, default=None</span>
+<span class="sd">            Determines random number for `predict` method. Pass an int for</span>
+<span class="sd">            reproducible results across multiple method calls.</span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        .. [1] Herde, M., Lührs, L., Huseljic, D., &amp; Sick, B. (2024).</span>
+<span class="sd">           Annot-Mix: Learning with Noisy Class Labels from Multiple Annotators</span>
+<span class="sd">           via a Mixup Extension. Eur. Conf. Artif. Intell.</span>
+<span class="sd">        .. [2] Zhang, H., Cisse, M., Dauphin, Y. N., &amp; Lopez-Paz, D. (2018).</span>
+<span class="sd">           mixup: Beyond Empirical Risk Minimization. Int. Conf. Learn.</span>
+<span class="sd">           Represent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">_ALLOWED_EXTRA_OUTPUTS</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;logits&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;embeddings&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;annotator_perf&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;annotator_class&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;annotator_embeddings&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">clf_module</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">sample_embed_dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">annotator_embed_dim</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+            <span class="n">hidden_dim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">n_hidden_layers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">hidden_dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+            <span class="n">eta</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+            <span class="n">n_annotators</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">neural_net_param_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">sample_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+            <span class="n">classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">cost_matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">AnnotMixClassifier</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+                <span class="n">multi_annotator_module</span><span class="o">=</span><span class="n">_AnnotMixModule</span><span class="p">,</span>
+                <span class="n">clf_module</span><span class="o">=</span><span class="n">clf_module</span><span class="p">,</span>
+                <span class="n">criterion</span><span class="o">=</span><span class="n">KLDivLoss</span><span class="p">,</span>
+                <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+                <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span><span class="p">,</span>
+                <span class="n">cost_matrix</span><span class="o">=</span><span class="n">cost_matrix</span><span class="p">,</span>
+                <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+                <span class="n">neural_net_param_dict</span><span class="o">=</span><span class="n">neural_net_param_dict</span><span class="p">,</span>
+                <span class="n">sample_dtype</span><span class="o">=</span><span class="n">sample_dtype</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clf_module</span> <span class="o">=</span> <span class="n">clf_module</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed_dim</span> <span class="o">=</span> <span class="n">sample_embed_dim</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">annotator_embed_dim</span> <span class="o">=</span> <span class="n">annotator_embed_dim</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span> <span class="o">=</span> <span class="n">hidden_dim</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_hidden_layers</span> <span class="o">=</span> <span class="n">n_hidden_layers</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dropout</span> <span class="o">=</span> <span class="n">hidden_dropout</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eta</span> <span class="o">=</span> <span class="n">eta</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_annotators</span> <span class="o">=</span> <span class="n">n_annotators</span>
+
+<div class="viewcode-block" id="AnnotMixClassifier.predict">
+<a class="viewcode-back" href="../../../../generated/api/skactiveml.classifier.multiannotator.AnnotMixClassifier.html#skactiveml.classifier.multiannotator.AnnotMixClassifier.predict">[docs]</a>
+        <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">X</span><span class="p">,</span>
+            <span class="n">extra_outputs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return class predictions for the test samples `X`.</span>
+
+<span class="sd">            By default, this method returns only the class predictions</span>
+<span class="sd">            `y_pred`. If `extra_outputs` is provided, a tuple is returned whose</span>
+<span class="sd">            first element is `y_pred` and whose remaining elements are the</span>
+<span class="sd">            requested additional forward outputs, in the order specified by</span>
+<span class="sd">            `extra_outputs`.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : array-like of shape (n_samples, ...)</span>
+<span class="sd">                Test samples.</span>
+<span class="sd">            extra_outputs : None or str or sequence of str, default=None</span>
+<span class="sd">                Names of additional outputs to return next to `y_pred`. The</span>
+<span class="sd">                names must be a subset of the following keys:</span>
+
+<span class="sd">                - &quot;logits&quot; : Additionally return the class-membership logits</span>
+<span class="sd">                  `L_class` for the samples in `X`.</span>
+<span class="sd">                - &quot;embeddings&quot; : Additionally return the learned embeddings</span>
+<span class="sd">                  `X_embed` for the samples in `X`.</span>
+<span class="sd">                - &quot;annotator_perf&quot; : additionally return the estimated</span>
+<span class="sd">                  annotator performance probabilities `P_perf` for each</span>
+<span class="sd">                  sample–annotator pair.</span>
+<span class="sd">                - &quot;annotator_class&quot; : Additionally return the annotator–class</span>
+<span class="sd">                  probability estimates `P_annot` for each sample, class, and</span>
+<span class="sd">                  annotator.</span>
+<span class="sd">                - &quot;annotator_embeddings&quot; : Additionally return the</span>
+<span class="sd">                  learned embeddings `A_embed` for the annotators as the next</span>
+<span class="sd">                  element of the output tuple.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            y_pred : numpy.ndarray of shape (n_samples,)</span>
+<span class="sd">                Class labels of the test samples.</span>
+<span class="sd">            *extras : numpy.ndarray, optional</span>
+<span class="sd">                Only returned if `extra_outputs` is not `None`. In that</span>
+<span class="sd">                case, the method returns a tuple whose first element is</span>
+<span class="sd">                `y_pred` and whose remaining elements correspond to the</span>
+<span class="sd">                requested forward outputs in the order given by</span>
+<span class="sd">                `extra_outputs`. Potential outputs are:</span>
+
+<span class="sd">                - `L_class` : `np.ndarray` of shape `(n_samples, n_classes)`,</span>
+<span class="sd">                  where `L_class[n, c]` is the logit for the class</span>
+<span class="sd">                  `classes_[c]` of sample `X[n]`.</span>
+<span class="sd">                - `X_embed` : `np.ndarray` of shape `(n_samples, ...)`, where</span>
+<span class="sd">                  `X_embed[n]` refers to the learned embedding for sample</span>
+<span class="sd">                  `X[n]`.</span>
+<span class="sd">                - `P_perf` : `np.ndarray` of shape `(n_samples, n_annotators)`,</span>
+<span class="sd">                  where `P_perf[n, m]` refers to the estimated label</span>
+<span class="sd">                  correctness probability (performance) of annotator `m` when</span>
+<span class="sd">                  labeling sample `X[n]`.</span>
+<span class="sd">                - `P_annot` : `np.ndarray` of shape</span>
+<span class="sd">                  `(n_samples, n_annotators, n_classes)`, where</span>
+<span class="sd">                  `P_annot[n, m, c]` refers to the probability that annotator</span>
+<span class="sd">                  `m` provides the class label `c` for sample `X[n]`.</span>
+<span class="sd">                - `A_embed` : `np.ndarray` of shape</span>
+<span class="sd">                  `(n_annotators, annotator_embed_dim)`, where `A_embed[m]`</span>
+<span class="sd">                  refers to the learned embedding for annotator `m`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="n">SkactivemlClassifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span>
+                <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+                <span class="n">extra_outputs</span><span class="o">=</span><span class="n">extra_outputs</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AnnotMixClassifier.predict_proba">
+<a class="viewcode-back" href="../../../../generated/api/skactiveml.classifier.multiannotator.AnnotMixClassifier.html#skactiveml.classifier.multiannotator.AnnotMixClassifier.predict_proba">[docs]</a>
+        <span class="k">def</span><span class="w"> </span><span class="nf">predict_proba</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">X</span><span class="p">,</span>
+            <span class="n">extra_outputs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Return class probability estimates for the test samples `X`.</span>
+
+<span class="sd">            By default, this method returns only the class probabilities `P`.</span>
+<span class="sd">            If `extra_outputs` is provided, a tuple is returned whose first</span>
+<span class="sd">            element is `P` and whose remaining elements are the requested</span>
+<span class="sd">            additional forward outputs, in the order specified by</span>
+<span class="sd">            `extra_outputs`.</span>
+
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            X : array-like of shape (n_samples, ...)</span>
+<span class="sd">                Test samples.</span>
+<span class="sd">            extra_outputs : None or str or sequence of str, default=None</span>
+<span class="sd">                Names of additional outputs to return next to `P`. The names</span>
+<span class="sd">                must be a subset of the following keys:</span>
+
+<span class="sd">                - &quot;logits&quot; : Additionally return the class-membership logits</span>
+<span class="sd">                  `L_class` for the samples in `X`.</span>
+<span class="sd">                - &quot;embeddings&quot; : Additionally return the learned embeddings</span>
+<span class="sd">                  `X_embed` for the samples in `X`.</span>
+<span class="sd">                - &quot;annotator_perf&quot; : additionally return the estimated</span>
+<span class="sd">                  annotator performance probabilities `P_perf` for each</span>
+<span class="sd">                  sample–annotator pair.</span>
+<span class="sd">                - &quot;annotator_class&quot; : Additionally return the annotator–class</span>
+<span class="sd">                  probability estimates `P_annot` for each sample, class, and</span>
+<span class="sd">                  annotator.</span>
+<span class="sd">                - &quot;annotator_embeddings&quot; : Additionally return the</span>
+<span class="sd">                  learned embeddings `A_embed` for the annotators as the next</span>
+<span class="sd">                  element of the output tuple.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            P : numpy.ndarray of shape (n_samples, n_classes)</span>
+<span class="sd">                Class probabilities of the test samples. Classes are ordered</span>
+<span class="sd">                according to `self.classes_`.</span>
+<span class="sd">            *extras : numpy.ndarray, optional</span>
+<span class="sd">                Only returned if `extra_outputs` is not `None`. In that</span>
+<span class="sd">                case, the method returns a tuple whose first element is `P`</span>
+<span class="sd">                and whose remaining elements correspond to the requested</span>
+<span class="sd">                forward outputs in the order given by `extra_outputs`.</span>
+<span class="sd">                Potential outputs are:</span>
+
+<span class="sd">                - `L_class` : `np.ndarray` of shape `(n_samples, n_classes)`,</span>
+<span class="sd">                  where `L_class[n, c]` is the logit for the class</span>
+<span class="sd">                  `classes_[c]` of sample `X[n]`.</span>
+<span class="sd">                - `X_embed` : `np.ndarray` of shape `(n_samples, ...)`, where</span>
+<span class="sd">                  `X_embed[n]` refers to the learned embedding for sample</span>
+<span class="sd">                  `X[n]`.</span>
+<span class="sd">                - `P_perf` : `np.ndarray` of shape `(n_samples, n_annotators)`,</span>
+<span class="sd">                  where `P_perf[n, m]` refers to the estimated label</span>
+<span class="sd">                  correctness probability (performance) of annotator `m` when</span>
+<span class="sd">                  labeling sample `X[n]`.</span>
+<span class="sd">                - `P_annot : `np.ndarray` of shape</span>
+<span class="sd">                  `(n_samples, n_annotators, n_classes)`, where</span>
+<span class="sd">                  `P_annot[n, m, c]` refers to the probability that annotator</span>
+<span class="sd">                  `m` provides the class label `c` for sample `X[n]`.</span>
+<span class="sd">                - `A_embed` : `np.ndarray` of shape</span>
+<span class="sd">                  `(n_annotators, annotator_embed_dim)`, where `A_embed[m]`</span>
+<span class="sd">                  refers to the learned embedding for annotator `m`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c1"># Check input parameters.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data_kwargs</span><span class="p">()</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">check_X_dict_</span><span class="p">)</span>
+            <span class="n">check_n_features</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;n_features_in_&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">extra_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_extra_outputs</span><span class="p">(</span>
+                <span class="n">extra_outputs</span><span class="o">=</span><span class="n">extra_outputs</span><span class="p">,</span>
+                <span class="n">allowed_names</span><span class="o">=</span><span class="n">AnnotMixClassifier</span><span class="o">.</span><span class="n">_ALLOWED_EXTRA_OUTPUTS</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Initialize module, if not done yet.</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;neural_net_&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+
+            <span class="c1"># Set forward options to obtain the different outputs required</span>
+            <span class="c1"># by the input parameters.</span>
+            <span class="n">net</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">neural_net_</span><span class="o">.</span><span class="n">module_</span>
+            <span class="n">old_forward_return</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">forward_return</span>
+            <span class="n">forward_outputs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;probas&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))}</span>
+            <span class="n">forward_returns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;logits_class&quot;</span><span class="p">]</span>
+            <span class="n">out_idx</span> <span class="o">=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="s2">&quot;logits&quot;</span> <span class="ow">in</span> <span class="n">extra_outputs</span><span class="p">:</span>
+                <span class="n">forward_outputs</span><span class="p">[</span><span class="s2">&quot;logits&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;embeddings&quot;</span> <span class="ow">in</span> <span class="n">extra_outputs</span><span class="p">:</span>
+                <span class="n">forward_outputs</span><span class="p">[</span><span class="s2">&quot;embeddings&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">out_idx</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="n">forward_returns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;x_embed&quot;</span><span class="p">)</span>
+                <span class="n">out_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="s2">&quot;annotator_perf&quot;</span> <span class="ow">in</span> <span class="n">extra_outputs</span><span class="p">:</span>
+
+                <span class="k">def</span><span class="w"> </span><span class="nf">_transform_annotator_perf</span><span class="p">(</span><span class="n">P_perf</span><span class="p">):</span>
+                    <span class="n">P_perf</span> <span class="o">=</span> <span class="n">P_perf</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
+                    <span class="k">return</span> <span class="n">P_perf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_annotators_</span><span class="p">)</span>
+
+                <span class="n">forward_outputs</span><span class="p">[</span><span class="s2">&quot;annotator_perf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">out_idx</span><span class="p">,</span>
+                    <span class="n">_transform_annotator_perf</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">forward_returns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;log_p_annotator_perf&quot;</span><span class="p">)</span>
+                <span class="n">out_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="s2">&quot;annotator_class&quot;</span> <span class="ow">in</span> <span class="n">extra_outputs</span><span class="p">:</span>
+
+                <span class="k">def</span><span class="w"> </span><span class="nf">_transform_annotator_class</span><span class="p">(</span><span class="n">P_annot</span><span class="p">):</span>
+                    <span class="n">P_annot</span> <span class="o">=</span> <span class="n">P_annot</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span>
+                    <span class="k">return</span> <span class="n">P_annot</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+                        <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_annotators_</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+                    <span class="p">)</span>
+
+                <span class="n">forward_outputs</span><span class="p">[</span><span class="s2">&quot;annotator_class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">out_idx</span><span class="p">,</span>
+                    <span class="n">_transform_annotator_class</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">forward_returns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;log_p_annotator_class&quot;</span><span class="p">)</span>
+                <span class="n">out_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="s2">&quot;annotator_embeddings&quot;</span> <span class="ow">in</span> <span class="n">extra_outputs</span><span class="p">:</span>
+
+                <span class="k">def</span><span class="w"> </span><span class="nf">_transform_annotator_embeddings</span><span class="p">(</span><span class="n">A_embed</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">A_embed</span><span class="p">[:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_annotators_</span><span class="p">]</span>
+
+                <span class="n">forward_outputs</span><span class="p">[</span><span class="s2">&quot;annotator_embeddings&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">out_idx</span><span class="p">,</span>
+                    <span class="n">_transform_annotator_embeddings</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">forward_returns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;a_embed&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Compute predictions for the different outputs required</span>
+            <span class="c1"># by the input parameters.</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">net</span><span class="o">.</span><span class="n">set_forward_return</span><span class="p">(</span><span class="n">forward_returns</span><span class="p">)</span>
+                <span class="n">fw_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_with_named_outputs</span><span class="p">(</span>
+                    <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+                    <span class="n">forward_outputs</span><span class="o">=</span><span class="n">forward_outputs</span><span class="p">,</span>
+                    <span class="n">extra_outputs</span><span class="o">=</span><span class="n">extra_outputs</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="n">net</span><span class="o">.</span><span class="n">set_forward_return</span><span class="p">(</span><span class="n">old_forward_return</span><span class="p">)</span>
+
+            <span class="c1"># Initialize fallbacks if the classifier hasn&#39;t been fitted before.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_fallbacks</span><span class="p">(</span>
+                <span class="n">fw_out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fw_out</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">fw_out</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">fw_out</span></div>
+
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_build_neural_net_param_overrides</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Initialize the internal `sklearn` wrapper from `skorch`.&quot;&quot;&quot;</span>
+            <span class="c1"># Check parameters specific to `AnnotMixClassifier`.</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+                <span class="n">target_type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed_dim</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sample_embed_dim&quot;</span><span class="p">,</span>
+                <span class="n">target_type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">annotator_embed_dim</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;annotator_embed_dim&quot;</span><span class="p">,</span>
+                <span class="n">target_type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">hidden_dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span>
+            <span class="k">if</span> <span class="n">hidden_dim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">hidden_dim</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+                    <span class="mi">4</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span>
+                    <span class="nb">max</span><span class="p">(</span>
+                        <span class="mi">128</span><span class="p">,</span>
+                        <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annotator_embed_dim</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed_dim</span><span class="p">),</span>
+                    <span class="p">),</span>
+                <span class="p">)</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="n">hidden_dim</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;hidden_dim&quot;</span><span class="p">,</span>
+                <span class="n">target_type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">n_hidden_layers</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;n_hidden_layers&quot;</span><span class="p">,</span>
+                <span class="n">target_type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dropout</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;hidden_dropout&quot;</span><span class="p">,</span>
+                <span class="n">target_type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">max_val</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                <span class="n">max_inclusive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eta</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;eta&quot;</span><span class="p">,</span>
+                <span class="n">target_type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">max_val</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                <span class="n">max_inclusive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">collate_fn</span> <span class="o">=</span> <span class="n">_MixUpCollate</span><span class="p">(</span>
+                <span class="n">n_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span>
+                <span class="n">n_annotators</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_annotators_</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">,</span>
+                <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;criterion__reduction&quot;</span><span class="p">:</span> <span class="s2">&quot;batchmean&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;module__n_classes&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">),</span>
+                <span class="s2">&quot;module__n_annotators&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_annotators_</span><span class="p">,</span>
+                <span class="s2">&quot;module__sample_embed_dim&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed_dim</span><span class="p">,</span>
+                <span class="s2">&quot;module__annotator_embed_dim&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotator_embed_dim</span><span class="p">,</span>
+                <span class="s2">&quot;module__hidden_dim&quot;</span><span class="p">:</span> <span class="n">hidden_dim</span><span class="p">,</span>
+                <span class="s2">&quot;module__n_hidden_layers&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_hidden_layers</span><span class="p">,</span>
+                <span class="s2">&quot;module__hidden_dropout&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dropout</span><span class="p">,</span>
+                <span class="s2">&quot;module__eta&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">eta</span><span class="p">,</span>
+                <span class="s2">&quot;iterator_train__collate_fn&quot;</span><span class="p">:</span> <span class="n">collate_fn</span><span class="p">,</span>
+            <span class="p">}</span></div>
+
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">_AnnotMixModule</span><span class="p">(</span><span class="n">_MultiAnnotatorClassificationModule</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Auxiliary module for Annot-Mix [1]_ that produces class logits and</span>
+<span class="sd">        annotator-conditioned outputs, while training with MixUp [2]_.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        n_classes : int</span>
+<span class="sd">            Number of classes.</span>
+<span class="sd">        n_annotators : int</span>
+<span class="sd">            Number of annotators.</span>
+<span class="sd">        clf_module : nn.Module or nn.Module.__class__</span>
+<span class="sd">            Classifier backbone/head that maps `x -&gt; logits_class` or</span>
+<span class="sd">            `(logits_class, x_embed)`. If it returns only logits, `x_embed` is</span>
+<span class="sd">            set to the input `x` (or to `None` if `x` is not an embedding).</span>
+<span class="sd">        clf_module_param_dict : dict</span>
+<span class="sd">            Keyword args for constructing `clf_module` if a class is passed.</span>
+<span class="sd">        annotator_embed_dim : int</span>
+<span class="sd">            Dimensionality of the annotator embedding used to model</span>
+<span class="sd">            annotator-specific behavior.</span>
+<span class="sd">        sample_embed_dim : int or None</span>
+<span class="sd">            Dimensionality of an optional learnable sample-embedding used to</span>
+<span class="sd">            model sample-specific behavior of each annotator. If</span>
+<span class="sd">            `sample_embed_dim=0`, no additional sample embedding is learned.</span>
+<span class="sd">        hidden_dim : int or None</span>
+<span class="sd">            Hidden size of the fusion multi-layer perceptron that propagates</span>
+<span class="sd">            sample and annotator representations. If `None`, a sensible</span>
+<span class="sd">            default is used, which depends on the other input parameters.</span>
+<span class="sd">        n_hidden_layers : int</span>
+<span class="sd">            Number of hidden layers in the fusion multi-layer perceptron.</span>
+<span class="sd">        hidden_dropout : float</span>
+<span class="sd">            Dropout probability applied in the fusion multi-layer perceptron.</span>
+<span class="sd">        eta : float in (0, 1)</span>
+<span class="sd">            Prior annotator performance, i.e., the probability of obtaining a</span>
+<span class="sd">            correct annotation from an arbitrary annotator for an arbitrary</span>
+<span class="sd">            sample.</span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        .. [1] Herde, M., Lührs, L., Huseljic, D., &amp; Sick, B. (2024).</span>
+<span class="sd">           Annot-Mix: Learning with Noisy Class Labels from Multiple Annotators</span>
+<span class="sd">           via a Mixup Extension. Eur. Conf. Artif. Intell.</span>
+<span class="sd">        .. [2] Zhang, H., Cisse, M., Dauphin, Y. N., &amp; Lopez-Paz, D. (2018).</span>
+<span class="sd">           mixup: Beyond Empirical Risk Minimization. Int. Conf. Learn.</span>
+<span class="sd">           Represent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Optional names that can be returned *after* logits_class</span>
+        <span class="n">OUTPUTS</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;logits_class&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;x_embed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;a_embed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;log_p_annotator_class&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;log_p_annotator_perf&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">n_classes</span><span class="p">,</span>
+            <span class="n">n_annotators</span><span class="p">,</span>
+            <span class="n">clf_module</span><span class="p">,</span>
+            <span class="n">clf_module_param_dict</span><span class="p">,</span>
+            <span class="n">sample_embed_dim</span><span class="p">,</span>
+            <span class="n">annotator_embed_dim</span><span class="p">,</span>
+            <span class="n">hidden_dim</span><span class="p">,</span>
+            <span class="n">n_hidden_layers</span><span class="p">,</span>
+            <span class="n">hidden_dropout</span><span class="p">,</span>
+            <span class="n">eta</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+                <span class="n">clf_module</span><span class="o">=</span><span class="n">clf_module</span><span class="p">,</span>
+                <span class="n">clf_module_param_dict</span><span class="o">=</span><span class="n">clf_module_param_dict</span><span class="p">,</span>
+                <span class="n">default_forward_outputs</span><span class="o">=</span><span class="s2">&quot;log_p_annotator_class&quot;</span><span class="p">,</span>
+                <span class="n">full_forward_outputs</span><span class="o">=</span><span class="p">[</span>
+                    <span class="s2">&quot;logits_class&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;x_embed&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;a_embed&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;log_p_annotator_class&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;log_p_annotator_perf&quot;</span><span class="p">,</span>
+                <span class="p">],</span>
+            <span class="p">)</span>
+            <span class="c1"># Define integer variables.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_classes</span> <span class="o">=</span> <span class="n">n_classes</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">annotator_embed_dim</span> <span class="o">=</span> <span class="n">annotator_embed_dim</span>
+
+            <span class="c1"># Set up layer to learn annotator embeddings.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">register_buffer</span><span class="p">(</span>
+                <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n_annotators</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">sample_embed_dim</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LazyLinear</span><span class="p">(</span>
+                    <span class="n">out_features</span><span class="o">=</span><span class="n">sample_embed_dim</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">annotator_embed</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span>
+                <span class="n">in_features</span><span class="o">=</span><span class="n">n_annotators</span><span class="p">,</span>
+                <span class="n">out_features</span><span class="o">=</span><span class="n">annotator_embed_dim</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Post-scale diagonal bump as inductive bias.</span>
+            <span class="n">eta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">eta</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">eta</span><span class="p">))</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n_classes</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">prior_conf</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span>
+                <span class="n">eta</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n_classes</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Set up annotator confusion head.</span>
+            <span class="n">full_dim</span> <span class="o">=</span> <span class="n">sample_embed_dim</span> <span class="o">+</span> <span class="n">annotator_embed_dim</span>
+            <span class="n">blocks</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">full_dim</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_hidden_layers</span><span class="p">):</span>
+                <span class="n">blocks</span> <span class="o">+=</span> <span class="p">[</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">hidden_dropout</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">SiLU</span><span class="p">(),</span>
+                <span class="p">]</span>
+                <span class="n">dim</span> <span class="o">=</span> <span class="n">hidden_dim</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">n_classes</span> <span class="o">*</span> <span class="n">n_classes</span><span class="p">)</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">prior_conf</span>
+            <span class="n">blocks</span> <span class="o">+=</span> <span class="p">[</span><span class="n">out</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">annotator_confusion_head</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">blocks</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            x : torch.Tensor of shape (batch_size, ...)</span>
+<span class="sd">                Input batch. Shape depends on `clf_module`.</span>
+<span class="sd">            a : torch.Tensor of shape (batch_size, ...) or None</span>
+<span class="sd">                Annotator features/IDs. Needed if any of {&quot;a_embed&quot;,</span>
+<span class="sd">                &quot;log_p_annotator_class&quot;, &quot;p_perf&quot;} are requested.</span>
+
+<span class="sd">            Returns</span>
+<span class="sd">            -------</span>
+<span class="sd">            out : torch.Tensor or tuple</span>
+<span class="sd">                Given `set_forward_return`, tensors are appended in the order:</span>
+
+<span class="sd">                - `&quot;logits_class&quot;`,</span>
+<span class="sd">                - `&quot;x_embed&quot;`,</span>
+<span class="sd">                - &quot;log_p_annotator_class&quot;`</span>
+<span class="sd">                - &quot;log_p_annotator_perf&quot;`</span>
+<span class="sd">                - `&quot;a_embed&quot;`.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c1"># Obtain classifier outputs.</span>
+            <span class="n">logits_class</span><span class="p">,</span> <span class="n">x_embed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clf_module_forward</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+            <span class="c1"># Append classifier output if required.</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="s2">&quot;logits_class&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_return</span><span class="p">:</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">logits_class</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s2">&quot;x_embed&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_return</span><span class="p">:</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_embed</span><span class="p">)</span>
+
+            <span class="n">need_annotator_output</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span>
+                <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_return</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span>
+                    <span class="s2">&quot;a_embed&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;log_p_annotator_class&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;log_p_annotator_perf&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">need_annotator_output</span><span class="p">:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>
+
+                <span class="c1"># Sample/annotator embeddings for annotator head.</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed</span><span class="p">:</span>
+                    <span class="n">x_embed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed</span><span class="p">(</span>
+                        <span class="n">x_embed</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">start_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="n">a_embed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotator_embed</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+                <span class="c1"># Generate pairs of samples and annotator if not done yet.</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
+                    <span class="n">combs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cartesian_prod</span><span class="p">(</span>
+                        <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
+                        <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a_embed</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">a_embed</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
+                    <span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed</span><span class="p">:</span>
+                        <span class="n">x_embed</span> <span class="o">=</span> <span class="n">x_embed</span><span class="p">[</span><span class="n">combs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]]</span>
+                    <span class="n">a_embed_return</span> <span class="o">=</span> <span class="n">a_embed</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+                    <span class="n">a_embed</span> <span class="o">=</span> <span class="n">a_embed</span><span class="p">[</span><span class="n">combs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]]</span>
+                    <span class="n">logits_class</span> <span class="o">=</span> <span class="n">logits_class</span><span class="p">[</span><span class="n">combs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">a_embed_return</span> <span class="o">=</span> <span class="n">a_embed</span>
+
+                <span class="c1"># Compute confusion matrix logits per sample-annotator pair.</span>
+                <span class="n">annot_head_input</span> <span class="o">=</span> <span class="n">a_embed</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_embed</span><span class="p">:</span>
+                    <span class="n">annot_head_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x_embed</span><span class="p">,</span> <span class="n">a_embed</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">logits_conf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotator_confusion_head</span><span class="p">(</span><span class="n">annot_head_input</span><span class="p">)</span>
+                <span class="n">logits_conf</span> <span class="o">=</span> <span class="n">logits_conf</span><span class="o">.</span><span class="n">view</span><span class="p">(</span>
+                    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_classes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_classes</span>
+                <span class="p">)</span>
+
+                <span class="c1"># Compute log-probabilities for class and confusion matrices.</span>
+                <span class="n">p_conf_log</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">logits_conf</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">p_class_log</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">logits_class</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+                <span class="c1"># Compute and append annotator correctness log-probabilities.</span>
+                <span class="k">if</span> <span class="s2">&quot;log_p_annotator_perf&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_return</span><span class="p">:</span>
+                    <span class="n">log_diag_conf</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">diagonal</span><span class="p">(</span>
+                        <span class="n">p_conf_log</span><span class="p">,</span> <span class="n">dim1</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim2</span><span class="o">=-</span><span class="mi">1</span>
+                    <span class="p">)</span>
+                    <span class="n">p_perf</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">logsumexp</span><span class="p">(</span>
+                        <span class="n">p_class_log</span> <span class="o">+</span> <span class="n">log_diag_conf</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span>
+                    <span class="p">)</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p_perf</span><span class="p">)</span>
+
+                <span class="c1"># Compute and append annotator class log-probabilities.</span>
+                <span class="k">if</span> <span class="s2">&quot;log_p_annotator_class&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_return</span><span class="p">:</span>
+                    <span class="n">log_p_annotator_class</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">logsumexp</span><span class="p">(</span>
+                        <span class="n">p_class_log</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">p_conf_log</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span>
+                    <span class="p">)</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_p_annotator_class</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="s2">&quot;a_embed&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward_return</span><span class="p">:</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a_embed_return</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">_MixUpCollate</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Collate that expands a batch into all (sample, annotator) pairs and</span>
+<span class="sd">        optionally applies MixUp [1]_  jointly to samples, annotators, and</span>
+<span class="sd">        labels [2]_.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        n_classes : int</span>
+<span class="sd">            Number of classes (for one-hot encoding).</span>
+<span class="sd">        n_annotators : int</span>
+<span class="sd">            Number of annotators (for one-hot encoding)</span>
+<span class="sd">        alpha : float, default=1.0</span>
+<span class="sd">            MixUp Beta(alpha, alpha) parameter. If &lt;= 0, no MixUp is applied.</span>
+<span class="sd">        missing_label : int or float, default=-1</span>
+<span class="sd">            Value in `y` indicating an unlabeled sample. Rows whose sample</span>
+<span class="sd">            label equals `missing_label` are excluded from the</span>
+<span class="sd">            (sample, annotator) pairs. If set to `float(&#39;nan&#39;)` or `numpy.nan`,</span>
+<span class="sd">            NaN labels are treated as missing.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Labels are returned as one-hot encoded vectors of length `n_classes`.</span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        .. [1] Zhang, H., Cisse, M., Dauphin, Y. N., &amp; Lopez-Paz, D. (2018).</span>
+<span class="sd">           mixup: Beyond Empirical Risk Minimization. Int. Conf. Learn.</span>
+<span class="sd">           Represent.</span>
+<span class="sd">        .. [2] Herde, M., Lührs, L., Huseljic, D., &amp; Sick, B. (2024).</span>
+<span class="sd">           Annot-Mix: Learning with Noisy Class Labels from Multiple Annotators</span>
+<span class="sd">           via a Mixup Extension. Eur. Conf. Artif. Intell.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">n_annotators</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span>
+        <span class="p">):</span>
+            <span class="k">if</span> <span class="n">n_classes</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`n_classes` must be a positive integer.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">n_annotators</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`n_annotators` must be a positive integer.&quot;</span><span class="p">)</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">alpha</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`alpha` must be &gt;= 0 for MixUp.&quot;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_classes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_classes</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_annotators</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_annotators</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_annotators</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span> <span class="o">=</span> <span class="n">missing_label</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
+            <span class="c1"># 1) Basic collation (supports tensors/ndarrays/nested dicts) of</span>
+            <span class="c1"># samples X, labels y, and annotators a.</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">default_collate</span><span class="p">([</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">default_collate</span><span class="p">([</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">])</span>
+
+            <span class="c1"># Expect labels of shape (n_samples, n_annotators)</span>
+            <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_annotators</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;y must have shape (n_samples, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_annotators</span><span class="si">}</span><span class="s2">), &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;got </span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">n_samples</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+
+            <span class="c1"># Flatten labels to (n_samples * n_annotators,).</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># 2) Build all (sample, annotator) combinations</span>
+            <span class="c1"># sample indices: 0..B-1 repeated for each annotator.</span>
+            <span class="n">idx_s</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span>
+                <span class="n">n_samples</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">repeat_interleave</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_annotators</span><span class="p">)</span>
+            <span class="c1"># Annotator indices: 0..A-1 tiled B times.</span>
+            <span class="n">idx_a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_annotators</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span>
+                <span class="n">n_samples</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Mask out pairs whose sample is unlabeled.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span>
+            <span class="p">):</span>  <span class="c1"># NaN</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">torch</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">y</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span>
+
+            <span class="n">idx_s</span> <span class="o">=</span> <span class="n">idx_s</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+            <span class="n">idx_a</span> <span class="o">=</span> <span class="n">idx_a</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+            <span class="n">y_pairs</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+            <span class="c1"># 3) Select data per pair.</span>
+            <span class="n">x_pairs</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">index_select</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">idx_s</span><span class="p">)</span>
+            <span class="n">a_pairs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">index_select</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">idx_a</span><span class="p">)</span>
+
+            <span class="c1"># One-hot labels (ensure integer dtype for F.one_hot).</span>
+            <span class="n">y_pairs</span> <span class="o">=</span> <span class="n">y_pairs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+            <span class="n">y_oh</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">y_pairs</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_classes</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span>
+                <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span>
+            <span class="p">)</span>
+
+            <span class="c1"># 4) Optional MixUp across pairs (jointly mixing x, a, and y).</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">x_pairs</span><span class="p">,</span> <span class="n">a_pairs</span><span class="p">,</span> <span class="n">y_oh</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_mix_up</span><span class="p">(</span>
+                    <span class="n">x_pairs</span><span class="p">,</span> <span class="n">a_pairs</span><span class="p">,</span> <span class="n">y_oh</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span>
+                <span class="p">)</span>
+
+            <span class="n">x_out</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x_pairs</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">a_pairs</span><span class="p">}</span>
+            <span class="k">return</span> <span class="n">x_out</span><span class="p">,</span> <span class="n">y_oh</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mix_up</span><span class="p">(</span><span class="o">*</span><span class="n">arrays</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">lmbda</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">permute_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        MixUp [1]_ multiple arrays using the same permutation and</span>
+<span class="sd">        lambdas.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        arrays : sequence of torch.Tensor</span>
+<span class="sd">            Tensors with the same length `N` along the first dimension.</span>
+<span class="sd">            Each will be mixed with the same permutation and mixing</span>
+<span class="sd">            coefficients.</span>
+<span class="sd">        alpha : float, default=1.0</span>
+<span class="sd">            Beta(alpha, alpha) parameter. Used only if `lmbda is None`.</span>
+<span class="sd">            If `alpha == 0`, returns inputs unchanged (with `lmbda` all ones).</span>
+<span class="sd">            If `alpha &lt; 0`, a ValueError is raised.</span>
+<span class="sd">        lmbda : torch.Tensor of shape (N,), default=None</span>
+<span class="sd">            Precomputed mixing coefficients in [0, 1]. If not provided, sampled</span>
+<span class="sd">            from `Beta(alpha, alpha)` on the same device as the first array</span>
+<span class="sd">            when `alpha &gt; 0`, or set to ones if `alpha == 0`.</span>
+<span class="sd">        permute_indices : torch.Tensor of shape (N,), default=None</span>
+<span class="sd">            Precomputed permutation indices. If not provided, a random</span>
+<span class="sd">            permutation is generated on the same device as the first array.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        outputs : tuple</span>
+<span class="sd">            Tuple of mixed tensors in the same order as `arrays`, followed by</span>
+<span class="sd">            `(lmbda, permute_indices)`.</span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        .. [1] Zhang, H., Cisse, M., Dauphin, Y. N., &amp; Lopez-Paz, D. (2018).</span>
+<span class="sd">           mixup: Beyond Empirical Risk Minimization. Int. Conf. Learn.</span>
+<span class="sd">           Represent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrays</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;At least one array must be provided to _mix_up.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># All arrays must share the same leading dimension.</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">N</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;All arrays must have the same length in dim 0.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="n">first</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="n">device</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">alpha</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;alpha must be &gt;= 0 for MixUp.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Handle lambda.</span>
+        <span class="k">if</span> <span class="n">lmbda</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">alpha</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">lmbda</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lmbda</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">torch</span><span class="o">.</span><span class="n">distributions</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">sample</span><span class="p">((</span><span class="n">N</span><span class="p">,))</span>
+                    <span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lmbda</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">lmbda</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">lmbda</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">lmbda</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">N</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;`lmbda` must have shape (</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">,), &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;got </span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">lmbda</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Handle permutation.</span>
+        <span class="k">if</span> <span class="n">permute_indices</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">permute_indices</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randperm</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">permute_indices</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span>
+                <span class="n">permute_indices</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">permute_indices</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">permute_indices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">N</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;`permute_indices` must have shape (</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">,), &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;got </span><span class="si">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">permute_indices</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Broadcast lmbda to array shapes and mix.</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">:</span>
+            <span class="n">view_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">N</span><span class="p">,)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">lam_view</span> <span class="o">=</span> <span class="n">lmbda</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">view_shape</span><span class="p">)</span>
+            <span class="n">mixed</span> <span class="o">=</span> <span class="n">lam_view</span> <span class="o">*</span> <span class="n">arr</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">lam_view</span><span class="p">)</span> <span class="o">*</span> <span class="n">arr</span><span class="o">.</span><span class="n">index_select</span><span class="p">(</span>
+                <span class="mi">0</span><span class="p">,</span> <span class="n">permute_indices</span>
+            <span class="p">)</span>
+            <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mixed</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+
+        <span class="n">outputs</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">lmbda</span><span class="p">,</span> <span class="n">permute_indices</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+    <span class="k">pass</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
