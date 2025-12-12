@@ -1,0 +1,41 @@
+﻿NadarayaWatsonRegressor
+=======================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.NadarayaWatsonRegressor
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NadarayaWatsonRegressor.fit
+      ~NadarayaWatsonRegressor.get_metadata_routing
+      ~NadarayaWatsonRegressor.get_params
+      ~NadarayaWatsonRegressor.predict
+      ~NadarayaWatsonRegressor.predict_target_distribution
+      ~NadarayaWatsonRegressor.sample_y
+      ~NadarayaWatsonRegressor.score
+      ~NadarayaWatsonRegressor.set_fit_request
+      ~NadarayaWatsonRegressor.set_params
+      ~NadarayaWatsonRegressor.set_predict_request
+      ~NadarayaWatsonRegressor.set_score_request
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NadarayaWatsonRegressor.METRICS
+   
+   
+
+.. _sphx_glr_backref_skactiveml.regressor.NadarayaWatsonRegressor:
+
+.. minigallery:: skactiveml.regressor.NadarayaWatsonRegressor
+   :add-heading:

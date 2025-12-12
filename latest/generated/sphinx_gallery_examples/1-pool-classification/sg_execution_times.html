@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Computation times &#8212; scikit-activeml latest documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/sphinx_gallery_examples/1-pool-classification/sg_execution_times';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'latest';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../../_static/filter_examples.js?v=52a8636b"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/latest/generated/sphinx_gallery_examples/1-pool-classification/sg_execution_times.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="latest" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml latest documentation - Home"/>
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml latest documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Computation times</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="computation-times">
+<span id="sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Link to this heading">#</a></h1>
+<p><strong>49:45.218</strong> total execution time for 35 files <strong>from generated/sphinx_gallery_examples/1-pool-classification</strong>:</p>
+<div class="docutils container">
+<style scoped>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+</style>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" class="init">
+$(document).ready( function () {
+    $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+} );
+</script><div class="pst-scrollable-table-container"><table class="table table-striped sg-datatable">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>Time</p></th>
+<th class="head"><p>Mem (MB)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_%28USAP%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-uncertaintysampling-uncertainty-sampling-with-expected-average-precision-usap-py"><span class="std std-ref">Uncertainty Sampling with Expected Average Precision (USAP)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_(USAP).py</span></code>)</p></td>
+<td><p>33:19.766</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_%28EER%29_with_Misclassification-Loss.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-montecarloeer-monte-carlo-expected-error-reduction-eer-with-misclassification-loss-py"><span class="std std-ref">Monte-Carlo Expected Error Reduction (EER) with Misclassification-Loss</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Misclassification-Loss.py</span></code>)</p></td>
+<td><p>03:26.005</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_%28EER%29_with_Log-Loss.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-montecarloeer-monte-carlo-expected-error-reduction-eer-with-log-loss-py"><span class="std std-ref">Monte-Carlo Expected Error Reduction (EER) with Log-Loss</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Log-Loss.py</span></code>)</p></td>
+<td><p>03:12.323</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-ValueOfInformationEER-Value_of_Information_%28VOI%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-valueofinformationeer-value-of-information-voi-py"><span class="std std-ref">Value of Information (VOI)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-ValueOfInformationEER-Value_of_Information_(VOI).py</span></code>)</p></td>
+<td><p>02:26.741</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-ValueOfInformationEER-Value_of_Information_%28VOI%29_on_Labeled_Samples.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-valueofinformationeer-value-of-information-voi-on-labeled-samples-py"><span class="std std-ref">Value of Information (VOI) on Labeled Samples</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Labeled_Samples.py</span></code>)</p></td>
+<td><p>02:01.113</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-ValueOfInformationEER-Value_of_Information_%28VOI%29_on_Unlabeled_Samples.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-valueofinformationeer-value-of-information-voi-on-unlabeled-samples-py"><span class="std std-ref">Value of Information (VOI) on Unlabeled Samples</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Unlabeled_Samples.py</span></code>)</p></td>
+<td><p>01:47.775</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_%28EpisUS%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-epistemicuncertaintysampling-epistemic-uncertainty-sampling-episus-py"><span class="std std-ref">Epistemic Uncertainty Sampling (EpisUS)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_(EpisUS).py</span></code>)</p></td>
+<td><p>00:26.029</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-Quire-Querying_Informative_and_Representative_Examples_%28QUIRE%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-quire-querying-informative-and-representative-examples-quire-py"><span class="std std-ref">Querying Informative and Representative Examples (QUIRE)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-Quire-Querying_Informative_and_Representative_Examples_(QUIRE).py</span></code>)</p></td>
+<td><p>00:24.639</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_%28BALD%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-greedybald-bayesian-active-learning-by-disagreement-bald-py"><span class="std std-ref">Bayesian Active Learning by Disagreement (BALD)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_(BALD).py</span></code>)</p></td>
+<td><p>00:10.804</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_%28ALCE%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-costembeddingal-active-learning-with-cost-embedding-alce-py"><span class="std std-ref">Active Learning with Cost Embedding (ALCE)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_(ALCE).py</span></code>)</p></td>
+<td><p>00:09.609</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-parallelutilityestimationwrapper-parallel-utility-estimation-wrapper-py"><span class="std std-ref">Parallel Utility Estimation Wrapper</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper.py</span></code>)</p></td>
+<td><p>00:07.004</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-QueryByCommittee-Query-by-Committee_%28QBC%29_with_Kullback-Leibler_Divergence.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-querybycommittee-query-by-committee-qbc-with-kullback-leibler-divergence-py"><span class="std std-ref">Query-by-Committee (QBC) with Kullback-Leibler Divergence</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Kullback-Leibler_Divergence.py</span></code>)</p></td>
+<td><p>00:06.112</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_%28McPAL%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-probabilistical-multi-class-probabilistic-active-learning-mcpal-py"><span class="std std-ref">Multi-class Probabilistic Active Learning (McPAL)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_(McPAL).py</span></code>)</p></td>
+<td><p>00:06.101</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-QueryByCommittee-Query-by-Committee_%28QBC%29_with_Vote_Entropy.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-querybycommittee-query-by-committee-qbc-with-vote-entropy-py"><span class="std std-ref">Query-by-Committee (QBC) with Vote Entropy</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Vote_Entropy.py</span></code>)</p></td>
+<td><p>00:06.082</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-QueryByCommittee-Query-by-Committee_%28QBC%29_with_Variation_Ratios.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-querybycommittee-query-by-committee-qbc-with-variation-ratios-py"><span class="std std-ref">Query-by-Committee (QBC) with Variation Ratios</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Variation_Ratios.py</span></code>)</p></td>
+<td><p>00:06.051</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_%284DS%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-fourds-density-diversity-distribution-distance-sampling-4ds-py"><span class="std std-ref">Density-Diversity-Distribution-Distance Sampling (4DS)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_(4DS).py</span></code>)</p></td>
+<td><p>00:05.912</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-UncertaintySampling-Uncertainty_Sampling_%28US%29_with_Margin.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-uncertaintysampling-uncertainty-sampling-us-with-margin-py"><span class="std std-ref">Uncertainty Sampling (US) with Margin</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Margin.py</span></code>)</p></td>
+<td><p>00:05.905</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-MaxHerding-MaxHerding.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-maxherding-maxherding-py"><span class="std std-ref">MaxHerding</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-MaxHerding-MaxHerding.py</span></code>)</p></td>
+<td><p>00:05.874</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-ContrastiveAL-Contrastive_Active_Learning_%28CAL%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-contrastiveal-contrastive-active-learning-cal-py"><span class="std std-ref">Contrastive Active Learning (CAL)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-ContrastiveAL-Contrastive_Active_Learning_(CAL).py</span></code>)</p></td>
+<td><p>00:05.794</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_%28BatchBALD%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-batchbald-batch-bayesian-active-learning-by-disagreement-batchbald-py"><span class="std std-ref">Batch Bayesian Active Learning by Disagreement (BatchBALD)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_(BatchBALD).py</span></code>)</p></td>
+<td><p>00:05.785</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-SubSamplingWrapper-Sub-sampling_Wrapper.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-subsamplingwrapper-sub-sampling-wrapper-py"><span class="std std-ref">Sub-sampling Wrapper</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-SubSamplingWrapper-Sub-sampling_Wrapper.py</span></code>)</p></td>
+<td><p>00:05.696</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_%28DWUS%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-uncertaintysampling-density-weighted-uncertainty-sampling-dwus-py"><span class="std std-ref">Density-weighted Uncertainty Sampling (DWUS)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_(DWUS).py</span></code>)</p></td>
+<td><p>00:05.647</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-DiscriminativeAL-Discriminative_Active_Learning_%28DAL%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-discriminativeal-discriminative-active-learning-dal-py"><span class="std std-ref">Discriminative Active Learning (DAL)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-DiscriminativeAL-Discriminative_Active_Learning_(DAL).py</span></code>)</p></td>
+<td><p>00:05.615</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-TypiClust-Typical_Clustering_%28TypiClust%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-typiclust-typical-clustering-typiclust-py"><span class="std std-ref">Typical Clustering (TypiClust)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-TypiClust-Typical_Clustering_(TypiClust).py</span></code>)</p></td>
+<td><p>00:05.586</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-ProbCover-Probability_Coverage_%28ProbCover%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-probcover-probability-coverage-probcover-py"><span class="std std-ref">Probability Coverage (ProbCover)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-ProbCover-Probability_Coverage_(ProbCover).py</span></code>)</p></td>
+<td><p>00:05.580</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_%28DUAL%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-uncertaintysampling-dual-strategy-for-active-learning-dual-py"><span class="std std-ref">Dual Strategy for Active Learning</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_(DUAL).py</span></code>)</p></td>
+<td><p>00:05.575</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-CoreSet-Core_Set.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-coreset-core-set-py"><span class="std std-ref">Core Set</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-CoreSet-Core_Set.py</span></code>)</p></td>
+<td><p>00:05.511</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-UncertaintySampling-Uncertainty_Sampling_%28US%29_with_Least-Confidence.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-uncertaintysampling-uncertainty-sampling-us-with-least-confidence-py"><span class="std std-ref">Uncertainty Sampling (US) with Least-Confidence</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Least-Confidence.py</span></code>)</p></td>
+<td><p>00:05.491</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-UncertaintySampling-Uncertainty_Sampling_%28US%29_with_Entropy.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-uncertaintysampling-uncertainty-sampling-us-with-entropy-py"><span class="std std-ref">Uncertainty Sampling (US) with Entropy</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Entropy.py</span></code>)</p></td>
+<td><p>00:05.436</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-RandomSampling-Random_Sampling.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-randomsampling-random-sampling-py"><span class="std std-ref">Random Sampling</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-RandomSampling-Random_Sampling.py</span></code>)</p></td>
+<td><p>00:05.302</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-DropQuery-Dropout_Query_%28DropQuery%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-dropquery-dropout-query-dropquery-py"><span class="std std-ref">Dropout Query (DropQuery)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-DropQuery-Dropout_Query_(DropQuery).py</span></code>)</p></td>
+<td><p>00:04.996</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-Clue-Clustering_Uncertainty-weighted_Embeddings_%28CLUE%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-clue-clustering-uncertainty-weighted-embeddings-clue-py"><span class="std std-ref">Clustering Uncertainty-weighted Embeddings (CLUE)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-Clue-Clustering_Uncertainty-weighted_Embeddings_(CLUE).py</span></code>)</p></td>
+<td><p>00:04.983</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_%28FALCUN%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-falcun-fast-active-learning-by-contrastive-uncertainty-falcun-py"><span class="std std-ref">Fast Active Learning by Contrastive UNcertainty (FALCUN)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_(FALCUN).py</span></code>)</p></td>
+<td><p>00:04.875</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_%28Batch4DS%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-fourds-batch-density-diversity-distribution-distance-sampling-batch4ds-py"><span class="std std-ref">Batch Density-Diversity-Distribution-Distance Sampling (4DS)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_(Batch4DS).py</span></code>)</p></td>
+<td><p>00:04.764</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_%28BADGE%29.html#sphx-glr-generated-sphinx-gallery-examples-1-pool-classification-plot-badge-batch-active-learning-by-diverse-gradient-embedding-badge-py"><span class="std std-ref">Batch Active Learning by Diverse Gradient Embedding (BADGE)</span></a> (<code class="docutils literal notranslate"><span class="pre">plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_(BADGE).py</span></code>)</p></td>
+<td><p>00:04.736</p></td>
+<td><p>0.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/generated/sphinx_gallery_examples/1-pool-classification/sg_execution_times.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

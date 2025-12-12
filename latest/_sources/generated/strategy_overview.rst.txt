@@ -1,0 +1,430 @@
+#################
+Strategy Overview
+#################
+
+|
+
+.. image:: ../logos/scikit-activeml-query-strategy-overview.svg
+   :class: dark-light
+   :align: center
+   :width: 100%
+
+|
+
+This is an overview of all implemented pool- and stream-based active learning strategies, which are often divided into threemain categories based on the utilities they compute for sample selection:
+
+1. **Informativeness-based** strategies mostly select samples for which the model is most uncertain (e.g., via information-theoretic measures).
+
+2. **Representativeness-based** strategies select samples that capture the overall data distribution (e.g., via clustering ordensity estimation).
+
+3. **Hybrid** strategies combine both criteria to select samples that are informative and representative.
+
+
+Furthermore, we distinguish between **regression** and **classification** as supervised learning tasks, where labels canbe provided by a **single annotator** or **multiple annotators**. Finally, a strategy builds a batch of samples by either including the samples with the **top-k** utilities or by including **diverse** samples with high utility scores.
+
+You can use the checkboxes below to filter the query strategies based on these distinctions.
+
+.. raw:: html
+
+   <input type="checkbox" class="input-tag" value="regression">
+   <label>Regression</label>
+   <input type="checkbox" class="input-tag" value="classification">
+    <label>Classification</label>
+
+   <input type="checkbox" class="input-tag" value="top-k-batch">
+    <label>Top-k-Batch</label>
+   <input type="checkbox" class="input-tag" value="diverse-batch">
+    <label>Diverse-Batch</label>
+
+   <input type="checkbox" class="input-tag" value="single-annotator">
+    <label>Single-Annotator</label>
+   <input type="checkbox" class="input-tag" value="multi-annotator">
+    <label>Multi-Annotator</label>
+
+
+
+
+
+Pool-based AL Strategies
+------------------------
+
+Baseline
+~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Random Sampling </generated/sphinx_gallery_examples/1-pool-classification/plot-RandomSampling-Random_Sampling>`
+     - :doc:`RandomSampling </generated/api/skactiveml.pool.RandomSampling>`
+     - pool regression classification single-annotator diverse-batch
+     - 
+
+Hybrid
+~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Batch Active Learning by Diverse Gradient Embedding (BADGE) </generated/sphinx_gallery_examples/1-pool-classification/plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_(BADGE)>`
+     - :doc:`Badge </generated/api/skactiveml.pool.Badge>`
+     - pool classification single-annotator diverse-batch
+     - :footcite:t:`ash2020deep`
+   * - :doc:`Clustering Uncertainty-weighted Embeddings (CLUE) </generated/sphinx_gallery_examples/1-pool-classification/plot-Clue-Clustering_Uncertainty-weighted_Embeddings_(CLUE)>`
+     - :doc:`Clue </generated/api/skactiveml.pool.Clue>`
+     - pool classification regression single-annotator diverse-batch
+     - :footcite:t:`prabhu2021active`
+   * - :doc:`Contrastive Active Learning (CAL) </generated/sphinx_gallery_examples/1-pool-classification/plot-ContrastiveAL-Contrastive_Active_Learning_(CAL)>`
+     - :doc:`ContrastiveAL </generated/api/skactiveml.pool.ContrastiveAL>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`margatina2021active`
+   * - :doc:`Dropout Query (DropQuery) </generated/sphinx_gallery_examples/1-pool-classification/plot-DropQuery-Dropout_Query_(DropQuery)>`
+     - :doc:`DropQuery </generated/api/skactiveml.pool.DropQuery>`
+     - pool classification single-annotator diverse-batch
+     - :footcite:t:`gupte2024revisiting`
+   * - :doc:`Fast Active Learning by Contrastive UNcertainty (FALCUN) </generated/sphinx_gallery_examples/1-pool-classification/plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_(FALCUN)>`
+     - :doc:`Falcun </generated/api/skactiveml.pool.Falcun>`
+     - pool classification single-annotator diverse-batch
+     - :footcite:t:`gilhuber2024falcun`
+   * - :doc:`Density-Diversity-Distribution-Distance Sampling (4DS) </generated/sphinx_gallery_examples/1-pool-classification/plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_(4DS)>`
+     - :doc:`FourDs </generated/api/skactiveml.pool.FourDs>`
+     - pool classification single-annotator diverse-batch
+     - :footcite:t:`reitmaier2013let`
+   * - :doc:`Batch Density-Diversity-Distribution-Distance Sampling (Batch4DS) </generated/sphinx_gallery_examples/1-pool-classification/plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_(Batch4DS)>`
+     - :doc:`FourDs </generated/api/skactiveml.pool.FourDs>`
+     - pool classification single-annotator diverse-batch
+     - :footcite:t:`reitmaier2013let`
+   * - :doc:`Multi-class Probabilistic Active Learning (McPAL) </generated/sphinx_gallery_examples/1-pool-classification/plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_(McPAL)>`
+     - :doc:`ProbabilisticAL </generated/api/skactiveml.pool.ProbabilisticAL>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`kottke2016multi`
+   * - :doc:`Querying Informative and Representative Examples (QUIRE) </generated/sphinx_gallery_examples/1-pool-classification/plot-Quire-Querying_Informative_and_Representative_Examples_(QUIRE)>`
+     - :doc:`Quire </generated/api/skactiveml.pool.Quire>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`huang2010active`, :footcite:t:`huang2014active`
+   * - :doc:`Density-weighted Uncertainty Sampling (DWUS) </generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_(DWUS)>`
+     - :doc:`UncertaintySampling </generated/api/skactiveml.pool.UncertaintySampling>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`donmez2007dual`
+   * - :doc:`Dual Strategy for Active Learning (DUAL) </generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_(DUAL)>`
+     - :doc:`UncertaintySampling </generated/api/skactiveml.pool.UncertaintySampling>`
+     - pool classification single-annotator
+     - :footcite:t:`donmez2007dual`
+
+Informativeness
+~~~~~~~~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Batch Bayesian Active Learning by Disagreement (BatchBALD) </generated/sphinx_gallery_examples/1-pool-classification/plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_(BatchBALD)>`
+     - :doc:`BatchBALD </generated/api/skactiveml.pool.BatchBALD>`
+     - pool classification single-annotator diverse-batch
+     - :footcite:t:`houlsby2011bayesian`, :footcite:t:`kirsch2019batchbald`
+   * - :doc:`Active Learning with Cost Embedding (ALCE) </generated/sphinx_gallery_examples/1-pool-classification/plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_(ALCE)>`
+     - :doc:`CostEmbeddingAL </generated/api/skactiveml.pool.CostEmbeddingAL>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`huang2016novel`
+   * - :doc:`Epistemic Uncertainty Sampling (EpisUS) </generated/sphinx_gallery_examples/1-pool-classification/plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_(EpisUS)>`
+     - :doc:`EpistemicUncertaintySampling </generated/api/skactiveml.pool.EpistemicUncertaintySampling>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`nguyen2019epistemic`
+   * - :doc:`Bayesian Active Learning by Disagreement (BALD) </generated/sphinx_gallery_examples/1-pool-classification/plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_(BALD)>`
+     - :doc:`GreedyBALD </generated/api/skactiveml.pool.GreedyBALD>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`houlsby2011bayesian`
+   * - :doc:`Monte-Carlo Expected Error Reduction (EER) with Log-Loss </generated/sphinx_gallery_examples/1-pool-classification/plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Log-Loss>`
+     - :doc:`MonteCarloEER </generated/api/skactiveml.pool.MonteCarloEER>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`roy2001toward`
+   * - :doc:`Monte-Carlo Expected Error Reduction (EER) with Misclassification-Loss </generated/sphinx_gallery_examples/1-pool-classification/plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Misclassification-Loss>`
+     - :doc:`MonteCarloEER </generated/api/skactiveml.pool.MonteCarloEER>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`roy2001toward`
+   * - :doc:`Query-by-Committee (QBC) with Kullback-Leibler Divergence </generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Kullback-Leibler_Divergence>`
+     - :doc:`QueryByCommittee </generated/api/skactiveml.pool.QueryByCommittee>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`seung1992query`, :footcite:t:`mccallum1998employing`
+   * - :doc:`Query-by-Committee (QBC) with Vote Entropy </generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Vote_Entropy>`
+     - :doc:`QueryByCommittee </generated/api/skactiveml.pool.QueryByCommittee>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`seung1992query`, :footcite:t:`engelson1996minimizing`
+   * - :doc:`Query-by-Committee (QBC) with Variation Ratios </generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Variation_Ratios>`
+     - :doc:`QueryByCommittee </generated/api/skactiveml.pool.QueryByCommittee>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`seung1992query`, :footcite:t:`beluch2018power`
+   * - :doc:`Uncertainty Sampling (US) with Margin </generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Margin>`
+     - :doc:`UncertaintySampling </generated/api/skactiveml.pool.UncertaintySampling>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`settles2009active`
+   * - :doc:`Uncertainty Sampling (US) with Least-Confidence </generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Least-Confidence>`
+     - :doc:`UncertaintySampling </generated/api/skactiveml.pool.UncertaintySampling>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`settles2009active`
+   * - :doc:`Uncertainty Sampling (US) with Entropy </generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Entropy>`
+     - :doc:`UncertaintySampling </generated/api/skactiveml.pool.UncertaintySampling>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`settles2009active`
+   * - :doc:`Uncertainty Sampling with Expected Average Precision (USAP) </generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_(USAP)>`
+     - :doc:`UncertaintySampling </generated/api/skactiveml.pool.UncertaintySampling>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`wang2018uncertainty`
+   * - :doc:`Value of Information (VOI) on Unlabeled Samples </generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Unlabeled_Samples>`
+     - :doc:`ValueOfInformationEER </generated/api/skactiveml.pool.ValueOfInformationEER>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`joshi2009multi`
+   * - :doc:`Value of Information (VOI) on Labeled Samples </generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Labeled_Samples>`
+     - :doc:`ValueOfInformationEER </generated/api/skactiveml.pool.ValueOfInformationEER>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`margineantu2005active`
+   * - :doc:`Value of Information (VOI) </generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)>`
+     - :doc:`ValueOfInformationEER </generated/api/skactiveml.pool.ValueOfInformationEER>`
+     - pool classification single-annotator top-k-batch
+     - :footcite:t:`kapoor2007selective`
+
+Representativeness
+~~~~~~~~~~~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Core Set </generated/sphinx_gallery_examples/1-pool-classification/plot-CoreSet-Core_Set>`
+     - :doc:`CoreSet </generated/api/skactiveml.pool.CoreSet>`
+     - pool regression classification single-annotator diverse-batch
+     - :footcite:t:`sener2018active`
+   * - :doc:`Discriminative Active Learning (DAL) </generated/sphinx_gallery_examples/1-pool-classification/plot-DiscriminativeAL-Discriminative_Active_Learning_(DAL)>`
+     - :doc:`DiscriminativeAL </generated/api/skactiveml.pool.DiscriminativeAL>`
+     - pool classification regression single-annotator diverse-batch
+     - :footcite:t:`gissin2019discriminative`
+   * - :doc:`MaxHerding </generated/sphinx_gallery_examples/1-pool-classification/plot-MaxHerding-MaxHerding>`
+     - :doc:`MaxHerding </generated/api/skactiveml.pool.MaxHerding>`
+     - pool regression classification single-annotator diverse-batch
+     - :footcite:t:`bae2024generalized`
+   * - :doc:`Probability Coverage (ProbCover) </generated/sphinx_gallery_examples/1-pool-classification/plot-ProbCover-Probability_Coverage_(ProbCover)>`
+     - :doc:`ProbCover </generated/api/skactiveml.pool.ProbCover>`
+     - pool classification single-annotator diverse-batch
+     - :footcite:t:`yehuda2022active`
+   * - :doc:`Typical Clustering (TypiClust) </generated/sphinx_gallery_examples/1-pool-classification/plot-TypiClust-Typical_Clustering_(TypiClust)>`
+     - :doc:`TypiClust </generated/api/skactiveml.pool.TypiClust>`
+     - pool regression classification single-annotator diverse-batch
+     - :footcite:t:`hacohen2022active`
+
+Wrapper
+~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Parallel Utility Estimation Wrapper </generated/sphinx_gallery_examples/1-pool-classification/plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper>`
+     - :doc:`ParallelUtilityEstimationWrapper </generated/api/skactiveml.pool.ParallelUtilityEstimationWrapper>`
+     - pool regression classification single-annotator top-k-batch
+     - 
+   * - :doc:`Sub-sampling Wrapper </generated/sphinx_gallery_examples/1-pool-classification/plot-SubSamplingWrapper-Sub-sampling_Wrapper>`
+     - :doc:`SubSamplingWrapper </generated/api/skactiveml.pool.SubSamplingWrapper>`
+     - pool regression classification single-annotator top-k-batch diverse-batch
+     - 
+
+
+Pool-based AL Strategies for Regression
+---------------------------------------
+
+Hybrid
+~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Regression Tree Based Active Learning (RT-AL) with Random Selection </generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Random_Selection>`
+     - :doc:`RegressionTreeBasedAL </generated/api/skactiveml.pool.RegressionTreeBasedAL>`
+     - pool regression single-annotator diverse-batch
+     - :footcite:t:`jose2023regression`
+   * - :doc:`Regression Tree Based Active Learning (RT-AL) with Diversity Selection </generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Diversity_Selection>`
+     - :doc:`RegressionTreeBasedAL </generated/api/skactiveml.pool.RegressionTreeBasedAL>`
+     - pool regression single-annotator diverse-batch
+     - :footcite:t:`jose2023regression`
+   * - :doc:`Regression Tree Based Active Learning (RT-AL) with Representativity Selection </generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Representativity_Selection>`
+     - :doc:`RegressionTreeBasedAL </generated/api/skactiveml.pool.RegressionTreeBasedAL>`
+     - pool regression single-annotator diverse-batch
+     - :footcite:t:`jose2023regression`
+
+Informativeness
+~~~~~~~~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Expected Model Change </generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelChangeMaximization-Expected_Model_Change>`
+     - :doc:`ExpectedModelChangeMaximization </generated/api/skactiveml.pool.ExpectedModelChangeMaximization>`
+     - pool regression single-annotator top-k-batch
+     - :footcite:t:`cai2013maximizing`
+   * - :doc:`Expected Model Output Change </generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelOutputChange-Expected_Model_Output_Change>`
+     - :doc:`ExpectedModelOutputChange </generated/api/skactiveml.pool.ExpectedModelOutputChange>`
+     - pool regression single-annotator top-k-batch
+     - :footcite:t:`kading2018active`
+   * - :doc:`Expected Model Variance Reduction </generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelVarianceReduction-Expected_Model_Variance_Reduction>`
+     - :doc:`ExpectedModelVarianceReduction </generated/api/skactiveml.pool.ExpectedModelVarianceReduction>`
+     - pool regression single-annotator top-k-batch
+     - :footcite:t:`cohn1996active`
+   * - :doc:`Regression based Kullback Leibler Divergence Maximization </generated/sphinx_gallery_examples/2-pool-regression/plot-KLDivergenceMaximization-Regression_based_Kullback_Leibler_Divergence_Maximization>`
+     - :doc:`KLDivergenceMaximization </generated/api/skactiveml.pool.KLDivergenceMaximization>`
+     - pool regression single-annotator top-k-batch
+     - :footcite:t:`elreedy2019novel`
+   * - :doc:`Query-by-Committee (QBC) with Empirical Variance </generated/sphinx_gallery_examples/2-pool-regression/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Empirical_Variance>`
+     - :doc:`QueryByCommittee </generated/api/skactiveml.pool.QueryByCommittee>`
+     - pool regression single-annotator
+     - :footcite:t:`seung1992query`, :footcite:t:`burbidge2007active`
+
+Representativeness
+~~~~~~~~~~~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Greedy Sampling on the Target Space (GSy) </generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingTarget-Greedy_Sampling_on_the_Target_Space_(GSy)>`
+     - :doc:`GreedySamplingTarget </generated/api/skactiveml.pool.GreedySamplingTarget>`
+     - pool regression single-annotator diverse-batch
+     - :footcite:t:`wu2019active`
+   * - :doc:`Improved Greedy Sampling (GSi) </generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingTarget-Improved_Greedy_Sampling_(GSi)>`
+     - :doc:`GreedySamplingTarget </generated/api/skactiveml.pool.GreedySamplingTarget>`
+     - pool regression single-annotator diverse-batch
+     - :footcite:t:`wu2019active`
+   * - :doc:`Greedy Sampling on the Feature Space (GSx) </generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingX-Greedy_Sampling_on_the_Feature_Space_(GSx)>`
+     - :doc:`GreedySamplingX </generated/api/skactiveml.pool.GreedySamplingX>`
+     - pool regression classification single-annotator diverse-batch
+     - :footcite:t:`wu2019active`
+
+
+Pool-based AL Strategies for Mulitple Annotators
+------------------------------------------------
+
+Baseline
+~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Interval Estimation Threshold </generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-IntervalEstimationThreshold-Interval_Estimation_Threshold>`
+     - :doc:`IntervalEstimationThreshold </generated/api/skactiveml.pool.multiannotator.IntervalEstimationThreshold>`
+     - pool classification multi-annotator
+     - 
+   * - :doc:`Random Sampling </generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-SingleAnnotatorWrapper-Random_Sampling>`
+     - :doc:`SingleAnnotatorWrapper </generated/api/skactiveml.pool.multiannotator.SingleAnnotatorWrapper>`
+     - pool classification multi-annotator
+     - 
+   * - :doc:`Core Set + Greedy Selection </generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-SingleAnnotatorWrapper-Core_Set_+_Greedy_Selection>`
+     - :doc:`SingleAnnotatorWrapper </generated/api/skactiveml.pool.multiannotator.SingleAnnotatorWrapper>`
+     - pool classification multi-annotator
+     - 
+
+
+Stream-based AL Strategies
+--------------------------
+
+Baseline
+~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Periodic Sampling </generated/sphinx_gallery_examples/4-stream/plot-PeriodicSampling-Periodic_Sampling>`
+     - :doc:`PeriodicSampling </generated/api/skactiveml.stream.PeriodicSampling>`
+     - stream classification single-annotator top-k-batch
+     - 
+   * - :doc:`Stream Random Sampling </generated/sphinx_gallery_examples/4-stream/plot-StreamRandomSampling-Stream_Random_Sampling>`
+     - :doc:`StreamRandomSampling </generated/api/skactiveml.stream.StreamRandomSampling>`
+     - stream classification single-annotator top-k-batch
+     - 
+
+Hybrid
+~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Cognitive Dual-Query Strategy with Fixed-Uncertainty </generated/sphinx_gallery_examples/4-stream/plot-CognitiveDualQueryStrategyFixUn-Cognitive_Dual-Query_Strategy_with_Fixed-Uncertainty>`
+     - :doc:`CognitiveDualQueryStrategyFixUn </generated/api/skactiveml.stream.CognitiveDualQueryStrategyFixUn>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`liu2023active`
+   * - :doc:`Cognitive Dual-Query Strategy with Random Sampling </generated/sphinx_gallery_examples/4-stream/plot-CognitiveDualQueryStrategyRan-Cognitive_Dual-Query_Strategy_with_Random_Sampling>`
+     - :doc:`CognitiveDualQueryStrategyRan </generated/api/skactiveml.stream.CognitiveDualQueryStrategyRan>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`liu2023active`
+   * - :doc:`Cognitive Dual-Query Strategy with Randomized-Variable-Uncertainty </generated/sphinx_gallery_examples/4-stream/plot-CognitiveDualQueryStrategyRanVarUn-Cognitive_Dual-Query_Strategy_with_Randomized-Variable-Uncertainty>`
+     - :doc:`CognitiveDualQueryStrategyRanVarUn </generated/api/skactiveml.stream.CognitiveDualQueryStrategyRanVarUn>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`liu2023active`
+   * - :doc:`Cognitive Dual-Query Strategy with Variable-Uncertainty </generated/sphinx_gallery_examples/4-stream/plot-CognitiveDualQueryStrategyVarUn-Cognitive_Dual-Query_Strategy_with_Variable-Uncertainty>`
+     - :doc:`CognitiveDualQueryStrategyVarUn </generated/api/skactiveml.stream.CognitiveDualQueryStrategyVarUn>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`liu2023active`
+   * - :doc:`Split </generated/sphinx_gallery_examples/4-stream/plot-Split-Split>`
+     - :doc:`Split </generated/api/skactiveml.stream.Split>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`zliobaite2014active`
+   * - :doc:`Density Based Active Learning for Data Streams </generated/sphinx_gallery_examples/4-stream/plot-StreamDensityBasedAL-Density_Based_Active_Learning_for_Data_Streams>`
+     - :doc:`StreamDensityBasedAL </generated/api/skactiveml.stream.StreamDensityBasedAL>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`ienco2014high`
+   * - :doc:`Probabilistic Active Learning in Datastreams </generated/sphinx_gallery_examples/4-stream/plot-StreamProbabilisticAL-Probabilistic_Active_Learning_in_Datastreams>`
+     - :doc:`StreamProbabilisticAL </generated/api/skactiveml.stream.StreamProbabilisticAL>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`kottke2015probalistic`
+
+Informativeness
+~~~~~~~~~~~~~~~
+.. list-table:: 
+   :header-rows: 1
+
+   * - Method
+     - Base Class
+     - Tags
+     - Reference
+   * - :doc:`Fixed-Uncertainty </generated/sphinx_gallery_examples/4-stream/plot-FixedUncertainty-Fixed-Uncertainty>`
+     - :doc:`FixedUncertainty </generated/api/skactiveml.stream.FixedUncertainty>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`zliobaite2014active`
+   * - :doc:`Randomized-Variable-Uncertainty </generated/sphinx_gallery_examples/4-stream/plot-RandomVariableUncertainty-Randomized-Variable-Uncertainty>`
+     - :doc:`RandomVariableUncertainty </generated/api/skactiveml.stream.RandomVariableUncertainty>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`zliobaite2014active`
+   * - :doc:`Variable-Uncertainty </generated/sphinx_gallery_examples/4-stream/plot-VariableUncertainty-Variable-Uncertainty>`
+     - :doc:`VariableUncertainty </generated/api/skactiveml.stream.VariableUncertainty>`
+     - stream classification single-annotator top-k-batch
+     - :footcite:t:`zliobaite2014active`
+
+
+References
+----------
+.. footbibliography::

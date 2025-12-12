@@ -1,0 +1,11 @@
+﻿make\_criterion\_tuple\_aware
+=============================
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils.make_criterion_tuple_aware
+
+.. _sphx_glr_backref_skactiveml.utils.make_criterion_tuple_aware:
+
+.. minigallery:: skactiveml.utils.make_criterion_tuple_aware
+   :add-heading:

@@ -1,0 +1,38 @@
+﻿SklearnNormalRegressor
+======================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.SklearnNormalRegressor
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SklearnNormalRegressor.fit
+      ~SklearnNormalRegressor.get_metadata_routing
+      ~SklearnNormalRegressor.get_params
+      ~SklearnNormalRegressor.partial_fit
+      ~SklearnNormalRegressor.predict
+      ~SklearnNormalRegressor.predict_target_distribution
+      ~SklearnNormalRegressor.sample
+      ~SklearnNormalRegressor.sample_y
+      ~SklearnNormalRegressor.score
+      ~SklearnNormalRegressor.set_fit_request
+      ~SklearnNormalRegressor.set_params
+      ~SklearnNormalRegressor.set_partial_fit_request
+      ~SklearnNormalRegressor.set_predict_request
+      ~SklearnNormalRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.regressor.SklearnNormalRegressor:
+
+.. minigallery:: skactiveml.regressor.SklearnNormalRegressor
+   :add-heading:

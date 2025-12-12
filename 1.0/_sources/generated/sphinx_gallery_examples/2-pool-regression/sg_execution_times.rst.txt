@@ -1,0 +1,67 @@
+
+:orphan:
+
+.. _sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_sg_execution_times:
+
+
+Computation times
+=================
+**05:41.996** total execution time for 11 files **from generated/sphinx_gallery_examples/2-pool-regression**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-KLDivergenceMaximization-Regression_based_Kullback_Leibler_Divergence_Maximization.py` (``plot-KLDivergenceMaximization-Regression_based_Kullback_Leibler_Divergence_Maximization.py``)
+     - 03:20.555
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-ExpectedModelOutputChange-Expected_Model_Output_Change.py` (``plot-ExpectedModelOutputChange-Expected_Model_Output_Change.py``)
+     - 00:59.930
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-ExpectedModelVarianceReduction-Expected_Model_Variance_Reduction.py` (``plot-ExpectedModelVarianceReduction-Expected_Model_Variance_Reduction.py``)
+     - 00:25.301
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-GreedySamplingTarget-Greedy_Sampling_on_the_Target_Space_(GSy).py` (``plot-GreedySamplingTarget-Greedy_Sampling_on_the_Target_Space_(GSy).py``)
+     - 00:09.532
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-GreedySamplingTarget-Improved_Greedy_Sampling_(GSi).py` (``plot-GreedySamplingTarget-Improved_Greedy_Sampling_(GSi).py``)
+     - 00:09.268
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-ExpectedModelChangeMaximization-Expected_Model_Change.py` (``plot-ExpectedModelChangeMaximization-Expected_Model_Change.py``)
+     - 00:06.900
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Empirical_Variance.py` (``plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Empirical_Variance.py``)
+     - 00:06.571
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-GreedySamplingX-Greedy_Sampling_on_the_Feature_Space_(GSx).py` (``plot-GreedySamplingX-Greedy_Sampling_on_the_Feature_Space_(GSx).py``)
+     - 00:06.348
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Diversity_Selection.py` (``plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Diversity_Selection.py``)
+     - 00:06.223
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Random_Selection.py` (``plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Random_Selection.py``)
+     - 00:06.167
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_2-pool-regression_plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Representativity_Selection.py` (``plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Representativity_Selection.py``)
+     - 00:05.200
+     - 0.0

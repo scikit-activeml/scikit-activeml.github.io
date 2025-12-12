@@ -1,0 +1,11 @@
+﻿check\_bound
+============
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils.check_bound
+
+.. _sphx_glr_backref_skactiveml.utils.check_bound:
+
+.. minigallery:: skactiveml.utils.check_bound
+   :add-heading:

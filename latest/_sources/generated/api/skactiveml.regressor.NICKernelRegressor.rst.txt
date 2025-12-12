@@ -1,0 +1,41 @@
+﻿NICKernelRegressor
+==================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.NICKernelRegressor
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NICKernelRegressor.fit
+      ~NICKernelRegressor.get_metadata_routing
+      ~NICKernelRegressor.get_params
+      ~NICKernelRegressor.predict
+      ~NICKernelRegressor.predict_target_distribution
+      ~NICKernelRegressor.sample_y
+      ~NICKernelRegressor.score
+      ~NICKernelRegressor.set_fit_request
+      ~NICKernelRegressor.set_params
+      ~NICKernelRegressor.set_predict_request
+      ~NICKernelRegressor.set_score_request
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NICKernelRegressor.METRICS
+   
+   
+
+.. _sphx_glr_backref_skactiveml.regressor.NICKernelRegressor:
+
+.. minigallery:: skactiveml.regressor.NICKernelRegressor
+   :add-heading:

@@ -1,0 +1,11 @@
+﻿is\_unlabeled
+=============
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils.is_unlabeled
+
+.. _sphx_glr_backref_skactiveml.utils.is_unlabeled:
+
+.. minigallery:: skactiveml.utils.is_unlabeled
+   :add-heading:

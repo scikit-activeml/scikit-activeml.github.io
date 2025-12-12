@@ -1,0 +1,11 @@
+﻿expected\_average\_precision
+============================
+
+.. currentmodule:: skactiveml.pool
+
+.. autofunction:: skactiveml.pool.expected_average_precision
+
+.. _sphx_glr_backref_skactiveml.pool.expected_average_precision:
+
+.. minigallery:: skactiveml.pool.expected_average_precision
+   :add-heading:

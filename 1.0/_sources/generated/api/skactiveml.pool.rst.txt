@@ -1,0 +1,84 @@
+:mod:`skactiveml.pool`
+======================
+
+.. automodule:: skactiveml.pool
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+  skactiveml.pool.multiannotator
+  skactiveml.pool.utils
+
+Submodules
+----------
+
+.. list-table::
+  :header-rows: 0
+  :widths: 100
+
+  * - :mod:`skactiveml.pool.multiannotator`
+  * - :mod:`skactiveml.pool.utils`
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   pool.RandomSampling
+   pool.ProbabilisticAL
+   pool.UncertaintySampling
+   pool.EpistemicUncertaintySampling
+   pool.ExpectedErrorReduction
+   pool.MonteCarloEER
+   pool.ValueOfInformationEER
+   pool.QueryByCommittee
+   pool.Quire
+   pool.FourDs
+   pool.CostEmbeddingAL
+   pool.ExpectedModelChangeMaximization
+   pool.ExpectedModelOutputChange
+   pool.ExpectedModelVarianceReduction
+   pool.KLDivergenceMaximization
+   pool.GreedySamplingX
+   pool.GreedySamplingTarget
+   pool.DiscriminativeAL
+   pool.BatchBALD
+   pool.Clue
+   pool.DropQuery
+   pool.CoreSet
+   pool.TypiClust
+   pool.Badge
+   pool.ProbCover
+   pool.ContrastiveAL
+   pool.GreedyBALD
+   pool.RegressionTreeBasedAL
+   pool.SubSamplingWrapper
+   pool.ParallelUtilityEstimationWrapper
+   pool.Falcun
+   pool.MaxHerding
+
+Functions
+---------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: function.rst
+
+   pool.cost_reduction
+   pool.uncertainty_scores
+   pool.expected_average_precision
+   pool.average_kl_divergence
+   pool.vote_entropy
+   pool.variation_ratios
+   pool.batch_bald
+   pool.k_greedy_center
+

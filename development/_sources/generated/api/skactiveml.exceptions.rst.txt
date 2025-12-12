@@ -1,0 +1,24 @@
+:mod:`skactiveml.exceptions`
+============================
+
+.. automodule:: skactiveml.exceptions
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   exceptions.MappingError
+

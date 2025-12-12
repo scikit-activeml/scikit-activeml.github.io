@@ -1,0 +1,658 @@
+
+
+.. _sphx_glr_generated_sphinx_gallery_examples_1-pool-classification:
+
+Pool-based AL Strategies
+------------------------
+
+.. image:: /examples/pool_classification_legend.png
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Core Set">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-CoreSet-Core_Set_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-CoreSet-Core_Set`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Core Set</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="MaxHerding">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-MaxHerding-MaxHerding_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-MaxHerding-MaxHerding`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">MaxHerding</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Random Sampling">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-RandomSampling-Random_Sampling_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-RandomSampling-Random_Sampling`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Random Sampling</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Active Learning with Cost Embedding (ALCE)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_(ALCE)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_(ALCE)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Active Learning with Cost Embedding (ALCE)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Contrastive Active Learning (CAL)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-ContrastiveAL-Contrastive_Active_Learning_(CAL)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-ContrastiveAL-Contrastive_Active_Learning_(CAL)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Contrastive Active Learning (CAL)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Typical Clustering (TypiClust)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-TypiClust-Typical_Clustering_(TypiClust)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-TypiClust-Typical_Clustering_(TypiClust)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Typical Clustering (TypiClust)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Uncertainty Sampling (US) with Entropy">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Entropy_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Entropy`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Uncertainty Sampling (US) with Entropy</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Epistemic Uncertainty Sampling (EpisUS)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_(EpisUS)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_(EpisUS)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Epistemic Uncertainty Sampling (EpisUS)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Querying Informative and Representative Examples (QUIRE)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-Quire-Querying_Informative_and_Representative_Examples_(QUIRE)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-Quire-Querying_Informative_and_Representative_Examples_(QUIRE)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Querying Informative and Representative Examples (QUIRE)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Uncertainty Sampling (US) with Margin">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Margin_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Margin`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Uncertainty Sampling (US) with Margin</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Uncertainty Sampling (US) with Least-Confidence">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Least-Confidence_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Least-Confidence`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Uncertainty Sampling (US) with Least-Confidence</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Probability Coverage (ProbCover)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-ProbCover-Probability_Coverage_(ProbCover)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-ProbCover-Probability_Coverage_(ProbCover)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Probability Coverage (ProbCover)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Uncertainty Sampling with Expected Average Precision (USAP)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_(USAP)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_(USAP)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Uncertainty Sampling with Expected Average Precision (USAP)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Density-Diversity-Distribution-Distance Sampling (4DS)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_(4DS)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_(4DS)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Density-Diversity-Distribution-Distance Sampling (4DS)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Monte-Carlo Expected Error Reduction (EER) with Log-Loss">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Log-Loss_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Log-Loss`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Monte-Carlo Expected Error Reduction (EER) with Log-Loss</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Monte-Carlo Expected Error Reduction (EER) with Misclassification-Loss">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Misclassification-Loss_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Misclassification-Loss`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Monte-Carlo Expected Error Reduction (EER) with Misclassification-Loss</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Sub-sampling Wrapper">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-SubSamplingWrapper-Sub-sampling_Wrapper_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-SubSamplingWrapper-Sub-sampling_Wrapper`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sub-sampling Wrapper</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Discriminative Active Learning (DAL)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-DiscriminativeAL-Discriminative_Active_Learning_(DAL)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-DiscriminativeAL-Discriminative_Active_Learning_(DAL)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Discriminative Active Learning (DAL)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Parallel Utility Estimation Wrapper">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Parallel Utility Estimation Wrapper</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Multi-class Probabilistic Active Learning (McPAL)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_(McPAL)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_(McPAL)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Multi-class Probabilistic Active Learning (McPAL)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Query-by-Committee (QBC) with Vote Entropy">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Vote_Entropy_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Vote_Entropy`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Query-by-Committee (QBC) with Vote Entropy</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Query-by-Committee (QBC) with Variation Ratios">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Variation_Ratios_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Variation_Ratios`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Query-by-Committee (QBC) with Variation Ratios</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Query-by-Committee (QBC) with Kullback-Leibler Divergence">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Kullback-Leibler_Divergence_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Kullback-Leibler_Divergence`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Query-by-Committee (QBC) with Kullback-Leibler Divergence</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Value of Information (VOI)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-ValueOfInformationEER-Value_of_Information_(VOI)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Value of Information (VOI)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Value of Information (VOI) on Labeled Samples">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Labeled_Samples_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Labeled_Samples`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Value of Information (VOI) on Labeled Samples</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Value of Information (VOI) on Unlabeled Samples">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Unlabeled_Samples_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Unlabeled_Samples`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Value of Information (VOI) on Unlabeled Samples</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Bayesian Active Learning by Disagreement (BALD)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_(BALD)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_(BALD)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Bayesian Active Learning by Disagreement (BALD)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Density-weighted Uncertainty Sampling (DWUS)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_(DWUS)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_(DWUS)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Density-weighted Uncertainty Sampling (DWUS)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Dual Strategy for Active Learning">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_(DUAL)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_(DUAL)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Dual Strategy for Active Learning</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Batch Active Learning by Diverse Gradient Embedding (BADGE)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_(BADGE)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_(BADGE)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Batch Active Learning by Diverse Gradient Embedding (BADGE)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Clustering Uncertainty-weighted Embeddings (CLUE)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-Clue-Clustering_Uncertainty-weighted_Embeddings_(CLUE)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-Clue-Clustering_Uncertainty-weighted_Embeddings_(CLUE)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clustering Uncertainty-weighted Embeddings (CLUE)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Dropout Query (DropQuery)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-DropQuery-Dropout_Query_(DropQuery)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-DropQuery-Dropout_Query_(DropQuery)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Dropout Query (DropQuery)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Fast Active Learning by Contrastive UNcertainty (FALCUN)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_(FALCUN)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_(FALCUN)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Fast Active Learning by Contrastive UNcertainty (FALCUN)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Batch Density-Diversity-Distribution-Distance Sampling (4DS)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_(Batch4DS)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_(Batch4DS)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Batch Density-Diversity-Distribution-Distance Sampling (4DS)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Batch Bayesian Active Learning by Disagreement (BatchBALD)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/1-pool-classification/images/thumb/sphx_glr_plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_(BatchBALD)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/1-pool-classification/plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_(BatchBALD)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Batch Bayesian Active Learning by Disagreement (BatchBALD)</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-CoreSet-Core_Set
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-MaxHerding-MaxHerding
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-RandomSampling-Random_Sampling
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_(ALCE)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-ContrastiveAL-Contrastive_Active_Learning_(CAL)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-TypiClust-Typical_Clustering_(TypiClust)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Entropy
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_(EpisUS)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-Quire-Querying_Informative_and_Representative_Examples_(QUIRE)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Margin
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Least-Confidence
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-ProbCover-Probability_Coverage_(ProbCover)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_(USAP)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_(4DS)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Log-Loss
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Misclassification-Loss
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-SubSamplingWrapper-Sub-sampling_Wrapper
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-DiscriminativeAL-Discriminative_Active_Learning_(DAL)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_(McPAL)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Vote_Entropy
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Variation_Ratios
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Kullback-Leibler_Divergence
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Labeled_Samples
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Unlabeled_Samples
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_(BALD)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_(DWUS)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_(DUAL)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_(BADGE)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-Clue-Clustering_Uncertainty-weighted_Embeddings_(CLUE)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-DropQuery-Dropout_Query_(DropQuery)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_(FALCUN)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_(Batch4DS)
+   /generated/sphinx_gallery_examples/1-pool-classification/plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_(BatchBALD)
+
