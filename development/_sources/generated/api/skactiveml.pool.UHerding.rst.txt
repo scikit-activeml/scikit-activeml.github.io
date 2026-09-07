@@ -1,0 +1,39 @@
+﻿UHerding
+========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.UHerding
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UHerding.query
+   
+      ~UHerding.get_metadata_routing
+      ~UHerding.get_params
+      ~UHerding.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.UHerding.query
+
+.. automethod:: skactiveml.pool.UHerding.get_metadata_routing
+.. automethod:: skactiveml.pool.UHerding.get_params
+.. automethod:: skactiveml.pool.UHerding.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.UHerding:
+
+.. minigallery:: skactiveml.pool.UHerding
+   :add-heading:

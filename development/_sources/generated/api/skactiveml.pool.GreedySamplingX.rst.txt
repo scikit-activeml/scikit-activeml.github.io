@@ -1,0 +1,39 @@
+﻿GreedySamplingX
+===============
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.GreedySamplingX
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GreedySamplingX.query
+   
+      ~GreedySamplingX.get_metadata_routing
+      ~GreedySamplingX.get_params
+      ~GreedySamplingX.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.GreedySamplingX.query
+
+.. automethod:: skactiveml.pool.GreedySamplingX.get_metadata_routing
+.. automethod:: skactiveml.pool.GreedySamplingX.get_params
+.. automethod:: skactiveml.pool.GreedySamplingX.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.GreedySamplingX:
+
+.. minigallery:: skactiveml.pool.GreedySamplingX
+   :add-heading:

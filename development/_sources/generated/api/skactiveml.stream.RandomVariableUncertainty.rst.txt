@@ -1,0 +1,41 @@
+﻿RandomVariableUncertainty
+=========================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.RandomVariableUncertainty
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RandomVariableUncertainty.query
+      ~RandomVariableUncertainty.update
+   
+      ~RandomVariableUncertainty.get_metadata_routing
+      ~RandomVariableUncertainty.get_params
+      ~RandomVariableUncertainty.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.RandomVariableUncertainty.query
+.. automethod:: skactiveml.stream.RandomVariableUncertainty.update
+
+.. automethod:: skactiveml.stream.RandomVariableUncertainty.get_metadata_routing
+.. automethod:: skactiveml.stream.RandomVariableUncertainty.get_params
+.. automethod:: skactiveml.stream.RandomVariableUncertainty.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.RandomVariableUncertainty:
+
+.. minigallery:: skactiveml.stream.RandomVariableUncertainty
+   :add-heading:

@@ -1,0 +1,39 @@
+﻿ExpectedModelOutputChange
+=========================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ExpectedModelOutputChange
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExpectedModelOutputChange.query
+   
+      ~ExpectedModelOutputChange.get_metadata_routing
+      ~ExpectedModelOutputChange.get_params
+      ~ExpectedModelOutputChange.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.ExpectedModelOutputChange.query
+
+.. automethod:: skactiveml.pool.ExpectedModelOutputChange.get_metadata_routing
+.. automethod:: skactiveml.pool.ExpectedModelOutputChange.get_params
+.. automethod:: skactiveml.pool.ExpectedModelOutputChange.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.ExpectedModelOutputChange:
+
+.. minigallery:: skactiveml.pool.ExpectedModelOutputChange
+   :add-heading:

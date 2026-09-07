@@ -1,0 +1,37 @@
+﻿SkorchClassifier
+================
+
+.. currentmodule:: skactiveml.classifier
+
+.. autoclass:: skactiveml.classifier.SkorchClassifier
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkorchClassifier.fit
+      ~SkorchClassifier.get_metadata_routing
+      ~SkorchClassifier.get_params
+      ~SkorchClassifier.initialize
+      ~SkorchClassifier.partial_fit
+      ~SkorchClassifier.predict
+      ~SkorchClassifier.predict_proba
+      ~SkorchClassifier.score
+      ~SkorchClassifier.set_fit_request
+      ~SkorchClassifier.set_params
+      ~SkorchClassifier.set_predict_proba_request
+      ~SkorchClassifier.set_predict_request
+      ~SkorchClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.classifier.SkorchClassifier:
+
+.. minigallery:: skactiveml.classifier.SkorchClassifier
+   :add-heading:

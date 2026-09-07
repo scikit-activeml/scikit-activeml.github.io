@@ -1,0 +1,57 @@
+﻿CrowdLayerClassifier
+====================
+
+.. currentmodule:: skactiveml.classifier.multiannotator
+
+.. autoclass:: skactiveml.classifier.multiannotator.CrowdLayerClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CrowdLayerClassifier.fit
+      ~CrowdLayerClassifier.initialize
+      ~CrowdLayerClassifier.partial_fit
+      ~CrowdLayerClassifier.predict
+      ~CrowdLayerClassifier.predict_proba
+      ~CrowdLayerClassifier.score
+   
+      ~CrowdLayerClassifier.get_metadata_routing
+      ~CrowdLayerClassifier.get_params
+      ~CrowdLayerClassifier.set_fit_request
+      ~CrowdLayerClassifier.set_params
+      ~CrowdLayerClassifier.set_predict_proba_request
+      ~CrowdLayerClassifier.set_predict_request
+      ~CrowdLayerClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.fit
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.initialize
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.partial_fit
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.predict
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.predict_proba
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.score
+
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.get_params
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.set_params
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.set_predict_proba_request
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.set_predict_request
+.. automethod:: skactiveml.classifier.multiannotator.CrowdLayerClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.multiannotator.CrowdLayerClassifier:
+
+.. minigallery:: skactiveml.classifier.multiannotator.CrowdLayerClassifier
+   :add-heading:

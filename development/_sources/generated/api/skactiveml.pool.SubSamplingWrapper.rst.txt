@@ -1,0 +1,39 @@
+﻿SubSamplingWrapper
+==================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.SubSamplingWrapper
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SubSamplingWrapper.query
+   
+      ~SubSamplingWrapper.get_metadata_routing
+      ~SubSamplingWrapper.get_params
+      ~SubSamplingWrapper.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.SubSamplingWrapper.query
+
+.. automethod:: skactiveml.pool.SubSamplingWrapper.get_metadata_routing
+.. automethod:: skactiveml.pool.SubSamplingWrapper.get_params
+.. automethod:: skactiveml.pool.SubSamplingWrapper.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.SubSamplingWrapper:
+
+.. minigallery:: skactiveml.pool.SubSamplingWrapper
+   :add-heading:

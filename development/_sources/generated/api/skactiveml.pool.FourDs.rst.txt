@@ -1,0 +1,39 @@
+﻿FourDs
+======
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.FourDs
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FourDs.query
+   
+      ~FourDs.get_metadata_routing
+      ~FourDs.get_params
+      ~FourDs.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.FourDs.query
+
+.. automethod:: skactiveml.pool.FourDs.get_metadata_routing
+.. automethod:: skactiveml.pool.FourDs.get_params
+.. automethod:: skactiveml.pool.FourDs.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.FourDs:
+
+.. minigallery:: skactiveml.pool.FourDs
+   :add-heading:

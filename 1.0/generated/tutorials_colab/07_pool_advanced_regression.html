@@ -1,0 +1,898 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced Active Learning for Regression Tasks &#8212; scikit-activeml 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/tutorials_colab/07_pool_advanced_regression';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.0.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../_static/filter_examples.js?v=52a8636b"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/1.0/generated/tutorials_colab/07_pool_advanced_regression.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml 1.0.0 documentation - Home"/>
+    <img src="../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml 1.0.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Advanced Active Learning for Regression Tasks</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="Advanced-Active-Learning-for-Regression-Tasks">
+<h1>Advanced Active Learning for Regression Tasks<a class="headerlink" href="#Advanced-Active-Learning-for-Regression-Tasks" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>Google Colab Note:</strong> If the notebook fails to run after installing the needed packages, try to restart the runtime (Ctrl + M) under Runtime -&gt; Restart session.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://colab.research.google.com/github/scikit-activeml/scikit-activeml.github.io/blob/gh-pages/1.0/generated/tutorials_colab//07_pool_advanced_regression.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install scikit-activeml[opt] torch torchvision xgboost</span>
+</pre></div>
+</div>
+</div>
+<p>This tutorial demonstrates how to perform pool-based active learning for regression and compare query strategies using two model families:</p>
+<ul class="simple">
+<li><p>a multilayer perceptron (MLP) trained via <a class="reference external" href="https://github.com/skorch-dev/skorch">skorch</a> (<code class="docutils literal notranslate"><span class="pre">torch</span></code> under the hood),</p></li>
+<li><p>a tree-boosting regressor from <a class="reference external" href="https://github.com/dmlc/xgboost">xgboost</a>,</p></li>
+<li><p>a random forest regressor from <a class="reference external" href="https://github.com/scikit-learn/scikit-learn">sklearn</a>.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comment in for speed up, if you have cuML installed.</span>
+<span class="c1"># %load_ext cuml.accel</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mlp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_openml</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skorch.toy</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLPModule</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.pool</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RandomSampling</span><span class="p">,</span>
+    <span class="n">GreedySamplingTarget</span><span class="p">,</span>
+    <span class="n">SubSamplingWrapper</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.regressor</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkorchRegressor</span><span class="p">,</span> <span class="n">SklearnRegressor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">MISSING_LABEL</span><span class="p">,</span> <span class="n">call_func</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skorch.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">LRScheduler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.optim.lr_scheduler</span><span class="w"> </span><span class="kn">import</span> <span class="n">CosineAnnealingLR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xgboost</span><span class="w"> </span><span class="kn">import</span> <span class="n">XGBRegressor</span>
+
+<span class="n">CACHE_PATH</span> <span class="o">=</span> <span class="s2">&quot;.cache&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">CACHE_PATH</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mlp</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.facecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+<span class="n">DEVICE</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+cuML: Accelerator installed.
+</pre></div></div>
+</div>
+<section id="Load-Dataset">
+<h2>Load Dataset<a class="headerlink" href="#Load-Dataset" title="Link to this heading">#</a></h2>
+<p>We use our the <code class="docutils literal notranslate"><span class="pre">fetch_openml</span></code> function from <code class="docutils literal notranslate"><span class="pre">sklearn.datasets</span></code> to load the <code class="docutils literal notranslate"><span class="pre">superconduct</span></code> dataset from <a class="reference external" href="https://www.openml.org/">OpenML</a>. The dataset contains information about superconductors, for which the critical temperature as a continuous target is to predicted.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and cache dataset.</span>
+<span class="n">X_full</span><span class="p">,</span> <span class="n">y_full</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span>
+    <span class="n">data_id</span><span class="o">=</span><span class="mi">43174</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">CACHE_PATH</span>
+<span class="p">)</span>
+<span class="n">X_full</span> <span class="o">=</span> <span class="n">X_full</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y_full</span> <span class="o">=</span> <span class="n">y_full</span><span class="o">.</span><span class="n">values</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="n">X_full</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Create 80-20 train-test split.</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_full</span><span class="p">,</span> <span class="n">y_full</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="p">)</span>
+
+<span class="c1"># Standardize numerical features.</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-Regression-Models">
+<h2>Create Regression Models<a class="headerlink" href="#Create-Regression-Models" title="Link to this heading">#</a></h2>
+<p>We create a dictionary of functions that can be used to create the regression models with varying seeds.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup dictionary of functions for creating regression models.</span>
+<span class="n">regressor_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Create random forest regressor.</span>
+<span class="n">regressor_dict</span><span class="p">[</span><span class="s2">&quot;RF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">seed</span><span class="p">:</span> <span class="n">SklearnRegressor</span><span class="p">(</span>
+    <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span>
+<span class="p">)</span>
+
+<span class="c1"># Add gradient-boosted decision tree.</span>
+<span class="n">regressor_dict</span><span class="p">[</span><span class="s2">&quot;XGB&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">seed</span><span class="p">:</span> <span class="n">SklearnRegressor</span><span class="p">(</span>
+    <span class="n">XGBRegressor</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span>
+<span class="p">)</span>
+
+<span class="n">regressor_dict</span><span class="p">[</span><span class="s2">&quot;MLP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">seed</span><span class="p">:</span> <span class="n">SkorchRegressor</span><span class="p">(</span>
+    <span class="n">module</span><span class="o">=</span><span class="n">MLPModule</span><span class="p">,</span>
+    <span class="n">criterion</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">HuberLoss</span><span class="p">,</span>
+    <span class="n">neural_net_param_dict</span><span class="o">=</span><span class="p">{</span>
+        <span class="c1"># Module-related parameters.</span>
+        <span class="s2">&quot;module__input_units&quot;</span><span class="p">:</span> <span class="n">n_features</span><span class="p">,</span>
+        <span class="s2">&quot;module__output_units&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;module__hidden_units&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+        <span class="s2">&quot;module__num_hidden&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;module__dropout&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="c1"># Optimizer-related parameters.</span>
+        <span class="s2">&quot;max_epochs&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">RAdam</span><span class="p">,</span>
+        <span class="s2">&quot;optimizer__lr&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
+        <span class="s2">&quot;callbacks&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;lr_scheduler&quot;</span><span class="p">,</span> <span class="n">LRScheduler</span><span class="p">(</span><span class="n">policy</span><span class="o">=</span><span class="n">CosineAnnealingLR</span><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+        <span class="p">],</span>
+        <span class="c1"># General parameters.</span>
+        <span class="s2">&quot;verbose&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;device&quot;</span><span class="p">:</span> <span class="n">DEVICE</span><span class="p">,</span>
+        <span class="s2">&quot;train_split&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;iterator_train__shuffle&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;torch_load_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;weights_only&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="n">sample_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+    <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-Query-Strategies">
+<h2>Create Query Strategies<a class="headerlink" href="#Create-Query-Strategies" title="Link to this heading">#</a></h2>
+<p>For simplicity, we only test two query strategies, of which <code class="docutils literal notranslate"><span class="pre">GreedySamplingI</span></code> is a dedicated strategy for regression tasks. If other strategies are to be included, we refer to our <a class="reference external" href="https://scikit-activeml.github.io/latest/generated/strategy_overview.html">overview of query strategies</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_strategy_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;RandomSampling&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">seed</span><span class="p">:</span> <span class="n">RandomSampling</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">),</span>
+    <span class="s2">&quot;GreedySamplingI&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">seed</span><span class="p">:</span> <span class="n">GreedySamplingTarget</span><span class="p">(</span>
+        <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GSi&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Perform-Active-Learning-Cycle">
+<h2>Perform Active Learning Cycle<a class="headerlink" href="#Perform-Active-Learning-Cycle" title="Link to this heading">#</a></h2>
+<p>Each active learning expirment starts with zero labels and covers 30 cycles with an acquisition batch size of 128.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_reps</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_cycles</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">query_batch_size</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">n_sub_set</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">reg_name</span> <span class="ow">in</span> <span class="n">regressor_dict</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">reg_name</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">qs_name</span> <span class="ow">in</span> <span class="n">query_strategy_dict</span><span class="p">:</span>
+        <span class="n">r2_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n_reps</span><span class="p">,</span> <span class="n">n_cycles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i_rep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_reps</span><span class="p">):</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">)</span>
+
+            <span class="n">reg</span> <span class="o">=</span> <span class="n">regressor_dict</span><span class="p">[</span><span class="n">reg_name</span><span class="p">](</span><span class="n">i_rep</span><span class="p">)</span>
+            <span class="n">qs</span> <span class="o">=</span> <span class="n">SubSamplingWrapper</span><span class="p">(</span>
+                <span class="n">query_strategy_dict</span><span class="p">[</span><span class="n">qs_name</span><span class="p">](</span><span class="n">i_rep</span><span class="p">),</span>
+                <span class="n">max_candidates</span><span class="o">=</span><span class="n">n_sub_set</span><span class="p">,</span>
+                <span class="n">exclude_non_subsample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">random_state</span><span class="o">=</span><span class="n">i_rep</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+                <span class="nb">range</span><span class="p">(</span><span class="n">n_cycles</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Repeat </span><span class="si">{</span><span class="n">i_rep</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> with </span><span class="si">{</span><span class="n">qs_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">):</span>
+                <span class="n">query_idx</span> <span class="o">=</span> <span class="n">call_func</span><span class="p">(</span>
+                    <span class="n">qs</span><span class="o">.</span><span class="n">query</span><span class="p">,</span>
+                    <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span>
+                    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+                    <span class="n">batch_size</span><span class="o">=</span><span class="n">query_batch_size</span><span class="p">,</span>
+                    <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span>
+                    <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">y</span><span class="p">[</span><span class="n">query_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">query_idx</span><span class="p">]</span>
+                <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+                <span class="n">r2_scores</span><span class="p">[</span><span class="n">i_rep</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
+
+        <span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">reg_name</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">qs_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r2_scores</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+RF
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Repeat 1 with RandomSampling: 100%|██████████| 30/30 [00:08&lt;00:00,  3.41it/s]
+Repeat 2 with RandomSampling: 100%|██████████| 30/30 [00:08&lt;00:00,  3.34it/s]
+Repeat 3 with RandomSampling: 100%|██████████| 30/30 [00:09&lt;00:00,  3.32it/s]
+Repeat 1 with GreedySamplingI: 100%|██████████| 30/30 [00:24&lt;00:00,  1.22it/s]
+Repeat 2 with GreedySamplingI: 100%|██████████| 30/30 [00:25&lt;00:00,  1.18it/s]
+Repeat 3 with GreedySamplingI: 100%|██████████| 30/30 [00:24&lt;00:00,  1.21it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+XGB
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Repeat 1 with RandomSampling: 100%|██████████| 30/30 [00:04&lt;00:00,  6.00it/s]
+Repeat 2 with RandomSampling: 100%|██████████| 30/30 [00:04&lt;00:00,  6.08it/s]
+Repeat 3 with RandomSampling: 100%|██████████| 30/30 [00:04&lt;00:00,  6.03it/s]
+Repeat 1 with GreedySamplingI: 100%|██████████| 30/30 [00:21&lt;00:00,  1.40it/s]
+Repeat 2 with GreedySamplingI: 100%|██████████| 30/30 [00:20&lt;00:00,  1.48it/s]
+Repeat 3 with GreedySamplingI: 100%|██████████| 30/30 [00:21&lt;00:00,  1.42it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MLP
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Repeat 1 with RandomSampling: 100%|██████████| 30/30 [01:03&lt;00:00,  2.10s/it]
+Repeat 2 with RandomSampling: 100%|██████████| 30/30 [01:00&lt;00:00,  2.02s/it]
+Repeat 3 with RandomSampling: 100%|██████████| 30/30 [01:00&lt;00:00,  2.02s/it]
+Repeat 1 with GreedySamplingI: 100%|██████████| 30/30 [01:16&lt;00:00,  2.54s/it]
+Repeat 2 with GreedySamplingI: 100%|██████████| 30/30 [01:16&lt;00:00,  2.54s/it]
+Repeat 3 with GreedySamplingI: 100%|██████████| 30/30 [01:17&lt;00:00,  2.58s/it]
+</pre></div></div>
+</div>
+</section>
+<section id="Visualize-Results">
+<h2>Visualize Results<a class="headerlink" href="#Visualize-Results" title="Link to this heading">#</a></h2>
+<p>In the following, we plot the obtained learning curve of the R2 scores including the area under learning curve (AULC) score per regression model and query strategy.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">reg_name</span><span class="p">,</span> <span class="n">ls</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">regressor_dict</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">qs_name</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">query_strategy_dict</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">qs_name</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">reg_name</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">qs_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+        <span class="n">reshaped_result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cycles</span><span class="p">))</span>
+        <span class="n">errorbar_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">reshaped_result</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">errorbar_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">reshaped_result</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">query_batch_size</span><span class="p">,</span>
+            <span class="n">errorbar_mean</span><span class="p">,</span>
+            <span class="n">errorbar_std</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">reg_name</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">qs_name</span><span class="si">}</span><span class="s2">: ALCU=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">errorbar_mean</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">,</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="n">ls</span><span class="p">,</span>
+        <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Labeled Samples&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;R2 Score&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/generated_tutorials_colab_07_pool_advanced_regression_14_0.png" src="../../_images/generated_tutorials_colab_07_pool_advanced_regression_14_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Load-Dataset">Load Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-Regression-Models">Create Regression Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-Query-Strategies">Create Query Strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Perform-Active-Learning-Cycle">Perform Active Learning Cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Visualize-Results">Visualize Results</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/generated/tutorials_colab/07_pool_advanced_regression.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

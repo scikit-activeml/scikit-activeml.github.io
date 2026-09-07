@@ -1,0 +1,29 @@
+﻿UncertaintyZliobaite
+====================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.UncertaintyZliobaite
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UncertaintyZliobaite.get_metadata_routing
+      ~UncertaintyZliobaite.get_params
+      ~UncertaintyZliobaite.query
+      ~UncertaintyZliobaite.set_params
+      ~UncertaintyZliobaite.update
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.stream.UncertaintyZliobaite:
+
+.. minigallery:: skactiveml.stream.UncertaintyZliobaite
+   :add-heading:

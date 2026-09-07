@@ -1,0 +1,49 @@
+﻿SkactivemlClassifier
+====================
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.SkactivemlClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkactivemlClassifier.fit
+      ~SkactivemlClassifier.predict
+      ~SkactivemlClassifier.predict_proba
+      ~SkactivemlClassifier.score
+   
+      ~SkactivemlClassifier.get_metadata_routing
+      ~SkactivemlClassifier.get_params
+      ~SkactivemlClassifier.set_fit_request
+      ~SkactivemlClassifier.set_params
+      ~SkactivemlClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.SkactivemlClassifier.fit
+.. automethod:: skactiveml.base.SkactivemlClassifier.predict
+.. automethod:: skactiveml.base.SkactivemlClassifier.predict_proba
+.. automethod:: skactiveml.base.SkactivemlClassifier.score
+
+.. automethod:: skactiveml.base.SkactivemlClassifier.get_metadata_routing
+.. automethod:: skactiveml.base.SkactivemlClassifier.get_params
+.. automethod:: skactiveml.base.SkactivemlClassifier.set_fit_request
+.. automethod:: skactiveml.base.SkactivemlClassifier.set_params
+.. automethod:: skactiveml.base.SkactivemlClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.base.SkactivemlClassifier:
+
+.. minigallery:: skactiveml.base.SkactivemlClassifier
+   :add-heading:

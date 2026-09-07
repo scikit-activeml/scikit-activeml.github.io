@@ -1,0 +1,53 @@
+﻿ProbabilisticRegressor
+======================
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.ProbabilisticRegressor
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ProbabilisticRegressor.fit
+      ~ProbabilisticRegressor.predict
+      ~ProbabilisticRegressor.predict_target_distribution
+      ~ProbabilisticRegressor.sample_y
+   
+      ~ProbabilisticRegressor.get_metadata_routing
+      ~ProbabilisticRegressor.get_params
+      ~ProbabilisticRegressor.score
+      ~ProbabilisticRegressor.set_fit_request
+      ~ProbabilisticRegressor.set_params
+      ~ProbabilisticRegressor.set_predict_request
+      ~ProbabilisticRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.ProbabilisticRegressor.fit
+.. automethod:: skactiveml.base.ProbabilisticRegressor.predict
+.. automethod:: skactiveml.base.ProbabilisticRegressor.predict_target_distribution
+.. automethod:: skactiveml.base.ProbabilisticRegressor.sample_y
+
+.. automethod:: skactiveml.base.ProbabilisticRegressor.get_metadata_routing
+.. automethod:: skactiveml.base.ProbabilisticRegressor.get_params
+.. automethod:: skactiveml.base.ProbabilisticRegressor.score
+.. automethod:: skactiveml.base.ProbabilisticRegressor.set_fit_request
+.. automethod:: skactiveml.base.ProbabilisticRegressor.set_params
+.. automethod:: skactiveml.base.ProbabilisticRegressor.set_predict_request
+.. automethod:: skactiveml.base.ProbabilisticRegressor.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.base.ProbabilisticRegressor:
+
+.. minigallery:: skactiveml.base.ProbabilisticRegressor
+   :add-heading:

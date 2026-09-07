@@ -1,0 +1,39 @@
+﻿ExpectedModelVarianceReduction
+==============================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ExpectedModelVarianceReduction
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExpectedModelVarianceReduction.query
+   
+      ~ExpectedModelVarianceReduction.get_metadata_routing
+      ~ExpectedModelVarianceReduction.get_params
+      ~ExpectedModelVarianceReduction.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.ExpectedModelVarianceReduction.query
+
+.. automethod:: skactiveml.pool.ExpectedModelVarianceReduction.get_metadata_routing
+.. automethod:: skactiveml.pool.ExpectedModelVarianceReduction.get_params
+.. automethod:: skactiveml.pool.ExpectedModelVarianceReduction.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.ExpectedModelVarianceReduction:
+
+.. minigallery:: skactiveml.pool.ExpectedModelVarianceReduction
+   :add-heading:

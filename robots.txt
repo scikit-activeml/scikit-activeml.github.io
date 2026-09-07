@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://scikit-activeml.github.io/sitemap_index.xml

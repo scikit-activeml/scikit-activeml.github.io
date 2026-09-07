@@ -1,0 +1,39 @@
+﻿UncertaintySampling
+===================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.UncertaintySampling
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UncertaintySampling.query
+   
+      ~UncertaintySampling.get_metadata_routing
+      ~UncertaintySampling.get_params
+      ~UncertaintySampling.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.UncertaintySampling.query
+
+.. automethod:: skactiveml.pool.UncertaintySampling.get_metadata_routing
+.. automethod:: skactiveml.pool.UncertaintySampling.get_params
+.. automethod:: skactiveml.pool.UncertaintySampling.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.UncertaintySampling:
+
+.. minigallery:: skactiveml.pool.UncertaintySampling
+   :add-heading:

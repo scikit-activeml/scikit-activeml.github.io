@@ -1,0 +1,37 @@
+﻿AnnotMixClassifier
+==================
+
+.. currentmodule:: skactiveml.classifier.multiannotator
+
+.. autoclass:: skactiveml.classifier.multiannotator.AnnotMixClassifier
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AnnotMixClassifier.fit
+      ~AnnotMixClassifier.get_metadata_routing
+      ~AnnotMixClassifier.get_params
+      ~AnnotMixClassifier.initialize
+      ~AnnotMixClassifier.partial_fit
+      ~AnnotMixClassifier.predict
+      ~AnnotMixClassifier.predict_proba
+      ~AnnotMixClassifier.score
+      ~AnnotMixClassifier.set_fit_request
+      ~AnnotMixClassifier.set_params
+      ~AnnotMixClassifier.set_predict_proba_request
+      ~AnnotMixClassifier.set_predict_request
+      ~AnnotMixClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.classifier.multiannotator.AnnotMixClassifier:
+
+.. minigallery:: skactiveml.classifier.multiannotator.AnnotMixClassifier
+   :add-heading:

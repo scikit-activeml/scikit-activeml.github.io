@@ -1,0 +1,41 @@
+﻿CognitiveDualQueryStrategyFixUn
+===============================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.CognitiveDualQueryStrategyFixUn
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CognitiveDualQueryStrategyFixUn.query
+      ~CognitiveDualQueryStrategyFixUn.update
+   
+      ~CognitiveDualQueryStrategyFixUn.get_metadata_routing
+      ~CognitiveDualQueryStrategyFixUn.get_params
+      ~CognitiveDualQueryStrategyFixUn.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyFixUn.query
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyFixUn.update
+
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyFixUn.get_metadata_routing
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyFixUn.get_params
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyFixUn.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.CognitiveDualQueryStrategyFixUn:
+
+.. minigallery:: skactiveml.stream.CognitiveDualQueryStrategyFixUn
+   :add-heading:

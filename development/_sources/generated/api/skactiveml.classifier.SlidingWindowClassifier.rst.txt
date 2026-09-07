@@ -1,0 +1,55 @@
+﻿SlidingWindowClassifier
+=======================
+
+.. currentmodule:: skactiveml.classifier
+
+.. autoclass:: skactiveml.classifier.SlidingWindowClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SlidingWindowClassifier.fit
+      ~SlidingWindowClassifier.partial_fit
+      ~SlidingWindowClassifier.predict
+      ~SlidingWindowClassifier.predict_freq
+      ~SlidingWindowClassifier.predict_proba
+      ~SlidingWindowClassifier.score
+   
+      ~SlidingWindowClassifier.get_metadata_routing
+      ~SlidingWindowClassifier.get_params
+      ~SlidingWindowClassifier.set_fit_request
+      ~SlidingWindowClassifier.set_params
+      ~SlidingWindowClassifier.set_partial_fit_request
+      ~SlidingWindowClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.fit
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.partial_fit
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.predict
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.predict_freq
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.predict_proba
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.score
+
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.get_params
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.set_params
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.set_partial_fit_request
+.. automethod:: skactiveml.classifier.SlidingWindowClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.SlidingWindowClassifier:
+
+.. minigallery:: skactiveml.classifier.SlidingWindowClassifier
+   :add-heading:

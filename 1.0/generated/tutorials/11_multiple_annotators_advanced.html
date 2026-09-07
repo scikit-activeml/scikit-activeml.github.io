@@ -1,0 +1,1038 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced Active Learning with Multiple Annotators &#8212; scikit-activeml 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/tutorials/11_multiple_annotators_advanced';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.0.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../_static/filter_examples.js?v=52a8636b"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/1.0/generated/tutorials/11_multiple_annotators_advanced.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml 1.0.0 documentation - Home"/>
+    <img src="../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml 1.0.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Advanced Active Learning with Multiple Annotators</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="Advanced-Active-Learning-with-Multiple-Annotators">
+<h1>Advanced Active Learning with Multiple Annotators<a class="headerlink" href="#Advanced-Active-Learning-with-Multiple-Annotators" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>Google Colab Note:</strong> If the notebook fails to run after installing the needed packages, try to restart the runtime (Ctrl + M) under Runtime -&gt; Restart session.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://colab.research.google.com/github/scikit-activeml/scikit-activeml.github.io/blob/gh-pages/1.0/generated/tutorials_colab//11_multiple_annotators_advanced.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><strong>Notebook Dependencies</strong></p>
+<p>Uncomment the following cell to install all dependencies for this tutorial.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install scikit-activeml[opt] torch torchvision tqdm</span>
+</pre></div>
+</div>
+</div>
+<hr style="border-style: solid; border-top: 1px solid; border-right: 0; border-bottom: 0; border-left: 0;"><p>This notebook demonstrates how to use <code class="docutils literal notranslate"><span class="pre">scikit-activeml</span></code> to perform pool-based active learning when labels are provided by multiple, potentially unreliable annotators. We work on the handwritten digits dataset and simulate a small crowd of annotators with different noise patterns. We then compare a simple majority-vote baseline with a dedicated multi-annotator model that learns annotator performance (i.e., annotation accuracy) while querying new labels.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_digits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.classifier</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkorchClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.classifier.multiannotator</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AnnotMixClassifier</span><span class="p">,</span>
+    <span class="n">CrowdLayerClassifier</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.pool</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomSampling</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.pool.multiannotator</span><span class="w"> </span><span class="kn">import</span> <span class="n">SingleAnnotatorWrapper</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">MISSING_LABEL</span><span class="p">,</span> <span class="n">is_labeled</span><span class="p">,</span> <span class="n">majority_vote</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">skorch.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">LRScheduler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="kn">import</span> <span class="n">RAdam</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.optim.lr_scheduler</span><span class="w"> </span><span class="kn">import</span> <span class="n">CosineAnnealingLR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="c1"># Global configuration</span>
+<span class="n">DEVICE</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="Data-Preparation-and-Simulation-of-Multiple-Annotators">
+<h2>Data Preparation and Simulation of Multiple Annotators<a class="headerlink" href="#Data-Preparation-and-Simulation-of-Multiple-Annotators" title="Link to this heading">#</a></h2>
+<p>We start by loading the digits dataset and splitting it into training and test sets. Each image is scaled to the range ([0, 1]) and reshaped to match the input format expected by a small convolutional neural network. On top of the ground-truth training labels <code class="docutils literal notranslate"><span class="pre">y_train</span></code> we simulate five annotators with different reliability profiles:</p>
+<ul class="simple">
+<li><p>some are almost perfect,</p></li>
+<li><p>some are noisy, one struggles with a specific digit,</p></li>
+<li><p>and another one is biased towards the majority class.</p></li>
+</ul>
+<p>The resulting matrix <code class="docutils literal notranslate"><span class="pre">z_train</span></code> has one column per annotator and serves as crowd labels for the multi-annotator models.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and preprocess the data</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">load_digits</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">/</span> <span class="mf">16.0</span>  <span class="c1"># (n_samples, 1, 8, 8)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">,</span>
+    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_noisy_labels</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate annotator labels with a given accuracy.</span>
+
+<span class="sd">    With probability `accuracy` the annotator returns</span>
+<span class="sd">    the true label. Otherwise, it samples a wrong label</span>
+<span class="sd">    uniformly from the remaining classes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">y_true</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y_annot</span> <span class="o">=</span> <span class="n">y_true</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">correct</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">accuracy</span>
+    <span class="n">wrong_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="o">~</span><span class="n">correct</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">wrong_idx</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">wrong_labels</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">yt</span> <span class="ow">in</span> <span class="n">y_true</span><span class="p">[</span><span class="n">wrong_idx</span><span class="p">]:</span>
+            <span class="n">candidates</span> <span class="o">=</span> <span class="n">classes</span><span class="p">[</span><span class="n">classes</span> <span class="o">!=</span> <span class="n">yt</span><span class="p">]</span>
+            <span class="n">wrong_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">candidates</span><span class="p">))</span>
+        <span class="n">y_annot</span><span class="p">[</span><span class="n">wrong_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">wrong_labels</span>
+
+    <span class="k">return</span> <span class="n">y_annot</span>
+
+
+<span class="c1"># Annotator 1: almost perfect</span>
+<span class="n">ann1</span> <span class="o">=</span> <span class="n">sample_noisy_labels</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">accuracy</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+
+<span class="c1"># Annotator 2: strong, but clearly imperfect</span>
+<span class="n">ann2</span> <span class="o">=</span> <span class="n">sample_noisy_labels</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">accuracy</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+
+<span class="c1"># Annotator 3: noticeably noisy</span>
+<span class="n">ann3</span> <span class="o">=</span> <span class="n">sample_noisy_labels</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">accuracy</span><span class="o">=</span><span class="mf">0.70</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+
+<span class="c1"># Annotator 4: class-dependent difficulties</span>
+<span class="c1"># (struggles with one hard digit)</span>
+<span class="n">hard_class</span> <span class="o">=</span> <span class="mi">9</span>  <span class="c1"># treat digit &#39;9&#39; as hard, for example</span>
+<span class="n">acc_easy</span> <span class="o">=</span> <span class="mf">0.85</span>
+<span class="n">acc_hard</span> <span class="o">=</span> <span class="mf">0.40</span>
+
+<span class="n">per_sample_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_train</span> <span class="o">==</span> <span class="n">hard_class</span><span class="p">,</span> <span class="n">acc_hard</span><span class="p">,</span> <span class="n">acc_easy</span><span class="p">)</span>
+<span class="n">rand</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="n">rand</span> <span class="o">&lt;</span> <span class="n">per_sample_acc</span>
+
+<span class="n">ann4</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">wrong_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="o">~</span><span class="n">correct</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">wrong_idx</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+    <span class="n">wrong_labels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">yt</span> <span class="ow">in</span> <span class="n">y_train</span><span class="p">[</span><span class="n">wrong_idx</span><span class="p">]:</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="n">classes</span><span class="p">[</span><span class="n">classes</span> <span class="o">!=</span> <span class="n">yt</span><span class="p">]</span>
+        <span class="n">wrong_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">candidates</span><span class="p">))</span>
+    <span class="n">ann4</span><span class="p">[</span><span class="n">wrong_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">wrong_labels</span>
+
+<span class="c1"># Annotator 5: biased towards the majority class</span>
+<span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">majority_class</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">counts</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span>
+
+<span class="n">ann5</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">bias_strength</span> <span class="o">=</span> <span class="mf">0.50</span>  <span class="c1"># probability of forcing the majority label</span>
+<span class="n">bias_mask</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">bias_strength</span>
+<span class="n">ann5</span><span class="p">[</span><span class="n">bias_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">majority_class</span>
+
+<span class="c1"># Final annotation matrix: shape (n_samples, n_annotators)</span>
+<span class="n">z_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">ann1</span><span class="p">,</span> <span class="n">ann2</span><span class="p">,</span> <span class="n">ann3</span><span class="p">,</span> <span class="n">ann4</span><span class="p">,</span> <span class="n">ann5</span><span class="p">])</span>
+<span class="n">n_annotators</span> <span class="o">=</span> <span class="n">z_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Neural-Network-Backbone-and-Classifiers">
+<h2>Neural Network Backbone and Classifiers<a class="headerlink" href="#Neural-Network-Backbone-and-Classifiers" title="Link to this heading">#</a></h2>
+<p>The next step is to define a small convolutional network (CNN) that serves as a backbone for all classifiers. The network processes the 8 x 8 images, applies a single convolutional layer with max pooling, and maps the resulting 128-dimensional feature vector to class logits. The forward method returns both the logits and the intermediate embedding, which could be used by an active learning query strategy, such as <code class="docutils literal notranslate"><span class="pre">BADGE</span></code>.</p>
+<p>On top of this backbone we define two classifiers.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">MajorityVoteClassifier</span></code> first aggregates the crowd labels in <code class="docutils literal notranslate"><span class="pre">z_train</span></code> by taking a majority vote per sample and then fits a standard single-annotator model.</p></li>
+<li><p>In contrast, <code class="docutils literal notranslate"><span class="pre">AnnotMixClassifier</span></code> directly consumes the full matrix of annotator labels and internally models annotator performance.</p></li>
+</ul>
+<p>Both models share the same neural architecture and optimization hyperparameters so that differences in performance can be attributed to how they handle multiple annotators.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Small CNN backbone for 8×8 digit images</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CNNModule</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compact CNN that returns both logits</span>
+<span class="sd">    and a 128-dimensional embedding.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">feature_dim</span> <span class="o">=</span> <span class="mi">128</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># Input: (B, 1, 8, 8)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
+            <span class="n">in_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">out_channels</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+            <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>  <span class="c1"># -&gt; (B, 8, 8, 8)</span>
+
+          <span class="c1"># after 2×2 pooling: (B, 8, 4, 4)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_dim</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+        <span class="c1"># x: (B, 1, 8, 8)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># (B, 8, 4, 4)</span>
+        <span class="n">x_embed</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># (B, 128)</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">x_embed</span><span class="p">)</span>  <span class="c1"># (B, n_classes)</span>
+        <span class="k">return</span> <span class="n">logits</span><span class="p">,</span> <span class="n">x_embed</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MajorityVoteClassifier</span><span class="p">(</span><span class="n">SkorchClassifier</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classifier that trains on labels</span>
+<span class="sd">    aggregated by majority vote.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+        <span class="n">y_mv</span> <span class="o">=</span> <span class="n">majority_vote</span><span class="p">(</span>
+            <span class="n">y</span><span class="p">,</span>
+            <span class="n">classes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_mv</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span>
+
+
+
+<span class="c1"># Parameters passed to the NeuralNet in skorch`</span>
+<span class="n">neural_net_param_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># Module-related parameters.</span>
+    <span class="s2">&quot;module__n_classes&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">classes</span><span class="p">),</span>
+    <span class="c1"># Optimizer-related parameters.</span>
+    <span class="s2">&quot;max_epochs&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="n">RAdam</span><span class="p">,</span>
+    <span class="s2">&quot;optimizer__weight_decay&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;optimizer__lr&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="c1"># Data loading parameters.</span>
+    <span class="s2">&quot;iterator_train__shuffle&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;iterator_train__num_workers&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;iterator_train__batch_size&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">&quot;iterator_valid__batch_size&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+    <span class="s2">&quot;iterator_train__drop_last&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;train_split&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="c1"># Scheduler.</span>
+    <span class="s2">&quot;callbacks&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="s2">&quot;lr_scheduler&quot;</span><span class="p">,</span>
+            <span class="n">LRScheduler</span><span class="p">(</span><span class="n">policy</span><span class="o">=</span><span class="n">CosineAnnealingLR</span><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">],</span>
+    <span class="c1"># Misc.</span>
+    <span class="s2">&quot;verbose&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;device&quot;</span><span class="p">:</span> <span class="n">DEVICE</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Common keyword arguments shared by all classifiers</span>
+<span class="n">common_clf_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+    <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+    <span class="n">sample_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+    <span class="n">neural_net_param_dict</span><span class="o">=</span><span class="n">neural_net_param_dict</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_majority_vote_classifier</span><span class="p">(</span><span class="n">random_state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">MajorityVoteClassifier</span><span class="p">(</span>
+        <span class="n">module</span><span class="o">=</span><span class="n">CNNModule</span><span class="p">,</span>
+        <span class="n">criterion</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">common_clf_kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_annot_mix_classifier</span><span class="p">(</span><span class="n">random_state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">AnnotMixClassifier</span><span class="p">(</span>
+        <span class="n">clf_module</span><span class="o">=</span><span class="n">CNNModule</span><span class="p">,</span>
+        <span class="n">sample_embed_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">n_annotators</span><span class="o">=</span><span class="n">n_annotators</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">common_clf_kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="n">classifier_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Majority-Vote&quot;</span><span class="p">:</span> <span class="n">make_majority_vote_classifier</span><span class="p">,</span>
+    <span class="s2">&quot;Annot-Mix&quot;</span><span class="p">:</span> <span class="n">make_annot_mix_classifier</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Active-Learning-loop-with-Multiple-Annotators">
+<h2>Active Learning loop with Multiple Annotators<a class="headerlink" href="#Active-Learning-loop-with-Multiple-Annotators" title="Link to this heading">#</a></h2>
+<p>We now set up the active-learning loop. For each classifier we run several independent repetitions, and in each repetition we start with an annotation matrix <code class="docutils literal notranslate"><span class="pre">y</span></code> that contains only missing labels. We then alternate between fitting the classifier on the currently observed noisy annotations and querying new labels from the simulated annotators.</p>
+<p>The query strategy is based on random sampling and wrapped in a <code class="docutils literal notranslate"><span class="pre">SingleAnnotatorWrapper</span></code> so that individual annotator–sample pairs can be requested. For the <code class="docutils literal notranslate"><span class="pre">Annot-Mix</span></code> model we optionally use estimated annotator performances <code class="docutils literal notranslate"><span class="pre">A_perf</span></code> after the first warm-start iteration and pass them to the query strategy. After each cycle we record the test classification accuracy on the held-out test set and the accuracy of the collected labels compared to <code class="docutils literal notranslate"><span class="pre">y_train</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_reps</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_cycles</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">query_batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">clf_name</span><span class="p">,</span> <span class="n">clf_factory</span> <span class="ow">in</span> <span class="n">classifier_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># rows: repetitions, cols: AL cycles (excluding warm start)</span>
+    <span class="n">clf_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n_reps</span><span class="p">,</span> <span class="n">n_cycles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">label_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n_reps</span><span class="p">,</span> <span class="n">n_cycles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i_rep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_reps</span><span class="p">):</span>
+        <span class="c1"># Start with all annotations missing</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">z_train</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="n">clf</span> <span class="o">=</span> <span class="n">clf_factory</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">i_rep</span><span class="p">)</span>
+
+        <span class="n">base_qs</span> <span class="o">=</span> <span class="n">RandomSampling</span><span class="p">(</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">i_rep</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">ma_qs</span> <span class="o">=</span> <span class="n">SingleAnnotatorWrapper</span><span class="p">(</span>
+            <span class="n">base_qs</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">i_rep</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+            <span class="nb">range</span><span class="p">(</span><span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">total</span><span class="o">=</span><span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">clf_name</span><span class="si">}</span><span class="s2"> | repetition </span><span class="si">{</span><span class="n">i_rep</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">n_reps</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="c1"># Train classifier on current annotations</span>
+            <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># For Annot-Mix, use estimated annotator performance from the model</span>
+                <span class="k">if</span> <span class="n">clf_name</span> <span class="o">==</span> <span class="s2">&quot;Annot-Mix&quot;</span><span class="p">:</span>
+                    <span class="n">_</span><span class="p">,</span> <span class="n">A_perf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span>
+                        <span class="n">X_train</span><span class="p">,</span>
+                        <span class="n">extra_outputs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;annotator_perf&quot;</span><span class="p">],</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">A_perf</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="c1"># Evaluate label and test accuracy</span>
+                <span class="n">is_lbld_y</span> <span class="o">=</span> <span class="n">is_labeled</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">)</span>
+                <span class="n">n_labels</span> <span class="o">=</span> <span class="n">is_lbld_y</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">n_labels</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">is_true_y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">==</span> <span class="n">y_train</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span>
+                    <span class="n">n_correct_labels</span> <span class="o">=</span> <span class="p">(</span><span class="n">is_true_y</span> <span class="o">&amp;</span> <span class="n">is_lbld_y</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                    <span class="n">label_acc</span><span class="p">[</span><span class="n">i_rep</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_correct_labels</span> <span class="o">/</span> <span class="n">n_labels</span>
+                    <span class="n">clf_acc</span><span class="p">[</span><span class="n">i_rep</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Warm start: no model-based A_perf</span>
+                <span class="n">A_perf</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="c1"># Query new (sample, annotator) pairs and reveal their labels</span>
+            <span class="n">query_idx</span> <span class="o">=</span> <span class="n">ma_qs</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+                <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+                <span class="n">batch_size</span><span class="o">=</span><span class="n">query_batch_size</span><span class="p">,</span>
+                <span class="n">A_perf</span><span class="o">=</span><span class="n">A_perf</span><span class="p">,</span>
+                <span class="n">n_annotators_per_sample</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">sample_idx</span><span class="p">,</span> <span class="n">annotator_idx</span> <span class="o">=</span> <span class="n">query_idx</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">query_idx</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">y</span><span class="p">[</span><span class="n">sample_idx</span><span class="p">,</span> <span class="n">annotator_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">z_train</span><span class="p">[</span><span class="n">sample_idx</span><span class="p">,</span> <span class="n">annotator_idx</span><span class="p">]</span>
+
+    <span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">clf_name</span><span class="si">}</span><span class="s2">_clf-acc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clf_acc</span>
+    <span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">clf_name</span><span class="si">}</span><span class="s2">_label-acc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">label_acc</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "733c6821fd404930879debc15f7e4976"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "22ad002d4e994e838a05daacf167920c"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "42f1caa54ac842b5b307f46810f64dd7"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4f6d48a03488456c857a8c1d710f270a"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "29a2dc375d5d443389307ff173b5eaa7"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cfee7aeaa5b64005aa2ffb88fa030e77"}</script></div>
+</div>
+</section>
+<section id="Visualising-Classifier-and-Annotation-Accuracy">
+<h2>Visualising Classifier and Annotation Accuracy<a class="headerlink" href="#Visualising-Classifier-and-Annotation-Accuracy" title="Link to this heading">#</a></h2>
+<p>To conclude the tutorial we visualise how both classifiers behave as more annotations are acquired. For each method we plot the average test accuracy and the average correct annotation rate across repetitions as a function of the number of acquired annotations. The curves include error bars showing one standard deviation, and the legend reports a simple area-like summary score (ALCU), which is the mean value of each curve over all active-learning cycles. There is one central observations:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">AnnotMix</span></code> is able to model the annotators’ performances as basis for increasing the correct annotation rate by greedily assigning annotators with higher performances to samples.</p>
+</div></blockquote>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;clf-acc&quot;</span><span class="p">,</span> <span class="s2">&quot;Test Classification Accuracy&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;label-acc&quot;</span><span class="p">,</span> <span class="s2">&quot;Correct Annotation Rate&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">x_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">query_batch_size</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">metric_key</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">),</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">metrics</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">clf_name</span> <span class="ow">in</span> <span class="n">classifier_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">clf_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">metric_key</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">]</span>
+
+        <span class="n">mean_curve</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">std_curve</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">alcu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mean_curve</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span>
+            <span class="n">x_values</span><span class="p">,</span>
+            <span class="n">mean_curve</span><span class="p">,</span>
+            <span class="n">yerr</span><span class="o">=</span><span class="n">std_curve</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">clf_name</span><span class="si">}</span><span class="s2">: ALCU=</span><span class="si">{</span><span class="n">alcu</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">markersize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;# Acquired Annotations&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+        <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span>
+        <span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;major&quot;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/generated_tutorials_11_multiple_annotators_advanced_14_0.png" src="../../_images/generated_tutorials_11_multiple_annotators_advanced_14_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-Preparation-and-Simulation-of-Multiple-Annotators">Data Preparation and Simulation of Multiple Annotators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Neural-Network-Backbone-and-Classifiers">Neural Network Backbone and Classifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Active-Learning-loop-with-Multiple-Annotators">Active Learning loop with Multiple Annotators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Visualising-Classifier-and-Annotation-Accuracy">Visualising Classifier and Annotation Accuracy</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/generated/tutorials/11_multiple_annotators_advanced.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

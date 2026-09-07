@@ -1,0 +1,39 @@
+﻿TypiClust
+=========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.TypiClust
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TypiClust.query
+   
+      ~TypiClust.get_metadata_routing
+      ~TypiClust.get_params
+      ~TypiClust.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.TypiClust.query
+
+.. automethod:: skactiveml.pool.TypiClust.get_metadata_routing
+.. automethod:: skactiveml.pool.TypiClust.get_params
+.. automethod:: skactiveml.pool.TypiClust.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.TypiClust:
+
+.. minigallery:: skactiveml.pool.TypiClust
+   :add-heading:

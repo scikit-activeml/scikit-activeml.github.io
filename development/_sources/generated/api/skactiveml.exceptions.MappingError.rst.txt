@@ -1,0 +1,25 @@
+﻿MappingError
+============
+
+.. currentmodule:: skactiveml.exceptions
+
+.. autoclass:: skactiveml.exceptions.MappingError
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+
+
+.. _sphx_glr_backref_skactiveml.exceptions.MappingError:
+
+.. minigallery:: skactiveml.exceptions.MappingError
+   :add-heading:

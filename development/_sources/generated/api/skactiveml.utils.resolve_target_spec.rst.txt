@@ -1,0 +1,11 @@
+﻿resolve\_target\_spec
+=====================
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils.resolve_target_spec
+
+.. _sphx_glr_backref_skactiveml.utils.resolve_target_spec:
+
+.. minigallery:: skactiveml.utils.resolve_target_spec
+   :add-heading:

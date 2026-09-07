@@ -1,0 +1,39 @@
+﻿RandomSampling
+==============
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.RandomSampling
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RandomSampling.query
+   
+      ~RandomSampling.get_metadata_routing
+      ~RandomSampling.get_params
+      ~RandomSampling.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.RandomSampling.query
+
+.. automethod:: skactiveml.pool.RandomSampling.get_metadata_routing
+.. automethod:: skactiveml.pool.RandomSampling.get_params
+.. automethod:: skactiveml.pool.RandomSampling.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.RandomSampling:
+
+.. minigallery:: skactiveml.pool.RandomSampling
+   :add-heading:

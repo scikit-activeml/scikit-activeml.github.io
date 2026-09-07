@@ -1,0 +1,19 @@
+﻿MappingError
+============
+
+.. currentmodule:: skactiveml.exceptions
+
+.. autoclass:: skactiveml.exceptions.MappingError
+
+   
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.exceptions.MappingError:
+
+.. minigallery:: skactiveml.exceptions.MappingError
+   :add-heading:

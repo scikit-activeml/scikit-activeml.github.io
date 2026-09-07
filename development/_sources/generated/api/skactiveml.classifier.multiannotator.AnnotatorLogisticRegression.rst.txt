@@ -1,0 +1,53 @@
+﻿AnnotatorLogisticRegression
+===========================
+
+.. currentmodule:: skactiveml.classifier.multiannotator
+
+.. autoclass:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AnnotatorLogisticRegression.fit
+      ~AnnotatorLogisticRegression.predict
+      ~AnnotatorLogisticRegression.predict_proba
+      ~AnnotatorLogisticRegression.score
+   
+      ~AnnotatorLogisticRegression.get_metadata_routing
+      ~AnnotatorLogisticRegression.get_params
+      ~AnnotatorLogisticRegression.set_fit_request
+      ~AnnotatorLogisticRegression.set_params
+      ~AnnotatorLogisticRegression.set_predict_proba_request
+      ~AnnotatorLogisticRegression.set_predict_request
+      ~AnnotatorLogisticRegression.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.fit
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.predict
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.predict_proba
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.score
+
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.get_metadata_routing
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.get_params
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.set_fit_request
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.set_params
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.set_predict_proba_request
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.set_predict_request
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.multiannotator.AnnotatorLogisticRegression:
+
+.. minigallery:: skactiveml.classifier.multiannotator.AnnotatorLogisticRegression
+   :add-heading:

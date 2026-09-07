@@ -1,0 +1,41 @@
+﻿UncertaintyZliobaite
+====================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.UncertaintyZliobaite
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UncertaintyZliobaite.query
+      ~UncertaintyZliobaite.update
+   
+      ~UncertaintyZliobaite.get_metadata_routing
+      ~UncertaintyZliobaite.get_params
+      ~UncertaintyZliobaite.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.UncertaintyZliobaite.query
+.. automethod:: skactiveml.stream.UncertaintyZliobaite.update
+
+.. automethod:: skactiveml.stream.UncertaintyZliobaite.get_metadata_routing
+.. automethod:: skactiveml.stream.UncertaintyZliobaite.get_params
+.. automethod:: skactiveml.stream.UncertaintyZliobaite.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.UncertaintyZliobaite:
+
+.. minigallery:: skactiveml.stream.UncertaintyZliobaite
+   :add-heading:

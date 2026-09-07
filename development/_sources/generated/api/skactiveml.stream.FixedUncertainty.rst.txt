@@ -1,0 +1,41 @@
+﻿FixedUncertainty
+================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.FixedUncertainty
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FixedUncertainty.query
+      ~FixedUncertainty.update
+   
+      ~FixedUncertainty.get_metadata_routing
+      ~FixedUncertainty.get_params
+      ~FixedUncertainty.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.FixedUncertainty.query
+.. automethod:: skactiveml.stream.FixedUncertainty.update
+
+.. automethod:: skactiveml.stream.FixedUncertainty.get_metadata_routing
+.. automethod:: skactiveml.stream.FixedUncertainty.get_params
+.. automethod:: skactiveml.stream.FixedUncertainty.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.FixedUncertainty:
+
+.. minigallery:: skactiveml.stream.FixedUncertainty
+   :add-heading:

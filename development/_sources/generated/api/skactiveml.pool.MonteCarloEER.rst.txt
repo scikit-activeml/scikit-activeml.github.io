@@ -1,0 +1,39 @@
+﻿MonteCarloEER
+=============
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.MonteCarloEER
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MonteCarloEER.query
+   
+      ~MonteCarloEER.get_metadata_routing
+      ~MonteCarloEER.get_params
+      ~MonteCarloEER.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.MonteCarloEER.query
+
+.. automethod:: skactiveml.pool.MonteCarloEER.get_metadata_routing
+.. automethod:: skactiveml.pool.MonteCarloEER.get_params
+.. automethod:: skactiveml.pool.MonteCarloEER.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.MonteCarloEER:
+
+.. minigallery:: skactiveml.pool.MonteCarloEER
+   :add-heading:

@@ -1,0 +1,59 @@
+﻿SklearnNormalRegressor
+======================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.SklearnNormalRegressor
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SklearnNormalRegressor.fit
+      ~SklearnNormalRegressor.partial_fit
+      ~SklearnNormalRegressor.predict
+      ~SklearnNormalRegressor.predict_target_distribution
+      ~SklearnNormalRegressor.sample
+      ~SklearnNormalRegressor.sample_y
+   
+      ~SklearnNormalRegressor.get_metadata_routing
+      ~SklearnNormalRegressor.get_params
+      ~SklearnNormalRegressor.score
+      ~SklearnNormalRegressor.set_fit_request
+      ~SklearnNormalRegressor.set_params
+      ~SklearnNormalRegressor.set_partial_fit_request
+      ~SklearnNormalRegressor.set_predict_request
+      ~SklearnNormalRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.fit
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.partial_fit
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.predict
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.predict_target_distribution
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.sample
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.sample_y
+
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.get_metadata_routing
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.get_params
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.score
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.set_fit_request
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.set_params
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.set_partial_fit_request
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.set_predict_request
+.. automethod:: skactiveml.regressor.SklearnNormalRegressor.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.regressor.SklearnNormalRegressor:
+
+.. minigallery:: skactiveml.regressor.SklearnNormalRegressor
+   :add-heading:

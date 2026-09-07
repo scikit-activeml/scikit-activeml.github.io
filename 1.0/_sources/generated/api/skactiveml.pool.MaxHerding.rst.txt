@@ -1,0 +1,28 @@
+﻿MaxHerding
+==========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.MaxHerding
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MaxHerding.get_metadata_routing
+      ~MaxHerding.get_params
+      ~MaxHerding.query
+      ~MaxHerding.set_params
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.pool.MaxHerding:
+
+.. minigallery:: skactiveml.pool.MaxHerding
+   :add-heading:

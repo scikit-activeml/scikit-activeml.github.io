@@ -1,0 +1,47 @@
+﻿SkactivemlRegressor
+===================
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.SkactivemlRegressor
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkactivemlRegressor.fit
+      ~SkactivemlRegressor.predict
+   
+      ~SkactivemlRegressor.get_metadata_routing
+      ~SkactivemlRegressor.get_params
+      ~SkactivemlRegressor.score
+      ~SkactivemlRegressor.set_fit_request
+      ~SkactivemlRegressor.set_params
+      ~SkactivemlRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.SkactivemlRegressor.fit
+.. automethod:: skactiveml.base.SkactivemlRegressor.predict
+
+.. automethod:: skactiveml.base.SkactivemlRegressor.get_metadata_routing
+.. automethod:: skactiveml.base.SkactivemlRegressor.get_params
+.. automethod:: skactiveml.base.SkactivemlRegressor.score
+.. automethod:: skactiveml.base.SkactivemlRegressor.set_fit_request
+.. automethod:: skactiveml.base.SkactivemlRegressor.set_params
+.. automethod:: skactiveml.base.SkactivemlRegressor.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.base.SkactivemlRegressor:
+
+.. minigallery:: skactiveml.base.SkactivemlRegressor
+   :add-heading:

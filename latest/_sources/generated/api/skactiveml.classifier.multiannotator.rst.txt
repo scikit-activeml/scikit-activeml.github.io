@@ -1,0 +1,27 @@
+:mod:`skactiveml.classifier.multiannotator`
+===========================================
+
+.. automodule:: skactiveml.classifier.multiannotator
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   classifier.multiannotator.AnnotatorLogisticRegression
+   classifier.multiannotator.AnnotatorEnsembleClassifier
+   classifier.multiannotator.CrowdLayerClassifier
+   classifier.multiannotator.AnnotMixClassifier
+

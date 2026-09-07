@@ -1,0 +1,39 @@
+﻿KLDivergenceMaximization
+========================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.KLDivergenceMaximization
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~KLDivergenceMaximization.query
+   
+      ~KLDivergenceMaximization.get_metadata_routing
+      ~KLDivergenceMaximization.get_params
+      ~KLDivergenceMaximization.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.KLDivergenceMaximization.query
+
+.. automethod:: skactiveml.pool.KLDivergenceMaximization.get_metadata_routing
+.. automethod:: skactiveml.pool.KLDivergenceMaximization.get_params
+.. automethod:: skactiveml.pool.KLDivergenceMaximization.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.KLDivergenceMaximization:
+
+.. minigallery:: skactiveml.pool.KLDivergenceMaximization
+   :add-heading:

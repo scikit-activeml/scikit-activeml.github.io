@@ -1,0 +1,226 @@
+
+
+.. _sphx_glr_generated_sphinx_gallery_examples_2-pool-regression:
+
+Pool-based AL Strategies for Regression
+---------------------------------------
+
+.. image:: /examples/pool_regression_legend.png
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Greedy Sampling on the Feature Space (GSx)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-GreedySamplingX-Greedy_Sampling_on_the_Feature_Space_(GSx)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingX-Greedy_Sampling_on_the_Feature_Space_(GSx)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Greedy Sampling on the Feature Space (GSx)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Greedy Sampling on the Target Space (GSy)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-GreedySamplingTarget-Greedy_Sampling_on_the_Target_Space_(GSy)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingTarget-Greedy_Sampling_on_the_Target_Space_(GSy)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Greedy Sampling on the Target Space (GSy)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Improved Greedy Sampling (GSi)">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-GreedySamplingTarget-Improved_Greedy_Sampling_(GSi)_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingTarget-Improved_Greedy_Sampling_(GSi)`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Improved Greedy Sampling (GSi)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Expected Model Variance Reduction">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-ExpectedModelVarianceReduction-Expected_Model_Variance_Reduction_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelVarianceReduction-Expected_Model_Variance_Reduction`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Expected Model Variance Reduction</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Expected Model Change Maximization">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-ExpectedModelChangeMaximization-Expected_Model_Change_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelChangeMaximization-Expected_Model_Change`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Expected Model Change Maximization</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Query-by-Committee (QBC) with Empirical Variance">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Empirical_Variance_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Empirical_Variance`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Query-by-Committee (QBC) with Empirical Variance</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Expected Model Output Change">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-ExpectedModelOutputChange-Expected_Model_Output_Change_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelOutputChange-Expected_Model_Output_Change`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Expected Model Output Change</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Regression based Kullback Leibler Divergence Maximization">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-KLDivergenceMaximization-Regression_based_Kullback_Leibler_Divergence_Maximization_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-KLDivergenceMaximization-Regression_based_Kullback_Leibler_Divergence_Maximization`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Regression based Kullback Leibler Divergence Maximization</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Regression Tree Based Active Learning (RT-AL) with Random Selection">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Random_Selection_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Random_Selection`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Regression Tree Based Active Learning (RT-AL) with Random Selection</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Regression Tree Based Active Learning (RT-AL) with Diversity Selection">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Diversity_Selection_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Diversity_Selection`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Regression Tree Based Active Learning (RT-AL) with Diversity Selection</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Regression Tree Based Active Learning (RT-AL) with Representativity Selection">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/2-pool-regression/images/thumb/sphx_glr_plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Representativity_Selection_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Representativity_Selection`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Regression Tree Based Active Learning (RT-AL) with Representativity Selection</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingX-Greedy_Sampling_on_the_Feature_Space_(GSx)
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingTarget-Greedy_Sampling_on_the_Target_Space_(GSy)
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-GreedySamplingTarget-Improved_Greedy_Sampling_(GSi)
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelVarianceReduction-Expected_Model_Variance_Reduction
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelChangeMaximization-Expected_Model_Change
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Empirical_Variance
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-ExpectedModelOutputChange-Expected_Model_Output_Change
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-KLDivergenceMaximization-Regression_based_Kullback_Leibler_Divergence_Maximization
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Random_Selection
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Diversity_Selection
+   /generated/sphinx_gallery_examples/2-pool-regression/plot-RegressionTreeBasedAL-Regression_Tree_Based_Active_Learning_(RT-AL)_with_Representativity_Selection
+

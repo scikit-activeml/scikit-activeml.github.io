@@ -1,0 +1,39 @@
+﻿Falcun
+======
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.Falcun
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Falcun.query
+   
+      ~Falcun.get_metadata_routing
+      ~Falcun.get_params
+      ~Falcun.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.Falcun.query
+
+.. automethod:: skactiveml.pool.Falcun.get_metadata_routing
+.. automethod:: skactiveml.pool.Falcun.get_params
+.. automethod:: skactiveml.pool.Falcun.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.Falcun:
+
+.. minigallery:: skactiveml.pool.Falcun
+   :add-heading:

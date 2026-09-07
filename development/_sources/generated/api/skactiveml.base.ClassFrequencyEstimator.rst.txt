@@ -1,0 +1,53 @@
+﻿ClassFrequencyEstimator
+=======================
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.ClassFrequencyEstimator
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ClassFrequencyEstimator.fit
+      ~ClassFrequencyEstimator.predict
+      ~ClassFrequencyEstimator.predict_freq
+      ~ClassFrequencyEstimator.predict_proba
+      ~ClassFrequencyEstimator.sample_proba
+      ~ClassFrequencyEstimator.score
+   
+      ~ClassFrequencyEstimator.get_metadata_routing
+      ~ClassFrequencyEstimator.get_params
+      ~ClassFrequencyEstimator.set_fit_request
+      ~ClassFrequencyEstimator.set_params
+      ~ClassFrequencyEstimator.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.fit
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.predict
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.predict_freq
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.predict_proba
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.sample_proba
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.score
+
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.get_metadata_routing
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.get_params
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.set_fit_request
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.set_params
+.. automethod:: skactiveml.base.ClassFrequencyEstimator.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.base.ClassFrequencyEstimator:
+
+.. minigallery:: skactiveml.base.ClassFrequencyEstimator
+   :add-heading:

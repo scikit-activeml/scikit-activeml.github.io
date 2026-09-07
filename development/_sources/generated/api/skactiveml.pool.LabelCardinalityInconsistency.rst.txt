@@ -1,0 +1,39 @@
+﻿LabelCardinalityInconsistency
+=============================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.LabelCardinalityInconsistency
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~LabelCardinalityInconsistency.query
+   
+      ~LabelCardinalityInconsistency.get_metadata_routing
+      ~LabelCardinalityInconsistency.get_params
+      ~LabelCardinalityInconsistency.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.LabelCardinalityInconsistency.query
+
+.. automethod:: skactiveml.pool.LabelCardinalityInconsistency.get_metadata_routing
+.. automethod:: skactiveml.pool.LabelCardinalityInconsistency.get_params
+.. automethod:: skactiveml.pool.LabelCardinalityInconsistency.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.LabelCardinalityInconsistency:
+
+.. minigallery:: skactiveml.pool.LabelCardinalityInconsistency
+   :add-heading:

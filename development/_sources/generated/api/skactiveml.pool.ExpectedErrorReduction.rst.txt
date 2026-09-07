@@ -1,0 +1,39 @@
+﻿ExpectedErrorReduction
+======================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ExpectedErrorReduction
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExpectedErrorReduction.query
+   
+      ~ExpectedErrorReduction.get_metadata_routing
+      ~ExpectedErrorReduction.get_params
+      ~ExpectedErrorReduction.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.ExpectedErrorReduction.query
+
+.. automethod:: skactiveml.pool.ExpectedErrorReduction.get_metadata_routing
+.. automethod:: skactiveml.pool.ExpectedErrorReduction.get_params
+.. automethod:: skactiveml.pool.ExpectedErrorReduction.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.ExpectedErrorReduction:
+
+.. minigallery:: skactiveml.pool.ExpectedErrorReduction
+   :add-heading:

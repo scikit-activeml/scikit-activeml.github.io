@@ -1,0 +1,41 @@
+﻿SingleAnnotatorStreamQueryStrategy
+==================================
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.SingleAnnotatorStreamQueryStrategy
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SingleAnnotatorStreamQueryStrategy.query
+      ~SingleAnnotatorStreamQueryStrategy.update
+   
+      ~SingleAnnotatorStreamQueryStrategy.get_metadata_routing
+      ~SingleAnnotatorStreamQueryStrategy.get_params
+      ~SingleAnnotatorStreamQueryStrategy.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.SingleAnnotatorStreamQueryStrategy.query
+.. automethod:: skactiveml.base.SingleAnnotatorStreamQueryStrategy.update
+
+.. automethod:: skactiveml.base.SingleAnnotatorStreamQueryStrategy.get_metadata_routing
+.. automethod:: skactiveml.base.SingleAnnotatorStreamQueryStrategy.get_params
+.. automethod:: skactiveml.base.SingleAnnotatorStreamQueryStrategy.set_params
+
+
+.. _sphx_glr_backref_skactiveml.base.SingleAnnotatorStreamQueryStrategy:
+
+.. minigallery:: skactiveml.base.SingleAnnotatorStreamQueryStrategy
+   :add-heading:

@@ -1,0 +1,11 @@
+﻿label\_cardinality\_inconsistency
+=================================
+
+.. currentmodule:: skactiveml.pool
+
+.. autofunction:: skactiveml.pool.label_cardinality_inconsistency
+
+.. _sphx_glr_backref_skactiveml.pool.label_cardinality_inconsistency:
+
+.. minigallery:: skactiveml.pool.label_cardinality_inconsistency
+   :add-heading:

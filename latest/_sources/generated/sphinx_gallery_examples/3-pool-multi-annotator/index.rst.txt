@@ -1,0 +1,82 @@
+
+
+.. _sphx_glr_generated_sphinx_gallery_examples_3-pool-multi-annotator:
+
+Pool-based AL Strategies for Mulitple Annotators
+------------------------------------------------
+
+.. image:: /examples/pool_multi_annotator_legend.png
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Interval Estimation Threshold">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/3-pool-multi-annotator/images/thumb/sphx_glr_plot-IntervalEstimationThreshold-Interval_Estimation_Threshold_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-IntervalEstimationThreshold-Interval_Estimation_Threshold`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Interval Estimation Threshold</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Random Sampling">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/3-pool-multi-annotator/images/thumb/sphx_glr_plot-SingleAnnotatorWrapper-Random_Sampling_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-SingleAnnotatorWrapper-Random_Sampling`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Random Sampling</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Core Set + Greedy Selection">
+
+.. only:: html
+
+  .. image:: /generated/sphinx_gallery_examples/3-pool-multi-annotator/images/thumb/sphx_glr_plot-SingleAnnotatorWrapper-Core_Set_+_Greedy_Selection_thumb.gif
+    :alt:
+
+  :doc:`/generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-SingleAnnotatorWrapper-Core_Set_+_Greedy_Selection`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Core Set + Greedy Selection</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-IntervalEstimationThreshold-Interval_Estimation_Threshold
+   /generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-SingleAnnotatorWrapper-Random_Sampling
+   /generated/sphinx_gallery_examples/3-pool-multi-annotator/plot-SingleAnnotatorWrapper-Core_Set_+_Greedy_Selection
+
