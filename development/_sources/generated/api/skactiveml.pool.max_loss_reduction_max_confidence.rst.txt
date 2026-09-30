@@ -1,0 +1,11 @@
+﻿max\_loss\_reduction\_max\_confidence
+=====================================
+
+.. currentmodule:: skactiveml.pool
+
+.. autofunction:: skactiveml.pool.max_loss_reduction_max_confidence
+
+.. _sphx_glr_backref_skactiveml.pool.max_loss_reduction_max_confidence:
+
+.. minigallery:: skactiveml.pool.max_loss_reduction_max_confidence
+   :add-heading:

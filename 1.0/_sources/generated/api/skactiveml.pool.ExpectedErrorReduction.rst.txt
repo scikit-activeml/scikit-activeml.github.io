@@ -1,0 +1,28 @@
+﻿ExpectedErrorReduction
+======================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ExpectedErrorReduction
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExpectedErrorReduction.get_metadata_routing
+      ~ExpectedErrorReduction.get_params
+      ~ExpectedErrorReduction.query
+      ~ExpectedErrorReduction.set_params
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.pool.ExpectedErrorReduction:
+
+.. minigallery:: skactiveml.pool.ExpectedErrorReduction
+   :add-heading:

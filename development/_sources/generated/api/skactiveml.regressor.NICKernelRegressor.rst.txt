@@ -1,0 +1,60 @@
+﻿NICKernelRegressor
+==================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.NICKernelRegressor
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NICKernelRegressor.fit
+      ~NICKernelRegressor.predict
+      ~NICKernelRegressor.predict_target_distribution
+      ~NICKernelRegressor.sample_y
+   
+      ~NICKernelRegressor.get_metadata_routing
+      ~NICKernelRegressor.get_params
+      ~NICKernelRegressor.score
+      ~NICKernelRegressor.set_fit_request
+      ~NICKernelRegressor.set_params
+      ~NICKernelRegressor.set_predict_request
+      ~NICKernelRegressor.set_score_request
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NICKernelRegressor.METRICS
+   
+   
+
+
+.. automethod:: skactiveml.regressor.NICKernelRegressor.fit
+.. automethod:: skactiveml.regressor.NICKernelRegressor.predict
+.. automethod:: skactiveml.regressor.NICKernelRegressor.predict_target_distribution
+.. automethod:: skactiveml.regressor.NICKernelRegressor.sample_y
+
+.. automethod:: skactiveml.regressor.NICKernelRegressor.get_metadata_routing
+.. automethod:: skactiveml.regressor.NICKernelRegressor.get_params
+.. automethod:: skactiveml.regressor.NICKernelRegressor.score
+.. automethod:: skactiveml.regressor.NICKernelRegressor.set_fit_request
+.. automethod:: skactiveml.regressor.NICKernelRegressor.set_params
+.. automethod:: skactiveml.regressor.NICKernelRegressor.set_predict_request
+.. automethod:: skactiveml.regressor.NICKernelRegressor.set_score_request
+
+.. autoattribute:: skactiveml.regressor.NICKernelRegressor.METRICS
+
+.. _sphx_glr_backref_skactiveml.regressor.NICKernelRegressor:
+
+.. minigallery:: skactiveml.regressor.NICKernelRegressor
+   :add-heading:

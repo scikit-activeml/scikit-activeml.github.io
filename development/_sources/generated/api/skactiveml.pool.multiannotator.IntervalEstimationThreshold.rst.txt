@@ -1,0 +1,39 @@
+﻿IntervalEstimationThreshold
+===========================
+
+.. currentmodule:: skactiveml.pool.multiannotator
+
+.. autoclass:: skactiveml.pool.multiannotator.IntervalEstimationThreshold
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IntervalEstimationThreshold.query
+   
+      ~IntervalEstimationThreshold.get_metadata_routing
+      ~IntervalEstimationThreshold.get_params
+      ~IntervalEstimationThreshold.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationThreshold.query
+
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationThreshold.get_metadata_routing
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationThreshold.get_params
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationThreshold.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.multiannotator.IntervalEstimationThreshold:
+
+.. minigallery:: skactiveml.pool.multiannotator.IntervalEstimationThreshold
+   :add-heading:

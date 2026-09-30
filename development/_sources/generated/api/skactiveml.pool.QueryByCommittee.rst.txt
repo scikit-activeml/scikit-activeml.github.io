@@ -1,0 +1,39 @@
+﻿QueryByCommittee
+================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.QueryByCommittee
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~QueryByCommittee.query
+   
+      ~QueryByCommittee.get_metadata_routing
+      ~QueryByCommittee.get_params
+      ~QueryByCommittee.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.QueryByCommittee.query
+
+.. automethod:: skactiveml.pool.QueryByCommittee.get_metadata_routing
+.. automethod:: skactiveml.pool.QueryByCommittee.get_params
+.. automethod:: skactiveml.pool.QueryByCommittee.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.QueryByCommittee:
+
+.. minigallery:: skactiveml.pool.QueryByCommittee
+   :add-heading:

@@ -1,0 +1,13 @@
+﻿check\_classes
+==============
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils.check_classes
+
+
+
+.. _sphx_glr_backref_skactiveml.utils.check_classes:
+
+.. minigallery:: skactiveml.utils.check_classes
+   :add-heading:

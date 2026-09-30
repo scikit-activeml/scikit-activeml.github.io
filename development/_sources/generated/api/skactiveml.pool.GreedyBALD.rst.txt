@@ -1,0 +1,39 @@
+﻿GreedyBALD
+==========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.GreedyBALD
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GreedyBALD.query
+   
+      ~GreedyBALD.get_metadata_routing
+      ~GreedyBALD.get_params
+      ~GreedyBALD.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.GreedyBALD.query
+
+.. automethod:: skactiveml.pool.GreedyBALD.get_metadata_routing
+.. automethod:: skactiveml.pool.GreedyBALD.get_params
+.. automethod:: skactiveml.pool.GreedyBALD.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.GreedyBALD:
+
+.. minigallery:: skactiveml.pool.GreedyBALD
+   :add-heading:

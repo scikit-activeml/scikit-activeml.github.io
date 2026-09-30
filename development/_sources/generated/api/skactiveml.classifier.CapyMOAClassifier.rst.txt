@@ -1,0 +1,51 @@
+﻿CapyMOAClassifier
+=================
+
+.. currentmodule:: skactiveml.classifier
+
+.. autoclass:: skactiveml.classifier.CapyMOAClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CapyMOAClassifier.fit
+      ~CapyMOAClassifier.partial_fit
+      ~CapyMOAClassifier.predict
+      ~CapyMOAClassifier.predict_proba
+      ~CapyMOAClassifier.score
+   
+      ~CapyMOAClassifier.get_metadata_routing
+      ~CapyMOAClassifier.get_params
+      ~CapyMOAClassifier.set_fit_request
+      ~CapyMOAClassifier.set_params
+      ~CapyMOAClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.fit
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.partial_fit
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.predict
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.predict_proba
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.score
+
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.get_params
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.set_params
+.. automethod:: skactiveml.classifier.CapyMOAClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.CapyMOAClassifier:
+
+.. minigallery:: skactiveml.classifier.CapyMOAClassifier
+   :add-heading:

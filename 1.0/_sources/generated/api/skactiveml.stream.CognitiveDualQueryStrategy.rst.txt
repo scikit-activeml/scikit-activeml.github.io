@@ -1,0 +1,29 @@
+﻿CognitiveDualQueryStrategy
+==========================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.CognitiveDualQueryStrategy
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CognitiveDualQueryStrategy.get_metadata_routing
+      ~CognitiveDualQueryStrategy.get_params
+      ~CognitiveDualQueryStrategy.query
+      ~CognitiveDualQueryStrategy.set_params
+      ~CognitiveDualQueryStrategy.update
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.stream.CognitiveDualQueryStrategy:
+
+.. minigallery:: skactiveml.stream.CognitiveDualQueryStrategy
+   :add-heading:

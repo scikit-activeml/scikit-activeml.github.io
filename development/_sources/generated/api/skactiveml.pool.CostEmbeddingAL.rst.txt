@@ -1,0 +1,39 @@
+﻿CostEmbeddingAL
+===============
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.CostEmbeddingAL
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CostEmbeddingAL.query
+   
+      ~CostEmbeddingAL.get_metadata_routing
+      ~CostEmbeddingAL.get_params
+      ~CostEmbeddingAL.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.CostEmbeddingAL.query
+
+.. automethod:: skactiveml.pool.CostEmbeddingAL.get_metadata_routing
+.. automethod:: skactiveml.pool.CostEmbeddingAL.get_params
+.. automethod:: skactiveml.pool.CostEmbeddingAL.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.CostEmbeddingAL:
+
+.. minigallery:: skactiveml.pool.CostEmbeddingAL
+   :add-heading:

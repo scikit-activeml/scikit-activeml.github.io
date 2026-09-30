@@ -1,0 +1,148 @@
+
+:orphan:
+
+.. _sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_sg_execution_times:
+
+
+Computation times
+=================
+**37:07.774** total execution time for 38 files **from generated/sphinx_gallery_examples/1-pool-classification**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_(USAP).py` (``plot-UncertaintySampling-Uncertainty_Sampling_with_Expected_Average_Precision_(USAP).py``)
+     - 12:16.931
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Misclassification-Loss.py` (``plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Misclassification-Loss.py``)
+     - 04:54.845
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Log-Loss.py` (``plot-MonteCarloEER-Monte-Carlo_Expected_Error_Reduction_(EER)_with_Log-Loss.py``)
+     - 04:51.375
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-ValueOfInformationEER-Value_of_Information_(VOI).py` (``plot-ValueOfInformationEER-Value_of_Information_(VOI).py``)
+     - 03:30.194
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Labeled_Samples.py` (``plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Labeled_Samples.py``)
+     - 03:09.931
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Unlabeled_Samples.py` (``plot-ValueOfInformationEER-Value_of_Information_(VOI)_on_Unlabeled_Samples.py``)
+     - 03:07.230
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_(EpisUS).py` (``plot-EpistemicUncertaintySampling-Epistemic_Uncertainty_Sampling_(EpisUS).py``)
+     - 00:26.137
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-Quire-Querying_Informative_and_Representative_Examples_(QUIRE).py` (``plot-Quire-Querying_Informative_and_Representative_Examples_(QUIRE).py``)
+     - 00:22.873
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-MaxLossReductionMaxConfidence-Maximum_Loss_Reduction_with_Maximal_Confidence_(MMC).py` (``plot-MaxLossReductionMaxConfidence-Maximum_Loss_Reduction_with_Maximal_Confidence_(MMC).py``)
+     - 00:17.918
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-LabelCardinalityInconsistency-Label_Cardinality_Inconsistency_(LCI).py` (``plot-LabelCardinalityInconsistency-Label_Cardinality_Inconsistency_(LCI).py``)
+     - 00:17.501
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_(BALD).py` (``plot-GreedyBALD-Bayesian_Active_Learning_by_Disagreement_(BALD).py``)
+     - 00:14.175
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_(ALCE).py` (``plot-CostEmbeddingAL-Active_Learning_with_Cost_Embedding_(ALCE).py``)
+     - 00:12.689
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper.py` (``plot-ParallelUtilityEstimationWrapper-Parallel_Utility_Estimation_Wrapper.py``)
+     - 00:10.229
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_(McPAL).py` (``plot-ProbabilisticAL-Multi-class_Probabilistic_Active_Learning_(McPAL).py``)
+     - 00:08.721
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-MaxHerding-MaxHerding.py` (``plot-MaxHerding-MaxHerding.py``)
+     - 00:08.677
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Vote_Entropy.py` (``plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Vote_Entropy.py``)
+     - 00:08.656
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Kullback-Leibler_Divergence.py` (``plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Kullback-Leibler_Divergence.py``)
+     - 00:08.605
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Variation_Ratios.py` (``plot-QueryByCommittee-Query-by-Committee_(QBC)_with_Variation_Ratios.py``)
+     - 00:08.576
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-CoreSet-Core_Set.py` (``plot-CoreSet-Core_Set.py``)
+     - 00:08.513
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-SubSamplingWrapper-Sub-sampling_Wrapper.py` (``plot-SubSamplingWrapper-Sub-sampling_Wrapper.py``)
+     - 00:08.401
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-RandomSampling-Random_Sampling.py` (``plot-RandomSampling-Random_Sampling.py``)
+     - 00:08.366
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-UHerding-Uncertainty_Herding_(UHerding).py` (``plot-UHerding-Uncertainty_Herding_(UHerding).py``)
+     - 00:08.365
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_(4DS).py` (``plot-FourDs-Density-Diversity-Distribution-Distance_Sampling_(4DS).py``)
+     - 00:08.112
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-DiscriminativeAL-Discriminative_Active_Learning_(DAL).py` (``plot-DiscriminativeAL-Discriminative_Active_Learning_(DAL).py``)
+     - 00:08.079
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_(DUAL).py` (``plot-UncertaintySampling-Dual_Strategy_for_Active_Learning_(DUAL).py``)
+     - 00:07.952
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_(DWUS).py` (``plot-UncertaintySampling-Density-weighted_Uncertainty_Sampling_(DWUS).py``)
+     - 00:07.941
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-ContrastiveAL-Contrastive_Active_Learning_(CAL).py` (``plot-ContrastiveAL-Contrastive_Active_Learning_(CAL).py``)
+     - 00:07.916
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Margin.py` (``plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Margin.py``)
+     - 00:07.765
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Entropy.py` (``plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Entropy.py``)
+     - 00:07.678
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-ProbCover-Probability_Coverage_(ProbCover).py` (``plot-ProbCover-Probability_Coverage_(ProbCover).py``)
+     - 00:07.668
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_(BatchBALD).py` (``plot-BatchBALD-Batch_Bayesian_Active_Learning_by_Disagreement_(BatchBALD).py``)
+     - 00:07.665
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Least-Confidence.py` (``plot-UncertaintySampling-Uncertainty_Sampling_(US)_with_Least-Confidence.py``)
+     - 00:07.647
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-TypiClust-Typical_Clustering_(TypiClust).py` (``plot-TypiClust-Typical_Clustering_(TypiClust).py``)
+     - 00:07.584
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-DropQuery-Dropout_Query_(DropQuery).py` (``plot-DropQuery-Dropout_Query_(DropQuery).py``)
+     - 00:06.642
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_(Batch4DS).py` (``plot-FourDs-Batch_Density-Diversity-Distribution-Distance_Sampling_(Batch4DS).py``)
+     - 00:06.612
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-Clue-Clustering_Uncertainty-weighted_Embeddings_(CLUE).py` (``plot-Clue-Clustering_Uncertainty-weighted_Embeddings_(CLUE).py``)
+     - 00:06.557
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_(BADGE).py` (``plot-Badge-Batch_Active_Learning_by_Diverse_Gradient_Embedding_(BADGE).py``)
+     - 00:06.527
+     - 0.0
+   * - :ref:`sphx_glr_generated_sphinx_gallery_examples_1-pool-classification_plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_(FALCUN).py` (``plot-Falcun-Fast_Active_Learning_by_Contrastive_UNcertainty_(FALCUN).py``)
+     - 00:06.523
+     - 0.0

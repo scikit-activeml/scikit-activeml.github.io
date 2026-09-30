@@ -1,0 +1,968 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Deep Active Learning Using Semi-Supervised Classification &#8212; scikit-activeml 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/tutorials/08_pool_ssl';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.0.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../_static/filter_examples.js?v=52a8636b"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/1.0/generated/tutorials/08_pool_ssl.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml 1.0.0 documentation - Home"/>
+    <img src="../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml 1.0.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Deep Active Learning Using Semi-Supervised Classification</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="Deep-Active-Learning-Using-Semi-Supervised-Classification">
+<h1>Deep Active Learning Using Semi-Supervised Classification<a class="headerlink" href="#Deep-Active-Learning-Using-Semi-Supervised-Classification" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>Google Colab Note:</strong> If the notebook fails to run after installing the needed packages, try to restart the runtime (Ctrl + M) under Runtime -&gt; Restart session.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://colab.research.google.com/github/scikit-activeml/scikit-activeml.github.io/blob/gh-pages/1.0/generated/tutorials_colab//08_pool_ssl.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><strong>Notebook Dependencies</strong></p>
+<p>Uncomment the following cells to install all dependencies for this tutorial.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install scikit-activeml[opt] torch torchvision tqdm datasets transformers</span>
+</pre></div>
+</div>
+</div>
+<hr style="border-style: solid; border-top: 1px solid; border-right: 0; border-bottom: 0; border-left: 0;"><p>This tutorial aims to demonstrate a practical comparison study using our <code class="docutils literal notranslate"><span class="pre">scikit-activeml</span></code> library. The main focus of this notebook is the use of the <code class="docutils literal notranslate"><span class="pre">semi_supervised</span></code> subpackage of <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> (see <a class="reference external" href="https://scikit-learn.org/stable/modules/semi_supervised.html">here</a>), that offers wrapper classes for classifiers, enabling the use of unlabeled data. The basic structure and data preparation of this notebook closely follows the <a class="reference external" href="https://scikit-activeml.github.io/latest/generated/tutorials/05_pool_al_with_self_supervised_learning.html">Deep Active Learning with Frozen Vision Transformer
+notebook</a> while using a different dataset (Food101 [1]).</p>
+<p>[1] Bossard, L. and Guillaumin, M. and Van Gool, L. (2014). Food-101 - Mining Discriminative Components with Random Forests. European Conference on Computer Vision.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comment in for speedup, if you have cuML installed.</span>
+<span class="c1"># %load_ext cuml.accell</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mlp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.semi_supervised</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelfTrainingClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.classifier</span><span class="w"> </span><span class="kn">import</span> <span class="n">SklearnClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.pool</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">UncertaintySampling</span><span class="p">,</span>
+    <span class="n">RandomSampling</span><span class="p">,</span>
+    <span class="n">CoreSet</span><span class="p">,</span>
+    <span class="n">TypiClust</span><span class="p">,</span>
+    <span class="n">DropQuery</span><span class="p">,</span>
+    <span class="n">ProbCover</span><span class="p">,</span>
+    <span class="n">Falcun</span><span class="p">,</span>
+    <span class="n">SubSamplingWrapper</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">call_func</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoImageProcessor</span><span class="p">,</span> <span class="n">Dinov2Model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="n">mlp</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.facecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+<span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+</pre></div>
+</div>
+</div>
+<section id="Embed-FOOD-101-Images-with-DINOv2">
+<h2>Embed FOOD-101 Images with DINOv2<a class="headerlink" href="#Embed-FOOD-101-Images-with-DINOv2" title="Link to this heading">#</a></h2>
+<p>In this step, we focus on preparing the datasets using the self-supervised learning model DINOv2. DINOv2, short for “self-distillation with no labels”, is a popular vision foundation model that excels at providing meaningful representations for image data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download data.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;ethz/food101&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download DINOv2 ViT/S-14 as embedding model.</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">AutoImageProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+    <span class="s2">&quot;facebook/dinov2-small&quot;</span><span class="p">,</span> <span class="n">use_fast</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Dinov2Model</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;facebook/dinov2-small&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="c1"># Embed Food-101 images.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">embed</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">processor</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">images</span><span class="o">=</span><span class="n">batch</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">],</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span><span class="o">.</span><span class="n">last_hidden_state</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;emb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">batch</span>
+
+<span class="n">embed_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;processor&#39;</span><span class="p">:</span><span class="n">processor</span><span class="p">,</span>
+    <span class="s1">&#39;model&#39;</span><span class="p">:</span><span class="n">model</span><span class="p">,</span>
+    <span class="s1">&#39;device&#39;</span><span class="p">:</span><span class="n">device</span>
+<span class="p">}</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">embed</span><span class="p">,</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">num_proc</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">fn_kwargs</span><span class="o">=</span><span class="n">embed_kwargs</span><span class="p">)</span>
+<span class="n">X_pool</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="s2">&quot;emb&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y_pool</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;validation&quot;</span><span class="p">][</span><span class="s2">&quot;emb&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;validation&quot;</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Random-Seed-Management">
+<h2>Random Seed Management<a class="headerlink" href="#Random-Seed-Management" title="Link to this heading">#</a></h2>
+<p>To ensure experiment reproducibility, it’s important to set random states for all components that might use them. For simplicity, we set a single fixed random state and use helper functions to generate new seeds and random states. It’s important to note that the <code class="docutils literal notranslate"><span class="pre">master_random_state</span></code> should only be used to create new random states or random seeds.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">master_random_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a seed for a random number generator.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - random_state (np.random.RandomState): Random state object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - int: Generated seed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">31</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gen_random_state</span><span class="p">(</span><span class="n">random_state</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a new random state object based on a given random state.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - random_state (np.random.RandomState): Random state object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - np.random.RandomState: New random state object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Classification-Models-and-Query-Strategies">
+<h2>Classification Models and Query Strategies<a class="headerlink" href="#Classification-Models-and-Query-Strategies" title="Link to this heading">#</a></h2>
+<p>The embeddings we have computed can be used as an input to a classification model. For this guide, we use <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code>. Moreover, we handle the creation of query strategies using factory functions to simplify the separation of query strategies across repetitions. We use <code class="docutils literal notranslate"><span class="pre">missing_label=-1</span></code> because the wrappers in <code class="docutils literal notranslate"><span class="pre">scikit-learn.semi_supervised</span></code> only supports -1 as a placeholder label for unlabeled samples.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_features</span><span class="p">,</span> <span class="n">classes</span> <span class="o">=</span> <span class="n">X_pool</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_pool</span><span class="p">)</span>
+<span class="n">missing_label</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="c1"># Define classifiers to use for experiments</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_classifier</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">random_state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">classifier_factory_functions</span><span class="p">[</span><span class="n">name</span><span class="p">](</span><span class="n">classes</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
+<span class="n">classifier_factory_functions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;LogisticRegression&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">classes</span><span class="p">,</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">SklearnClassifier</span><span class="p">(</span>
+        <span class="n">LogisticRegression</span><span class="p">(</span>
+            <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+            <span class="n">C</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+            <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span>
+        <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Define query strategies for experiments</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_query_strategy</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">random_state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">query_strategy_factory_functions</span><span class="p">[</span><span class="n">name</span><span class="p">](</span><span class="n">random_state</span><span class="p">)</span>
+<span class="n">query_strategy_factory_functions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;RandomSampling&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">RandomSampling</span><span class="p">(</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span> <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;UncertaintySampling&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">UncertaintySampling</span><span class="p">(</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span> <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;CoreSet&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">CoreSet</span><span class="p">(</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span> <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;TypiClust&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">TypiClust</span><span class="p">(</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span> <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;DropQuery&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">DropQuery</span><span class="p">(</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span>
+        <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;ProbCover&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">ProbCover</span><span class="p">(</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span> <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;Falcun&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">Falcun</span><span class="p">(</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">),</span> <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Experiment-Parameters">
+<h2>Experiment Parameters<a class="headerlink" href="#Experiment-Parameters" title="Link to this heading">#</a></h2>
+<p>For this experiment, we need to define how the strategies should be compared against one another. Here the number of repetitions (<code class="docutils literal notranslate"><span class="pre">n_reps</span></code>), the number of cycles (<code class="docutils literal notranslate"><span class="pre">n_cycles</span></code>), and the size of each query (<code class="docutils literal notranslate"><span class="pre">query_batch_size</span></code>) need to be defined.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_reps</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_cycles</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">query_batch_size</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">classifier_names</span> <span class="o">=</span> <span class="n">classifier_factory_functions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">query_strategy_names</span> <span class="o">=</span> <span class="n">query_strategy_factory_functions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Experiment-Loop">
+<h2>Experiment Loop<a class="headerlink" href="#Experiment-Loop" title="Link to this heading">#</a></h2>
+<p>The actual experiment loops over all query strategies. The accuracy for the test set is stored for each cycle and repetition in the <code class="docutils literal notranslate"><span class="pre">results</span></code> dictionary. Here, we execute the experiments with and without <code class="docutils literal notranslate"><span class="pre">SelfTraining</span></code> (<code class="docutils literal notranslate"><span class="pre">use_ssl_clf</span></code>). This wrapper includes unlabeled samples into the labeled pool for training (i.e., not for querying new labels). The wrapped classifier is iteratively trained <code class="docutils literal notranslate"><span class="pre">SelfTrainingClassifier.max_iter</span></code> times and in each iteration new unlabeled samples whose
+prediciton for a class exceed <code class="docutils literal notranslate"><span class="pre">SelfTrainingClassifier.threshold</span></code> will be included in the labeled pool for the next training iteration. In this notebook, the number of iterations of self-training scales with the number of active learning cycles, such that it starts with 1 iteration at cycle 6 and caps at cycle 10 and above with 5 iterations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">clf_name</span> <span class="ow">in</span> <span class="n">classifier_names</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">use_ssl_clf</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">qs_name</span> <span class="ow">in</span> <span class="n">query_strategy_names</span><span class="p">:</span>
+            <span class="n">accuracies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">n_reps</span><span class="p">,</span> <span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i_rep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_reps</span><span class="p">):</span>
+                <span class="c1"># initialize labels</span>
+                <span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">X_pool</span><span class="p">),</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">missing_label</span><span class="p">)</span>
+
+                <span class="c1"># initialize query strategy qs with subsampling</span>
+                <span class="n">qs</span> <span class="o">=</span> <span class="n">create_query_strategy</span><span class="p">(</span>
+                    <span class="n">qs_name</span><span class="p">,</span>
+                    <span class="n">random_state</span><span class="o">=</span><span class="n">gen_random_state</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">i_rep</span><span class="p">)),</span>
+                <span class="p">)</span>
+                <span class="n">qs</span> <span class="o">=</span> <span class="n">SubSamplingWrapper</span><span class="p">(</span>
+                    <span class="n">query_strategy</span><span class="o">=</span><span class="n">qs</span><span class="p">,</span>
+                    <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span><span class="p">,</span>
+                    <span class="n">random_state</span><span class="o">=</span><span class="n">gen_random_state</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">i_rep</span><span class="p">)),</span>
+                    <span class="n">exclude_non_subsample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">max_candidates</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="c1"># initialize classifier with or without self-training</span>
+                <span class="n">raw_clf</span> <span class="o">=</span> <span class="n">create_classifier</span><span class="p">(</span>
+                    <span class="n">clf_name</span><span class="p">,</span>
+                    <span class="n">classes</span><span class="p">,</span>
+                    <span class="n">gen_random_state</span><span class="p">(</span><span class="n">master_random_state</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">use_ssl_clf</span><span class="p">:</span>
+                    <span class="c1"># wrap classifier with SelfTrainingClassifier</span>
+                    <span class="n">clf</span> <span class="o">=</span> <span class="n">SklearnClassifier</span><span class="p">(</span>
+                        <span class="n">SelfTrainingClassifier</span><span class="p">(</span>
+                            <span class="n">raw_clf</span><span class="p">,</span>
+                            <span class="n">threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+                            <span class="n">max_iter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="p">),</span>
+                        <span class="n">include_unlabeled_samples</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+                        <span class="n">random_state</span><span class="o">=</span><span class="n">gen_random_state</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">i_rep</span><span class="p">)),</span>
+                        <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Use regular classifier without wrapping it</span>
+                    <span class="n">clf</span><span class="o">=</span><span class="n">raw_clf</span>
+                <span class="c1"># Train and evaluate classifier without additionally queried data</span>
+                <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_pool</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+                <span class="n">accuracies</span><span class="p">[</span><span class="n">i_rep</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+                    <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Repeat </span><span class="si">{</span><span class="n">i_rep</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> with </span><span class="si">{</span><span class="n">qs_name</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">):</span>
+                    <span class="c1"># Query labels</span>
+                    <span class="n">query_idx</span> <span class="o">=</span> <span class="n">call_func</span><span class="p">(</span>
+                        <span class="n">qs</span><span class="o">.</span><span class="n">query</span><span class="p">,</span>
+                        <span class="n">X</span><span class="o">=</span><span class="n">X_pool</span><span class="p">,</span>
+                        <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span>
+                        <span class="n">batch_size</span><span class="o">=</span><span class="n">query_batch_size</span><span class="p">,</span>
+                        <span class="n">clf</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span>
+                        <span class="n">discriminator</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span>
+                        <span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">fit_clf</span><span class="o">=</span><span class="kc">False</span>
+                    <span class="p">)</span>
+                    <span class="n">y_train</span><span class="p">[</span><span class="n">query_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pool</span><span class="p">[</span><span class="n">query_idx</span><span class="p">]</span>
+                    <span class="c1"># Set the number of iterations for SelfTraining</span>
+                    <span class="k">if</span> <span class="n">use_ssl_clf</span><span class="p">:</span>
+                        <span class="n">clf</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="mi">5</span><span class="p">))</span>
+                    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_pool</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+                    <span class="n">accuracies</span><span class="p">[</span><span class="n">i_rep</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+            <span class="n">results</span><span class="p">[(</span><span class="n">clf_name</span><span class="p">,</span> <span class="n">use_ssl_clf</span><span class="p">,</span> <span class="n">qs_name</span><span class="p">)]</span> <span class="o">=</span> <span class="n">accuracies</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Repeat 1 with RandomSampling: 100%|██████████| 20/20 [01:00&lt;00:00,  3.00s/it]
+Repeat 2 with RandomSampling: 100%|██████████| 20/20 [01:02&lt;00:00,  3.11s/it]
+Repeat 3 with RandomSampling: 100%|██████████| 20/20 [01:01&lt;00:00,  3.06s/it]
+Repeat 1 with UncertaintySampling: 100%|██████████| 20/20 [01:17&lt;00:00,  3.85s/it]
+Repeat 2 with UncertaintySampling: 100%|██████████| 20/20 [01:18&lt;00:00,  3.91s/it]
+Repeat 3 with UncertaintySampling: 100%|██████████| 20/20 [01:16&lt;00:00,  3.82s/it]
+Repeat 1 with CoreSet: 100%|██████████| 20/20 [01:23&lt;00:00,  4.16s/it]
+Repeat 2 with CoreSet: 100%|██████████| 20/20 [01:16&lt;00:00,  3.82s/it]
+Repeat 3 with CoreSet: 100%|██████████| 20/20 [01:18&lt;00:00,  3.95s/it]
+Repeat 1 with TypiClust: 100%|██████████| 20/20 [03:11&lt;00:00,  9.59s/it]
+Repeat 2 with TypiClust: 100%|██████████| 20/20 [03:08&lt;00:00,  9.42s/it]
+Repeat 3 with TypiClust: 100%|██████████| 20/20 [03:12&lt;00:00,  9.60s/it]
+Repeat 1 with DropQuery: 100%|██████████| 20/20 [01:17&lt;00:00,  3.87s/it]
+Repeat 2 with DropQuery: 100%|██████████| 20/20 [01:16&lt;00:00,  3.82s/it]
+Repeat 3 with DropQuery: 100%|██████████| 20/20 [01:17&lt;00:00,  3.86s/it]
+Repeat 1 with ProbCover: 100%|██████████| 20/20 [02:31&lt;00:00,  7.57s/it]
+Repeat 2 with ProbCover: 100%|██████████| 20/20 [02:30&lt;00:00,  7.52s/it]
+Repeat 3 with ProbCover: 100%|██████████| 20/20 [02:30&lt;00:00,  7.54s/it]
+Repeat 1 with Falcun: 100%|██████████| 20/20 [01:15&lt;00:00,  3.78s/it]
+Repeat 2 with Falcun: 100%|██████████| 20/20 [01:13&lt;00:00,  3.65s/it]
+Repeat 3 with Falcun: 100%|██████████| 20/20 [01:14&lt;00:00,  3.73s/it]
+Repeat 1 with RandomSampling: 100%|██████████| 20/20 [00:03&lt;00:00,  6.35it/s]
+Repeat 2 with RandomSampling: 100%|██████████| 20/20 [00:03&lt;00:00,  6.21it/s]
+Repeat 3 with RandomSampling: 100%|██████████| 20/20 [00:03&lt;00:00,  6.38it/s]
+Repeat 1 with UncertaintySampling: 100%|██████████| 20/20 [00:04&lt;00:00,  4.86it/s]
+Repeat 2 with UncertaintySampling: 100%|██████████| 20/20 [00:03&lt;00:00,  5.11it/s]
+Repeat 3 with UncertaintySampling: 100%|██████████| 20/20 [00:04&lt;00:00,  4.93it/s]
+Repeat 1 with CoreSet: 100%|██████████| 20/20 [00:07&lt;00:00,  2.66it/s]
+Repeat 2 with CoreSet: 100%|██████████| 20/20 [00:07&lt;00:00,  2.64it/s]
+Repeat 3 with CoreSet: 100%|██████████| 20/20 [00:07&lt;00:00,  2.62it/s]
+Repeat 1 with TypiClust: 100%|██████████| 20/20 [02:16&lt;00:00,  6.85s/it]
+Repeat 2 with TypiClust: 100%|██████████| 20/20 [02:15&lt;00:00,  6.80s/it]
+Repeat 3 with TypiClust: 100%|██████████| 20/20 [02:14&lt;00:00,  6.74s/it]
+Repeat 1 with DropQuery: 100%|██████████| 20/20 [00:13&lt;00:00,  1.48it/s]
+Repeat 2 with DropQuery: 100%|██████████| 20/20 [00:13&lt;00:00,  1.49it/s]
+Repeat 3 with DropQuery: 100%|██████████| 20/20 [00:13&lt;00:00,  1.48it/s]
+Repeat 1 with ProbCover: 100%|██████████| 20/20 [01:31&lt;00:00,  4.56s/it]
+Repeat 2 with ProbCover: 100%|██████████| 20/20 [01:32&lt;00:00,  4.64s/it]
+Repeat 3 with ProbCover: 100%|██████████| 20/20 [01:31&lt;00:00,  4.58s/it]
+Repeat 1 with Falcun: 100%|██████████| 20/20 [00:07&lt;00:00,  2.64it/s]
+Repeat 2 with Falcun: 100%|██████████| 20/20 [00:07&lt;00:00,  2.72it/s]
+Repeat 3 with Falcun: 100%|██████████| 20/20 [00:07&lt;00:00,  2.66it/s]
+</pre></div></div>
+</div>
+</section>
+<section id="Resulting-Plotting">
+<h2>Resulting Plotting<a class="headerlink" href="#Resulting-Plotting" title="Link to this heading">#</a></h2>
+<p>We use learning curves to compare strategies. We visualize the average accuracy over all repetitions. In addition, the legend provides insight into the area under the learning curve, which indicates the average accuracy over all cycles. For this notebook we utilize dotted lines to show the average learning curves for experiments without a semi-supervised classifier while learning curves for classifiers wrapped with <code class="docutils literal notranslate"><span class="pre">SelfTrainingClassifier</span></code> are plotted using continous lines.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">clf_name</span> <span class="ow">in</span> <span class="n">classifier_names</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i_qs</span><span class="p">,</span> <span class="n">qs_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">query_strategy_names</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">use_ssl</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">clf_name</span><span class="p">,</span> <span class="n">use_ssl</span><span class="p">,</span> <span class="n">qs_name</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="n">reshaped_result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">errorbar_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">reshaped_result</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">errorbar_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">reshaped_result</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
+            <span class="n">display_name</span> <span class="o">=</span> <span class="n">qs_name</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;C</span><span class="si">{</span><span class="n">i_qs</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="k">if</span> <span class="n">use_ssl</span><span class="p">:</span>
+                <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+                <span class="n">display_name</span> <span class="o">=</span> <span class="n">qs_name</span><span class="o">+</span><span class="s1">&#39;+SelfTraining&#39;</span>
+
+            <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_cycles</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">query_batch_size</span><span class="p">,</span>
+                <span class="n">errorbar_mean</span><span class="p">,</span>
+                <span class="n">errorbar_std</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">display_name</span><span class="si">}</span><span class="s2">: ALCU=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">errorbar_mean</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span>
+            <span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;# labeled samples&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;accuracy&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;x-large&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/generated_tutorials_08_pool_ssl_20_0.png" src="../../_images/generated_tutorials_08_pool_ssl_20_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Embed-FOOD-101-Images-with-DINOv2">Embed FOOD-101 Images with DINOv2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Random-Seed-Management">Random Seed Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Classification-Models-and-Query-Strategies">Classification Models and Query Strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Experiment-Parameters">Experiment Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Experiment-Loop">Experiment Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Resulting-Plotting">Resulting Plotting</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/generated/tutorials/08_pool_ssl.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

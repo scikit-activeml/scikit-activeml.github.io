@@ -1,0 +1,29 @@
+﻿StreamDensityBasedAL
+====================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.StreamDensityBasedAL
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~StreamDensityBasedAL.get_metadata_routing
+      ~StreamDensityBasedAL.get_params
+      ~StreamDensityBasedAL.query
+      ~StreamDensityBasedAL.set_params
+      ~StreamDensityBasedAL.update
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.stream.StreamDensityBasedAL:
+
+.. minigallery:: skactiveml.stream.StreamDensityBasedAL
+   :add-heading:

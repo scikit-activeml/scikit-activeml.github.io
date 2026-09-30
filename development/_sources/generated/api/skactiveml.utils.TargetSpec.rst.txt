@@ -1,0 +1,44 @@
+﻿TargetSpec
+==========
+
+.. currentmodule:: skactiveml.utils
+
+.. autoclass:: skactiveml.utils.TargetSpec
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+   
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TargetSpec.task
+      ~TargetSpec.target_type
+      ~TargetSpec.annotation_type
+      ~TargetSpec.classes
+   
+   
+
+
+
+
+.. autoattribute:: skactiveml.utils.TargetSpec.task
+.. autoattribute:: skactiveml.utils.TargetSpec.target_type
+.. autoattribute:: skactiveml.utils.TargetSpec.annotation_type
+.. autoattribute:: skactiveml.utils.TargetSpec.classes
+
+.. _sphx_glr_backref_skactiveml.utils.TargetSpec:
+
+.. minigallery:: skactiveml.utils.TargetSpec
+   :add-heading:

@@ -1,0 +1,28 @@
+﻿QueryStrategy
+=============
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.QueryStrategy
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~QueryStrategy.get_metadata_routing
+      ~QueryStrategy.get_params
+      ~QueryStrategy.query
+      ~QueryStrategy.set_params
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.base.QueryStrategy:
+
+.. minigallery:: skactiveml.base.QueryStrategy
+   :add-heading:

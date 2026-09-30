@@ -1,0 +1,41 @@
+﻿StreamRandomSampling
+====================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.StreamRandomSampling
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~StreamRandomSampling.query
+      ~StreamRandomSampling.update
+   
+      ~StreamRandomSampling.get_metadata_routing
+      ~StreamRandomSampling.get_params
+      ~StreamRandomSampling.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.StreamRandomSampling.query
+.. automethod:: skactiveml.stream.StreamRandomSampling.update
+
+.. automethod:: skactiveml.stream.StreamRandomSampling.get_metadata_routing
+.. automethod:: skactiveml.stream.StreamRandomSampling.get_params
+.. automethod:: skactiveml.stream.StreamRandomSampling.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.StreamRandomSampling:
+
+.. minigallery:: skactiveml.stream.StreamRandomSampling
+   :add-heading:

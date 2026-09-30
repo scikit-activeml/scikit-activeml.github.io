@@ -1,0 +1,28 @@
+﻿DropQuery
+=========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.DropQuery
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DropQuery.get_metadata_routing
+      ~DropQuery.get_params
+      ~DropQuery.query
+      ~DropQuery.set_params
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.pool.DropQuery:
+
+.. minigallery:: skactiveml.pool.DropQuery
+   :add-heading:

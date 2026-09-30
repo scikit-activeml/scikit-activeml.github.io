@@ -1,0 +1,41 @@
+﻿SplitBudgetManager
+==================
+
+.. currentmodule:: skactiveml.stream.budgetmanager
+
+.. autoclass:: skactiveml.stream.budgetmanager.SplitBudgetManager
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SplitBudgetManager.query_by_utility
+      ~SplitBudgetManager.update
+   
+      ~SplitBudgetManager.get_metadata_routing
+      ~SplitBudgetManager.get_params
+      ~SplitBudgetManager.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.budgetmanager.SplitBudgetManager.query_by_utility
+.. automethod:: skactiveml.stream.budgetmanager.SplitBudgetManager.update
+
+.. automethod:: skactiveml.stream.budgetmanager.SplitBudgetManager.get_metadata_routing
+.. automethod:: skactiveml.stream.budgetmanager.SplitBudgetManager.get_params
+.. automethod:: skactiveml.stream.budgetmanager.SplitBudgetManager.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.budgetmanager.SplitBudgetManager:
+
+.. minigallery:: skactiveml.stream.budgetmanager.SplitBudgetManager
+   :add-heading:

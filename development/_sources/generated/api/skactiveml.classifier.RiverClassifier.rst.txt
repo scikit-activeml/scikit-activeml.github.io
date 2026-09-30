@@ -1,0 +1,55 @@
+﻿RiverClassifier
+===============
+
+.. currentmodule:: skactiveml.classifier
+
+.. autoclass:: skactiveml.classifier.RiverClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RiverClassifier.fit
+      ~RiverClassifier.partial_fit
+      ~RiverClassifier.predict
+      ~RiverClassifier.predict_proba
+      ~RiverClassifier.score
+      ~RiverClassifier.transform_data_to_dict
+   
+      ~RiverClassifier.get_metadata_routing
+      ~RiverClassifier.get_params
+      ~RiverClassifier.set_fit_request
+      ~RiverClassifier.set_params
+      ~RiverClassifier.set_partial_fit_request
+      ~RiverClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.RiverClassifier.fit
+.. automethod:: skactiveml.classifier.RiverClassifier.partial_fit
+.. automethod:: skactiveml.classifier.RiverClassifier.predict
+.. automethod:: skactiveml.classifier.RiverClassifier.predict_proba
+.. automethod:: skactiveml.classifier.RiverClassifier.score
+.. automethod:: skactiveml.classifier.RiverClassifier.transform_data_to_dict
+
+.. automethod:: skactiveml.classifier.RiverClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.RiverClassifier.get_params
+.. automethod:: skactiveml.classifier.RiverClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.RiverClassifier.set_params
+.. automethod:: skactiveml.classifier.RiverClassifier.set_partial_fit_request
+.. automethod:: skactiveml.classifier.RiverClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.RiverClassifier:
+
+.. minigallery:: skactiveml.classifier.RiverClassifier
+   :add-heading:

@@ -1,0 +1,49 @@
+﻿AnnotatorEnsembleClassifier
+===========================
+
+.. currentmodule:: skactiveml.classifier.multiannotator
+
+.. autoclass:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AnnotatorEnsembleClassifier.fit
+      ~AnnotatorEnsembleClassifier.predict
+      ~AnnotatorEnsembleClassifier.predict_proba
+      ~AnnotatorEnsembleClassifier.score
+   
+      ~AnnotatorEnsembleClassifier.get_metadata_routing
+      ~AnnotatorEnsembleClassifier.get_params
+      ~AnnotatorEnsembleClassifier.set_fit_request
+      ~AnnotatorEnsembleClassifier.set_params
+      ~AnnotatorEnsembleClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.fit
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.predict
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.predict_proba
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.score
+
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.get_params
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.set_params
+.. automethod:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier:
+
+.. minigallery:: skactiveml.classifier.multiannotator.AnnotatorEnsembleClassifier
+   :add-heading:

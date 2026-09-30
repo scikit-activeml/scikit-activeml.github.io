@@ -1,0 +1,39 @@
+﻿ProbabilisticAL
+===============
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ProbabilisticAL
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ProbabilisticAL.query
+   
+      ~ProbabilisticAL.get_metadata_routing
+      ~ProbabilisticAL.get_params
+      ~ProbabilisticAL.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.ProbabilisticAL.query
+
+.. automethod:: skactiveml.pool.ProbabilisticAL.get_metadata_routing
+.. automethod:: skactiveml.pool.ProbabilisticAL.get_params
+.. automethod:: skactiveml.pool.ProbabilisticAL.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.ProbabilisticAL:
+
+.. minigallery:: skactiveml.pool.ProbabilisticAL
+   :add-heading:

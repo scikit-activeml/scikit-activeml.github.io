@@ -1,0 +1,39 @@
+﻿ExpectedModelChangeMaximization
+===============================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ExpectedModelChangeMaximization
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExpectedModelChangeMaximization.query
+   
+      ~ExpectedModelChangeMaximization.get_metadata_routing
+      ~ExpectedModelChangeMaximization.get_params
+      ~ExpectedModelChangeMaximization.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.ExpectedModelChangeMaximization.query
+
+.. automethod:: skactiveml.pool.ExpectedModelChangeMaximization.get_metadata_routing
+.. automethod:: skactiveml.pool.ExpectedModelChangeMaximization.get_params
+.. automethod:: skactiveml.pool.ExpectedModelChangeMaximization.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.ExpectedModelChangeMaximization:
+
+.. minigallery:: skactiveml.pool.ExpectedModelChangeMaximization
+   :add-heading:

@@ -1,0 +1,36 @@
+﻿SklearnRegressor
+================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.SklearnRegressor
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SklearnRegressor.fit
+      ~SklearnRegressor.get_metadata_routing
+      ~SklearnRegressor.get_params
+      ~SklearnRegressor.partial_fit
+      ~SklearnRegressor.predict
+      ~SklearnRegressor.sample
+      ~SklearnRegressor.sample_y
+      ~SklearnRegressor.score
+      ~SklearnRegressor.set_fit_request
+      ~SklearnRegressor.set_params
+      ~SklearnRegressor.set_partial_fit_request
+      ~SklearnRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.regressor.SklearnRegressor:
+
+.. minigallery:: skactiveml.regressor.SklearnRegressor
+   :add-heading:

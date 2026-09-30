@@ -1,0 +1,39 @@
+﻿MaxHerding
+==========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.MaxHerding
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MaxHerding.query
+   
+      ~MaxHerding.get_metadata_routing
+      ~MaxHerding.get_params
+      ~MaxHerding.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.MaxHerding.query
+
+.. automethod:: skactiveml.pool.MaxHerding.get_metadata_routing
+.. automethod:: skactiveml.pool.MaxHerding.get_params
+.. automethod:: skactiveml.pool.MaxHerding.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.MaxHerding:
+
+.. minigallery:: skactiveml.pool.MaxHerding
+   :add-heading:

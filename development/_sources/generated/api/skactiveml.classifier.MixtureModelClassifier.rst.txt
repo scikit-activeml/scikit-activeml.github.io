@@ -1,0 +1,53 @@
+﻿MixtureModelClassifier
+======================
+
+.. currentmodule:: skactiveml.classifier
+
+.. autoclass:: skactiveml.classifier.MixtureModelClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MixtureModelClassifier.fit
+      ~MixtureModelClassifier.predict
+      ~MixtureModelClassifier.predict_freq
+      ~MixtureModelClassifier.predict_proba
+      ~MixtureModelClassifier.sample_proba
+      ~MixtureModelClassifier.score
+   
+      ~MixtureModelClassifier.get_metadata_routing
+      ~MixtureModelClassifier.get_params
+      ~MixtureModelClassifier.set_fit_request
+      ~MixtureModelClassifier.set_params
+      ~MixtureModelClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.fit
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.predict
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.predict_freq
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.predict_proba
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.sample_proba
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.score
+
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.get_params
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.set_params
+.. automethod:: skactiveml.classifier.MixtureModelClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.MixtureModelClassifier:
+
+.. minigallery:: skactiveml.classifier.MixtureModelClassifier
+   :add-heading:

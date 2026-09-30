@@ -1,0 +1,41 @@
+﻿FixedUncertaintyBudgetManager
+=============================
+
+.. currentmodule:: skactiveml.stream.budgetmanager
+
+.. autoclass:: skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~FixedUncertaintyBudgetManager.query_by_utility
+      ~FixedUncertaintyBudgetManager.update
+   
+      ~FixedUncertaintyBudgetManager.get_metadata_routing
+      ~FixedUncertaintyBudgetManager.get_params
+      ~FixedUncertaintyBudgetManager.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager.query_by_utility
+.. automethod:: skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager.update
+
+.. automethod:: skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager.get_metadata_routing
+.. automethod:: skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager.get_params
+.. automethod:: skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager:
+
+.. minigallery:: skactiveml.stream.budgetmanager.FixedUncertaintyBudgetManager
+   :add-heading:

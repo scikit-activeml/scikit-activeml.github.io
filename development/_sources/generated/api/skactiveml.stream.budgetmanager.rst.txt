@@ -1,0 +1,31 @@
+:mod:`skactiveml.stream.budgetmanager`
+======================================
+
+.. automodule:: skactiveml.stream.budgetmanager
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   stream.budgetmanager.EstimatedBudgetZliobaite
+   stream.budgetmanager.FixedUncertaintyBudgetManager
+   stream.budgetmanager.VariableUncertaintyBudgetManager
+   stream.budgetmanager.SplitBudgetManager
+   stream.budgetmanager.BalancedIncrementalQuantileFilter
+   stream.budgetmanager.RandomVariableUncertaintyBudgetManager
+   stream.budgetmanager.DensityBasedSplitBudgetManager
+   stream.budgetmanager.RandomBudgetManager
+

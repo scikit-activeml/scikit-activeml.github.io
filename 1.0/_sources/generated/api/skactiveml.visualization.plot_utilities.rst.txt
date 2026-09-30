@@ -1,0 +1,11 @@
+﻿plot\_utilities
+===============
+
+.. currentmodule:: skactiveml.visualization
+
+.. autofunction:: skactiveml.visualization.plot_utilities
+
+.. _sphx_glr_backref_skactiveml.visualization.plot_utilities:
+
+.. minigallery:: skactiveml.visualization.plot_utilities
+   :add-heading:

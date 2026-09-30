@@ -1,0 +1,57 @@
+﻿SkorchClassifier
+================
+
+.. currentmodule:: skactiveml.classifier
+
+.. autoclass:: skactiveml.classifier.SkorchClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkorchClassifier.fit
+      ~SkorchClassifier.initialize
+      ~SkorchClassifier.partial_fit
+      ~SkorchClassifier.predict
+      ~SkorchClassifier.predict_proba
+      ~SkorchClassifier.score
+   
+      ~SkorchClassifier.get_metadata_routing
+      ~SkorchClassifier.get_params
+      ~SkorchClassifier.set_fit_request
+      ~SkorchClassifier.set_params
+      ~SkorchClassifier.set_predict_proba_request
+      ~SkorchClassifier.set_predict_request
+      ~SkorchClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.SkorchClassifier.fit
+.. automethod:: skactiveml.classifier.SkorchClassifier.initialize
+.. automethod:: skactiveml.classifier.SkorchClassifier.partial_fit
+.. automethod:: skactiveml.classifier.SkorchClassifier.predict
+.. automethod:: skactiveml.classifier.SkorchClassifier.predict_proba
+.. automethod:: skactiveml.classifier.SkorchClassifier.score
+
+.. automethod:: skactiveml.classifier.SkorchClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.SkorchClassifier.get_params
+.. automethod:: skactiveml.classifier.SkorchClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.SkorchClassifier.set_params
+.. automethod:: skactiveml.classifier.SkorchClassifier.set_predict_proba_request
+.. automethod:: skactiveml.classifier.SkorchClassifier.set_predict_request
+.. automethod:: skactiveml.classifier.SkorchClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.SkorchClassifier:
+
+.. minigallery:: skactiveml.classifier.SkorchClassifier
+   :add-heading:

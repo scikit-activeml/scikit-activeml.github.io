@@ -1,0 +1,39 @@
+﻿Badge
+=====
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.Badge
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Badge.query
+   
+      ~Badge.get_metadata_routing
+      ~Badge.get_params
+      ~Badge.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.Badge.query
+
+.. automethod:: skactiveml.pool.Badge.get_metadata_routing
+.. automethod:: skactiveml.pool.Badge.get_params
+.. automethod:: skactiveml.pool.Badge.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.Badge:
+
+.. minigallery:: skactiveml.pool.Badge
+   :add-heading:

@@ -1,0 +1,62 @@
+:mod:`skactiveml.utils`
+=======================
+
+.. automodule:: skactiveml.utils
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   utils.ExtLabelEncoder
+
+Functions
+---------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: function.rst
+
+   utils.rand_argmax
+   utils.rand_argmin
+   utils.compute_vote_vectors
+   utils.majority_vote
+   utils.is_unlabeled
+   utils.is_labeled
+   utils.check_classes
+   utils.check_missing_label
+   utils.check_cost_matrix
+   utils.check_scalar
+   utils.check_classifier_params
+   utils.check_X_y
+   utils.check_random_state
+   utils.call_func
+   utils.match_signature
+   utils.check_class_prior
+   utils.ext_confusion_matrix
+   utils.labeled_indices
+   utils.unlabeled_indices
+   utils.check_type
+   utils.check_bound
+   utils.check_equal_missing_label
+   utils.check_budget_manager
+   utils.check_indices
+   utils.simple_batch
+   utils.check_n_features
+   utils._check_callable
+   utils._check_forward_outputs
+   utils.make_criterion_tuple_aware
+

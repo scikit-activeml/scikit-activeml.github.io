@@ -1,0 +1,39 @@
+﻿SingleAnnotatorWrapper
+======================
+
+.. currentmodule:: skactiveml.pool.multiannotator
+
+.. autoclass:: skactiveml.pool.multiannotator.SingleAnnotatorWrapper
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SingleAnnotatorWrapper.query
+   
+      ~SingleAnnotatorWrapper.get_metadata_routing
+      ~SingleAnnotatorWrapper.get_params
+      ~SingleAnnotatorWrapper.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.multiannotator.SingleAnnotatorWrapper.query
+
+.. automethod:: skactiveml.pool.multiannotator.SingleAnnotatorWrapper.get_metadata_routing
+.. automethod:: skactiveml.pool.multiannotator.SingleAnnotatorWrapper.get_params
+.. automethod:: skactiveml.pool.multiannotator.SingleAnnotatorWrapper.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.multiannotator.SingleAnnotatorWrapper:
+
+.. minigallery:: skactiveml.pool.multiannotator.SingleAnnotatorWrapper
+   :add-heading:

@@ -1,0 +1,28 @@
+﻿ProbCover
+=========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ProbCover
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ProbCover.get_metadata_routing
+      ~ProbCover.get_params
+      ~ProbCover.query
+      ~ProbCover.set_params
+   
+   
+
+   
+   
+   
+
+.. _sphx_glr_backref_skactiveml.pool.ProbCover:
+
+.. minigallery:: skactiveml.pool.ProbCover
+   :add-heading:

@@ -1,0 +1,41 @@
+﻿RandomBudgetManager
+===================
+
+.. currentmodule:: skactiveml.stream.budgetmanager
+
+.. autoclass:: skactiveml.stream.budgetmanager.RandomBudgetManager
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RandomBudgetManager.query_by_utility
+      ~RandomBudgetManager.update
+   
+      ~RandomBudgetManager.get_metadata_routing
+      ~RandomBudgetManager.get_params
+      ~RandomBudgetManager.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.budgetmanager.RandomBudgetManager.query_by_utility
+.. automethod:: skactiveml.stream.budgetmanager.RandomBudgetManager.update
+
+.. automethod:: skactiveml.stream.budgetmanager.RandomBudgetManager.get_metadata_routing
+.. automethod:: skactiveml.stream.budgetmanager.RandomBudgetManager.get_params
+.. automethod:: skactiveml.stream.budgetmanager.RandomBudgetManager.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.budgetmanager.RandomBudgetManager:
+
+.. minigallery:: skactiveml.stream.budgetmanager.RandomBudgetManager
+   :add-heading:

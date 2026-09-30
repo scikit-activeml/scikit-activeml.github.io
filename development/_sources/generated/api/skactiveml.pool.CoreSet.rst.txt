@@ -1,0 +1,39 @@
+﻿CoreSet
+=======
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.CoreSet
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CoreSet.query
+   
+      ~CoreSet.get_metadata_routing
+      ~CoreSet.get_params
+      ~CoreSet.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.CoreSet.query
+
+.. automethod:: skactiveml.pool.CoreSet.get_metadata_routing
+.. automethod:: skactiveml.pool.CoreSet.get_params
+.. automethod:: skactiveml.pool.CoreSet.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.CoreSet:
+
+.. minigallery:: skactiveml.pool.CoreSet
+   :add-heading:

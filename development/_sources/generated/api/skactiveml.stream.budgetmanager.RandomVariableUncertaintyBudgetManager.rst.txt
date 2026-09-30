@@ -1,0 +1,41 @@
+﻿RandomVariableUncertaintyBudgetManager
+======================================
+
+.. currentmodule:: skactiveml.stream.budgetmanager
+
+.. autoclass:: skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RandomVariableUncertaintyBudgetManager.query_by_utility
+      ~RandomVariableUncertaintyBudgetManager.update
+   
+      ~RandomVariableUncertaintyBudgetManager.get_metadata_routing
+      ~RandomVariableUncertaintyBudgetManager.get_params
+      ~RandomVariableUncertaintyBudgetManager.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager.query_by_utility
+.. automethod:: skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager.update
+
+.. automethod:: skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager.get_metadata_routing
+.. automethod:: skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager.get_params
+.. automethod:: skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager:
+
+.. minigallery:: skactiveml.stream.budgetmanager.RandomVariableUncertaintyBudgetManager
+   :add-heading:
