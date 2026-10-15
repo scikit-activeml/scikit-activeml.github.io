@@ -1,0 +1,43 @@
+﻿IntervalEstimationAnnotModel
+============================
+
+.. currentmodule:: skactiveml.pool.multiannotator
+
+.. autoclass:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IntervalEstimationAnnotModel.fit
+      ~IntervalEstimationAnnotModel.predict_annotator_perf
+   
+      ~IntervalEstimationAnnotModel.get_metadata_routing
+      ~IntervalEstimationAnnotModel.get_params
+      ~IntervalEstimationAnnotModel.set_fit_request
+      ~IntervalEstimationAnnotModel.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel.fit
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel.predict_annotator_perf
+
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel.get_metadata_routing
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel.get_params
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel.set_fit_request
+.. automethod:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.multiannotator.IntervalEstimationAnnotModel:
+
+.. minigallery:: skactiveml.pool.multiannotator.IntervalEstimationAnnotModel
+   :add-heading:

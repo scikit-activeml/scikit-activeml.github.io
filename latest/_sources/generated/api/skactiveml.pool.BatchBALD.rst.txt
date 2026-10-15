@@ -1,0 +1,36 @@
+﻿BatchBALD
+=========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.BatchBALD
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BatchBALD.get_metadata_routing
+      ~BatchBALD.get_params
+      ~BatchBALD.query
+      ~BatchBALD.set_params
+   
+   
+
+   
+   
+   
+
+
+.. note::
+
+   This implementation uses computations adapted from ``batchbald_redux``
+   under the Apache-2.0 license. See :ref:`license-batchbald-redux` for
+   the license and notices.
+
+
+.. _sphx_glr_backref_skactiveml.pool.BatchBALD:
+
+.. minigallery:: skactiveml.pool.BatchBALD
+   :add-heading:

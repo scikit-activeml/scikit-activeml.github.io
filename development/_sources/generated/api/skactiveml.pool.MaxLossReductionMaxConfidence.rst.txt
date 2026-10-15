@@ -1,0 +1,39 @@
+﻿MaxLossReductionMaxConfidence
+=============================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.MaxLossReductionMaxConfidence
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MaxLossReductionMaxConfidence.query
+   
+      ~MaxLossReductionMaxConfidence.get_metadata_routing
+      ~MaxLossReductionMaxConfidence.get_params
+      ~MaxLossReductionMaxConfidence.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.MaxLossReductionMaxConfidence.query
+
+.. automethod:: skactiveml.pool.MaxLossReductionMaxConfidence.get_metadata_routing
+.. automethod:: skactiveml.pool.MaxLossReductionMaxConfidence.get_params
+.. automethod:: skactiveml.pool.MaxLossReductionMaxConfidence.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.MaxLossReductionMaxConfidence:
+
+.. minigallery:: skactiveml.pool.MaxLossReductionMaxConfidence
+   :add-heading:

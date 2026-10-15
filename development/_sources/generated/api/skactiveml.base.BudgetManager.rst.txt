@@ -1,0 +1,41 @@
+﻿BudgetManager
+=============
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.BudgetManager
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BudgetManager.query_by_utility
+      ~BudgetManager.update
+   
+      ~BudgetManager.get_metadata_routing
+      ~BudgetManager.get_params
+      ~BudgetManager.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.BudgetManager.query_by_utility
+.. automethod:: skactiveml.base.BudgetManager.update
+
+.. automethod:: skactiveml.base.BudgetManager.get_metadata_routing
+.. automethod:: skactiveml.base.BudgetManager.get_params
+.. automethod:: skactiveml.base.BudgetManager.set_params
+
+
+.. _sphx_glr_backref_skactiveml.base.BudgetManager:
+
+.. minigallery:: skactiveml.base.BudgetManager
+   :add-heading:

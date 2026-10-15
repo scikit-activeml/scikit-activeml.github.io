@@ -1,0 +1,880 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skactiveml.pool._label_cardinality_inconsistency &#8212; scikit-activeml development documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="../../../_static/documentation_options.js?v=249f3023"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/skactiveml/pool/_label_cardinality_inconsistency';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../../_static/filter_examples.js?v=95a029dd"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/development/_modules/skactiveml/pool/_label_cardinality_inconsistency.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="development" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml development documentation - Home"/>
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml development documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../target_semantics.html">
+    Target Semantics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../target_semantics.html">
+    Target Semantics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">skactiveml.pool._label_cardinality_inconsistency</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for skactiveml.pool._label_cardinality_inconsistency</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Implementation of Label Cardinality Inconsistency."""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">SingleAnnotatorPoolQueryStrategy</span><span class="p">,</span> <span class="n">SkactivemlClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ExtLabelEncoder</span><span class="p">,</span>
+    <span class="n">is_labeled</span><span class="p">,</span>
+    <span class="n">simple_batch</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._target</span><span class="w"> </span><span class="kn">import</span> <span class="n">_fit_and_resolve_estimator_target_spec</span>
+
+
+<div class="viewcode-block" id="LabelCardinalityInconsistency">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.pool.LabelCardinalityInconsistency.html#skactiveml.pool.LabelCardinalityInconsistency">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LabelCardinalityInconsistency</span><span class="p">(</span><span class="n">SingleAnnotatorPoolQueryStrategy</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Label Cardinality Inconsistency (LCI)</span>
+
+<span class="sd">    This class implements the query strategy Label Cardinality Inconsistency</span>
+<span class="sd">    (LCI) [1]_ that selects samples based on the difference in label</span>
+<span class="sd">    cardinality between the labeled pool and the predicted number of positive</span>
+<span class="sd">    labels in the unlabeled pool. This strategy is multi-label-only: `y` must</span>
+<span class="sd">    be two-dimensional and each row must be either fully labeled or fully</span>
+<span class="sd">    unlabeled.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    missing_label : scalar or string or np.nan or None, default=np.nan</span>
+<span class="sd">        Value to represent a missing label.</span>
+<span class="sd">    random_state : int or RandomState instance or None, default=None</span>
+<span class="sd">        Controls the randomness of the estimator.</span>
+<span class="sd">    target_type : "auto" or "multi-label", default="auto"</span>
+<span class="sd">        Declared target type. A fitted classifier's target specification is</span>
+<span class="sd">        authoritative when available. This strategy supports only multi-label</span>
+<span class="sd">        classification with a single annotator.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] R. Wang and S. Ye (2019). Multi-Label Active Learning Driven by</span>
+<span class="sd">       Uncertainty and Inconsistency. In 2019 International Conference on</span>
+<span class="sd">       Machine Learning and Cybernetics.</span>
+<span class="sd">    """</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_target_capabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">frozenset</span><span class="p">(</span>
+            <span class="p">{(</span><span class="s2">"classification"</span><span class="p">,</span> <span class="s2">"multi-label"</span><span class="p">,</span> <span class="s2">"single-annotator"</span><span class="p">)}</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="LabelCardinalityInconsistency.query">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.pool.LabelCardinalityInconsistency.html#skactiveml.pool.LabelCardinalityInconsistency.query">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">X</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">,</span>
+        <span class="n">clf</span><span class="p">,</span>
+        <span class="n">fit_clf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">candidates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">return_utilities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Determines for which candidate samples labels are to be queried.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, n_features)</span>
+<span class="sd">            Training data set, usually complete, i.e., including the labeled</span>
+<span class="sd">            and unlabeled samples.</span>
+<span class="sd">        y : array-like of shape (n_samples, n_outputs)</span>
+<span class="sd">            Labels of the training data set (possibly including unlabeled</span>
+<span class="sd">            rows indicated by `self.missing_label`). Each row must either</span>
+<span class="sd">            contain only observed labels or only `missing_label` values, i.e.,</span>
+<span class="sd">            no mixing within a row. This strategy supports multi-label data</span>
+<span class="sd">            only.</span>
+<span class="sd">        clf : skactiveml.base.SkactivemlClassifier</span>
+<span class="sd">            Classifier implementing the methods `fit` and `predict`.</span>
+<span class="sd">        fit_clf : bool, default=True</span>
+<span class="sd">            Defines whether the classifier `clf` should be fitted on `X`, `y`,</span>
+<span class="sd">            and `sample_weight`.</span>
+<span class="sd">        sample_weight : array-like of shape (n_samples,) or \</span>
+<span class="sd">                (n_samples, n_outputs), default=None</span>
+<span class="sd">            Weights of training samples in `X`. One weight per sample is</span>
+<span class="sd">            supported. Per-target weights are forwarded to `clf.fit` without</span>
+<span class="sd">            additional validation and require estimator support.</span>
+<span class="sd">        candidates : None or array-like of shape (n_candidates), dtype=int or \</span>
+<span class="sd">                array-like of shape (n_candidates, n_features), default=None</span>
+<span class="sd">            - If `candidates` is `None`, the unlabeled samples from `(X, y)`</span>
+<span class="sd">              are considered as candidates.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates,)` and of type</span>
+<span class="sd">              `int`, `candidates` is considered as the indices of samples in</span>
+<span class="sd">              `(X, y)`.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates, n_features)`,</span>
+<span class="sd">              the candidates are directly given in `candidates`.</span>
+
+<span class="sd">            A given `candidates` is authoritative, i.e., an index array is</span>
+<span class="sd">            taken as given, such that labeled samples remain candidates, e.g.,</span>
+<span class="sd">            to relabel them or to recompute their utilities.</span>
+<span class="sd">        batch_size : int, default=1</span>
+<span class="sd">            The number of samples to be selected in one AL cycle.</span>
+<span class="sd">        return_utilities : bool, default=False</span>
+<span class="sd">            If `True`, also return the utilities based on the query strategy.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        query_indices : numpy.ndarray of shape (batch_size,)</span>
+<span class="sd">            The query indices indicate for which candidate sample a label is</span>
+<span class="sd">            to be queried, e.g., `query_indices[0]` indicates the first</span>
+<span class="sd">            selected sample.</span>
+
+<span class="sd">            - If `candidates` is `None` or of shape `(n_candidates,)`, the</span>
+<span class="sd">              indexing refers to the samples in `X`.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates, n_features)`, the</span>
+<span class="sd">              indexing refers to the samples in `candidates`.</span>
+<span class="sd">        utilities : numpy.ndarray of shape (batch_size, n_samples) or \</span>
+<span class="sd">                numpy.ndarray of shape (batch_size, n_candidates)</span>
+<span class="sd">            The utilities of samples after each selected sample of the batch,</span>
+<span class="sd">            e.g., `utilities[0]` indicates the utilities used for selecting</span>
+<span class="sd">            the first sample (with index `query_indices[0]`) of the batch.</span>
+<span class="sd">            Utilities for samples that are no candidates will be set to</span>
+<span class="sd">            np.nan.</span>
+
+<span class="sd">            - If `candidates` is `None` or of shape `(n_candidates,)`, the</span>
+<span class="sd">              indexing refers to the samples in `X`.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates, n_features)`, the</span>
+<span class="sd">              indexing refers to the samples in `candidates`.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        An exhausted candidate pool, i.e., a fully labeled `(X, y)` queried</span>
+<span class="sd">        with `candidates=None` or an empty `candidates`, is a valid</span>
+<span class="sd">        acquisition state. It is answered with an empty batch of `batch_size`</span>
+<span class="sd">        zero and a warning naming the exhaustion.</span>
+<span class="sd">        """</span>
+        <span class="c1"># Resolve through the classifier before acquisition state is changed.</span>
+        <span class="n">clf</span><span class="p">,</span> <span class="n">target_spec</span> <span class="o">=</span> <span class="n">_fit_and_resolve_estimator_target_spec</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">clf</span><span class="p">,</span>
+            <span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="p">,</span>
+            <span class="n">fit_estimator</span><span class="o">=</span><span class="n">fit_clf</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+            <span class="n">estimator_name</span><span class="o">=</span><span class="s2">"clf"</span><span class="p">,</span>
+            <span class="n">fit_name</span><span class="o">=</span><span class="s2">"fit_clf"</span><span class="p">,</span>
+            <span class="n">estimator_types</span><span class="o">=</span><span class="p">(</span><span class="n">SkactivemlClassifier</span><span class="p">,),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Validate input parameters</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">return_utilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
+            <span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="p">,</span>
+            <span class="n">candidates</span><span class="p">,</span>
+            <span class="n">batch_size</span><span class="p">,</span>
+            <span class="n">return_utilities</span><span class="p">,</span>
+            <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">X_cand</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform_candidates</span><span class="p">(</span>
+            <span class="n">candidates</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span>
+        <span class="p">)</span>
+
+        <span class="n">lbld_mask</span> <span class="o">=</span> <span class="n">is_labeled</span><span class="p">(</span>
+            <span class="n">y</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label_</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Encode targets and predictions so that the acquisition function</span>
+        <span class="c1"># never performs arithmetic on raw class values.</span>
+        <span class="n">label_encoder</span> <span class="o">=</span> <span class="n">ExtLabelEncoder</span><span class="p">(</span>
+            <span class="n">classes</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label_</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">lbld_mask</span><span class="p">])</span>
+        <span class="n">y_labeled</span> <span class="o">=</span> <span class="n">label_encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">lbld_mask</span><span class="p">])</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">label_encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_cand</span><span class="p">))</span>
+
+        <span class="n">utilities_cand</span> <span class="o">=</span> <span class="n">label_cardinality_inconsistency</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_labeled</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">mapping</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">utilities</span> <span class="o">=</span> <span class="n">utilities_cand</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">utilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">utilities</span><span class="p">[</span><span class="n">mapping</span><span class="p">]</span> <span class="o">=</span> <span class="n">utilities_cand</span>
+
+        <span class="k">return</span> <span class="n">simple_batch</span><span class="p">(</span>
+            <span class="n">utilities</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">random_state_</span><span class="p">,</span>
+            <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+            <span class="n">return_utilities</span><span class="o">=</span><span class="n">return_utilities</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="label_cardinality_inconsistency">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.pool.label_cardinality_inconsistency.html#skactiveml.pool.label_cardinality_inconsistency">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">label_cardinality_inconsistency</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_labeled</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Calculate the label cardinality inconsistency.</span>
+
+<span class="sd">    The label cardinality of a sample is its number of positive labels. This</span>
+<span class="sd">    acquisition function scores each candidate sample by the absolute</span>
+<span class="sd">    difference between its predicted label cardinality and the mean label</span>
+<span class="sd">    cardinality of the labeled samples [1]_. An empty labeled pool is treated</span>
+<span class="sd">    as having a label cardinality of zero.</span>
+
+<span class="sd">    Both targets must be encoded, i.e., `0` for the negative and `1` for the</span>
+<span class="sd">    positive class of each output, so that the acquisition function performs</span>
+<span class="sd">    no arithmetic on raw class values. Use</span>
+<span class="sd">    `skactiveml.utils.ExtLabelEncoder` with `target_type="multi-label"` to</span>
+<span class="sd">    encode raw class vocabularies.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    y_pred : array-like of shape (n_candidates, n_outputs)</span>
+<span class="sd">        Encoded predicted labels of the candidate samples.</span>
+<span class="sd">    y_labeled : array-like of shape (n_labeled, n_outputs)</span>
+<span class="sd">        Encoded observed labels of the labeled samples. May be empty, i.e.,</span>
+<span class="sd">        of shape `(0, n_outputs)`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    utilities : numpy.ndarray of shape (n_candidates,)</span>
+<span class="sd">        Absolute difference between each candidate's predicted label</span>
+<span class="sd">        cardinality and the mean label cardinality of the labeled samples,</span>
+<span class="sd">        i.e., one finite value in `[0, n_outputs]` per candidate. Larger</span>
+<span class="sd">        values indicate more useful candidates.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If `y_pred` or `y_labeled` is not a two-dimensional array with</span>
+<span class="sd">        `n_outputs` columns, or if either contains values other than `0` and</span>
+<span class="sd">        `1`, e.g., unlabeled rows or raw class values.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] R. Wang and S. Ye (2019). Multi-Label Active Learning Driven by</span>
+<span class="sd">       Uncertainty and Inconsistency. In 2019 International Conference on</span>
+<span class="sd">       Machine Learning and Cybernetics.</span>
+<span class="sd">    """</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">_check_encoded_multilabel_targets</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">)</span>
+    <span class="n">y_labeled</span> <span class="o">=</span> <span class="n">_check_encoded_multilabel_targets</span><span class="p">(</span>
+        <span class="n">y_labeled</span><span class="p">,</span> <span class="s2">"y_labeled"</span><span class="p">,</span> <span class="n">n_outputs</span><span class="o">=</span><span class="n">y_pred</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">label_cardinality</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_labeled</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">label_cardinality</span> <span class="o">=</span> <span class="n">y_labeled</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_labeled</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_pred</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">label_cardinality</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_encoded_multilabel_targets</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">n_outputs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Check that `y` is a matrix of encoded multi-label targets.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    y : array-like of shape (n_samples, n_outputs)</span>
+<span class="sd">        Encoded multi-label targets, i.e., one `0` or `1` per output.</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of `y` used in error messages.</span>
+<span class="sd">    n_outputs : int or None, default=None</span>
+<span class="sd">        Expected number of outputs. If not `None`, `y` must have this many</span>
+<span class="sd">        columns.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    y : numpy.ndarray of shape (n_samples, n_outputs)</span>
+<span class="sd">        Encoded multi-label targets as an integer array.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If `y` is not a two-dimensional array of the expected width, or if it</span>
+<span class="sd">        contains values other than `0` and `1`.</span>
+<span class="sd">    """</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"`</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">` must have shape `(n_samples, n_outputs)`, got "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">."</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_outputs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">n_outputs</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"`</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">` has </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> outputs, expected </span><span class="si">{</span><span class="n">n_outputs</span><span class="si">}</span><span class="s2">."</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"`</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">` must contain encoded labels, i.e., `0` or `1` per "</span>
+            <span class="s2">"output. Unlabeled or raw class values are not supported."</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

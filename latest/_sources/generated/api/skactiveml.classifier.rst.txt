@@ -1,0 +1,38 @@
+:mod:`skactiveml.classifier`
+============================
+
+.. automodule:: skactiveml.classifier
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+  skactiveml.classifier.multiannotator
+
+Submodules
+----------
+
+.. list-table::
+  :header-rows: 0
+  :widths: 100
+
+  * - :mod:`skactiveml.classifier.multiannotator`
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   classifier.ParzenWindowClassifier
+   classifier.MixtureModelClassifier
+   classifier.SklearnClassifier
+   classifier.SlidingWindowClassifier
+   classifier.SkorchClassifier
+

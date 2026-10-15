@@ -1,0 +1,39 @@
+﻿DropQuery
+=========
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.DropQuery
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DropQuery.query
+   
+      ~DropQuery.get_metadata_routing
+      ~DropQuery.get_params
+      ~DropQuery.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.DropQuery.query
+
+.. automethod:: skactiveml.pool.DropQuery.get_metadata_routing
+.. automethod:: skactiveml.pool.DropQuery.get_params
+.. automethod:: skactiveml.pool.DropQuery.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.DropQuery:
+
+.. minigallery:: skactiveml.pool.DropQuery
+   :add-heading:

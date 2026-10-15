@@ -1,0 +1,1085 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Target and Annotation Semantics &#8212; scikit-activeml development documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="_static/documentation_options.js?v=249f3023"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'target_semantics';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="_static/filter_examples.js?v=95a029dd"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/development/target_semantics.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="MappingError" href="generated/api/skactiveml.exceptions.MappingError.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="development" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml development documentation - Home"/>
+    <img src="_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml development documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    Target Semantics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Target Semantics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Target and Annotation Semantics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="target-and-annotation-semantics">
+<span id="target-semantics"></span><h1>Target and Annotation Semantics<a class="headerlink" href="#target-and-annotation-semantics" title="Link to this heading">#</a></h1>
+<p>Target semantics specify three properties of target data: the task, the target
+type, and the annotation type. The target contract first resolves these
+properties into a <a class="reference internal" href="generated/api/skactiveml.utils.TargetSpec.html#skactiveml.utils.TargetSpec" title="skactiveml.utils.TargetSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">TargetSpec</span></code></a>. Each estimator or query
+strategy can then check whether it supports that exact specification.</p>
+<p>Resolution and capability checking are separate. A target specification can be
+valid even if a particular estimator or query strategy does not support it.</p>
+<section id="public-api">
+<h2>Public API<a class="headerlink" href="#public-api" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="generated/api/skactiveml.utils.resolve_target_spec.html#skactiveml.utils.resolve_target_spec" title="skactiveml.utils.resolve_target_spec"><code class="xref py py-func docutils literal notranslate"><span class="pre">resolve_target_spec()</span></code></a> determines the target semantics
+from <code class="docutils literal notranslate"><span class="pre">y</span></code> and the declared <code class="docutils literal notranslate"><span class="pre">task</span></code>, <code class="docutils literal notranslate"><span class="pre">target_type</span></code>, <code class="docutils literal notranslate"><span class="pre">annotation_type</span></code>,
+optional class vocabularies, and <code class="docutils literal notranslate"><span class="pre">missing_label</span></code>. It returns a frozen target
+specification with four fields:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">task</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&quot;classification&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;regression&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">target_type</span></code></dt><dd><p>The resolved value <code class="docutils literal notranslate"><span class="pre">&quot;single-output&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;multi-label&quot;</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">&quot;multi-output&quot;</span></code>. A resolved specification never contains <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">annotation_type</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&quot;single-annotator&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;multi-annotator&quot;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">classes</span></code></dt><dd><p>The canonical immutable class vocabulary for classification, or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+for regression.</p>
+</dd>
+</dl>
+<p>Public estimators and pool query strategies expose a <code class="docutils literal notranslate"><span class="pre">target_type</span></code>
+constructor parameter. The default <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> keeps existing unambiguous
+single-output calls working. After a successful fit, classifiers and regressors
+expose the resolved <code class="docutils literal notranslate"><span class="pre">target_spec_</span></code> attribute.</p>
+<p>Query strategies resolve the target semantics separately for each call and do
+not store the specification from the previous query. If a fitted classifier is
+passed to a strategy, its <code class="docutils literal notranslate"><span class="pre">target_spec_</span></code> is authoritative, i.e., it
+determines what <code class="docutils literal notranslate"><span class="pre">y</span></code> means for that query.</p>
+</section>
+<section id="explicit-multi-label-classification">
+<h2>Explicit multi-label classification<a class="headerlink" href="#explicit-multi-label-classification" title="Link to this heading">#</a></h2>
+<p>For multi-label classification, declare <code class="docutils literal notranslate"><span class="pre">target_type=&quot;multi-label&quot;</span></code> instead
+of relying on <code class="docutils literal notranslate"><span class="pre">y</span></code> being two-dimensional. If <code class="docutils literal notranslate"><span class="pre">classes=None</span></code>, each output
+column must contain both binary classes so that its vocabulary can be inferred.</p>
+<p>The following example fits a classifier and queries one complete label vector.
+It is executed as part of the documentation tests.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.multioutput</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultiOutputClassifier</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.classifier</span><span class="w"> </span><span class="kn">import</span> <span class="n">SklearnClassifier</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.pool</span><span class="w"> </span><span class="kn">import</span> <span class="n">UncertaintySampling</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span> <span class="o">=</span> <span class="n">SklearnClassifier</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">MultiOutputClassifier</span><span class="p">(</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span>
+<span class="gp">... </span>    <span class="n">classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">target_type</span><span class="o">=</span><span class="s2">"multi-label"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">clf</span><span class="o">.</span><span class="n">target_spec_</span><span class="o">.</span><span class="n">target_type</span> <span class="o">==</span> <span class="s2">"multi-label"</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">clf</span><span class="o">.</span><span class="n">target_spec_</span><span class="o">.</span><span class="n">classes</span> <span class="o">==</span> <span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">strategy</span> <span class="o">=</span> <span class="n">UncertaintySampling</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">method</span><span class="o">=</span><span class="s2">"entropy"</span><span class="p">,</span> <span class="n">target_type</span><span class="o">=</span><span class="s2">"multi-label"</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">query_indices</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">clf</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span> <span class="n">fit_clf</span><span class="o">=</span><span class="kc">False</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">query_indices</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">query_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="multi-label-pool-strategy-capabilities">
+<span id="multilabel-strategy-inventory"></span><h3>Multi-label pool strategy capabilities<a class="headerlink" href="#multi-label-pool-strategy-capabilities" title="Link to this heading">#</a></h3>
+<p>The following pool strategies support complete multi-label targets. This list
+is checked against the exact capability inventory in
+<code class="docutils literal notranslate"><span class="pre">skactiveml/pool/tests/test_multilabel_contracts.py</span></code>. The test groups
+strategies by how they consume probabilities, whereas this documentation groups
+them by how their acquisition method uses multi-label data. A new
+multi-label-capable strategy therefore has to be added to the appropriate group
+in both places.</p>
+<p>The <a class="reference internal" href="generated/strategy_overview.html"><span class="doc">Strategy Overview</span></a> provides a
+<code class="docutils literal notranslate"><span class="pre">Multi-Label</span></code> filter and links to the available examples.</p>
+<p><strong>Native multi-label methods</strong></p>
+<blockquote>
+<div><p><a class="reference internal" href="generated/api/skactiveml.pool.MaxLossReductionMaxConfidence.html#skactiveml.pool.MaxLossReductionMaxConfidence" title="skactiveml.pool.MaxLossReductionMaxConfidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxLossReductionMaxConfidence</span></code></a> and
+<a class="reference internal" href="generated/api/skactiveml.pool.LabelCardinalityInconsistency.html#skactiveml.pool.LabelCardinalityInconsistency" title="skactiveml.pool.LabelCardinalityInconsistency"><code class="xref py py-class docutils literal notranslate"><span class="pre">LabelCardinalityInconsistency</span></code></a> implement methods
+designed for multi-label acquisition. Maximum Loss Reduction with Maximal
+Confidence is commonly abbreviated as <strong>MMC</strong> in the literature and
+tutorials. The importable class is
+<a class="reference internal" href="generated/api/skactiveml.pool.MaxLossReductionMaxConfidence.html#skactiveml.pool.MaxLossReductionMaxConfidence" title="skactiveml.pool.MaxLossReductionMaxConfidence"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxLossReductionMaxConfidence</span></code></a>; there is no separate
+<code class="docutils literal notranslate"><span class="pre">MMC</span></code> alias.</p>
+</div></blockquote>
+<p><strong>Extensions of single-output methods</strong></p>
+<blockquote>
+<div><p><a class="reference internal" href="generated/api/skactiveml.pool.Badge.html#skactiveml.pool.Badge" title="skactiveml.pool.Badge"><code class="xref py py-class docutils literal notranslate"><span class="pre">Badge</span></code></a>, <a class="reference internal" href="generated/api/skactiveml.pool.Clue.html#skactiveml.pool.Clue" title="skactiveml.pool.Clue"><code class="xref py py-class docutils literal notranslate"><span class="pre">Clue</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.pool.DropQuery.html#skactiveml.pool.DropQuery" title="skactiveml.pool.DropQuery"><code class="xref py py-class docutils literal notranslate"><span class="pre">DropQuery</span></code></a>, <a class="reference internal" href="generated/api/skactiveml.pool.Falcun.html#skactiveml.pool.Falcun" title="skactiveml.pool.Falcun"><code class="xref py py-class docutils literal notranslate"><span class="pre">Falcun</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.pool.ProbCover.html#skactiveml.pool.ProbCover" title="skactiveml.pool.ProbCover"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProbCover</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.pool.UHerding.html#skactiveml.pool.UHerding" title="skactiveml.pool.UHerding"><code class="xref py py-class docutils literal notranslate"><span class="pre">UHerding</span></code></a>, and
+<a class="reference internal" href="generated/api/skactiveml.pool.UncertaintySampling.html#skactiveml.pool.UncertaintySampling" title="skactiveml.pool.UncertaintySampling"><code class="xref py py-class docutils literal notranslate"><span class="pre">UncertaintySampling</span></code></a> document how the corresponding
+single-output method is extended to multi-label data. Most of these methods
+compute a score for each label and reduce the scores to one utility per
+sample. <code class="docutils literal notranslate"><span class="pre">ProbCover</span></code> differs in that it uses the observed label rows when
+choosing its default radius. See the documentation of each class for the
+exact extension and reduction rule.</p>
+</div></blockquote>
+<p><strong>Representation- and mask-only methods</strong></p>
+<blockquote>
+<div><p><a class="reference internal" href="generated/api/skactiveml.pool.CoreSet.html#skactiveml.pool.CoreSet" title="skactiveml.pool.CoreSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoreSet</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.pool.DiscriminativeAL.html#skactiveml.pool.DiscriminativeAL" title="skactiveml.pool.DiscriminativeAL"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiscriminativeAL</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.pool.GreedySamplingX.html#skactiveml.pool.GreedySamplingX" title="skactiveml.pool.GreedySamplingX"><code class="xref py py-class docutils literal notranslate"><span class="pre">GreedySamplingX</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.pool.MaxHerding.html#skactiveml.pool.MaxHerding" title="skactiveml.pool.MaxHerding"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxHerding</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.pool.RandomSampling.html#skactiveml.pool.RandomSampling" title="skactiveml.pool.RandomSampling"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomSampling</span></code></a>, and
+<a class="reference internal" href="generated/api/skactiveml.pool.TypiClust.html#skactiveml.pool.TypiClust" title="skactiveml.pool.TypiClust"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypiClust</span></code></a> use sample representations and the
+labeled/unlabeled mask. The label values themselves do not affect the
+acquisition.</p>
+</div></blockquote>
+<p><a class="reference internal" href="generated/api/skactiveml.pool.ParallelUtilityEstimationWrapper.html#skactiveml.pool.ParallelUtilityEstimationWrapper" title="skactiveml.pool.ParallelUtilityEstimationWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParallelUtilityEstimationWrapper</span></code></a> and
+<a class="reference internal" href="generated/api/skactiveml.pool.SubSamplingWrapper.html#skactiveml.pool.SubSamplingWrapper" title="skactiveml.pool.SubSamplingWrapper"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubSamplingWrapper</span></code></a> inherit multi-label support from
+the strategy they wrap.</p>
+</section>
+<section id="estimator-capability-for-multi-label-wrapping">
+<h3>Estimator capability for multi-label wrapping<a class="headerlink" href="#estimator-capability-for-multi-label-wrapping" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">SklearnClassifier</span></code> accepts an estimator for multi-label classification only
+if the estimator is a <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> classifier, implements <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>,
+and declares either <code class="docutils literal notranslate"><span class="pre">target_tags.multi_output</span></code> or
+<code class="docutils literal notranslate"><span class="pre">classifier_tags.multi_label</span></code> as supported. This capability is determined
+from the estimator metadata and is never inferred by fitting generated data.</p>
+<p>For example, a plain <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> implements <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> but
+declares neither tag. It is therefore rejected before any fitted state is stored
+instead of silently falling back to prior-only predictions.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rejected</span> <span class="o">=</span> <span class="n">SklearnClassifier</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">LogisticRegression</span><span class="p">(),</span>
+<span class="gp">... </span>    <span class="n">classes</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span>
+<span class="gp">... </span>    <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">_</span> <span class="o">=</span> <span class="n">rejected</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]))</span>
+<span class="gp">... </span><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"target_tags.multi_output"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">rejected</span><span class="p">,</span> <span class="s2">"target_spec_"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pre-fitted-estimators">
+<h3>Pre-fitted estimators<a class="headerlink" href="#pre-fitted-estimators" title="Link to this heading">#</a></h3>
+<p>A pre-fitted <code class="docutils literal notranslate"><span class="pre">estimator</span></code> already has learned target semantics. Before
+<code class="docutils literal notranslate"><span class="pre">SklearnClassifier</span></code> exposes any fitted attributes, it checks that the declared
+semantics are consistent with the estimator’s learned classes by class identity.</p>
+<p>Declared <code class="docutils literal notranslate"><span class="pre">classes</span></code> may extend the learned class vocabulary. Any additional
+classes then receive zero-filled probability columns in the declared order.
+However, the declaration may neither reinterpret learned classes nor change the
+number of predicted outputs. Consequently, equally wide but disjoint class
+vocabularies are rejected instead of being silently relabeled.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">X_prefit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">estimator</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_prefit</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extended</span> <span class="o">=</span> <span class="n">SklearnClassifier</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">estimator</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">extended</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_prefit</span><span class="p">)[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">extended</span><span class="o">.</span><span class="n">target_spec_</span><span class="o">.</span><span class="n">classes</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">relabeled</span> <span class="o">=</span> <span class="n">SklearnClassifier</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">estimator</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">_</span> <span class="o">=</span> <span class="n">relabeled</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_prefit</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"learned the class labels"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">relabeled</span><span class="p">,</span> <span class="s2">"target_spec_"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A fitted multi-label estimator is accepted in either of two cases. First, it may
+provide one binary class vocabulary per label output, as
+<code class="docutils literal notranslate"><span class="pre">MultiOutputClassifier</span></code> and a multi-output <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> do.
+Second, it may provide explicit multi-label metadata together with a flat
+<code class="docutils literal notranslate"><span class="pre">classes_</span></code> that identifies the label outputs, as <code class="docutils literal notranslate"><span class="pre">OneVsRestClassifier</span></code> does.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">OneVsRestClassifier</span></code>, the flat classes identify outputs rather than the
+binary class vocabulary of each output. Because each output is a binary
+indicator, <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">1],</span> <span class="pre">...]</span></code> must therefore be declared explicitly. A pre-fitted
+estimator that provides neither representation cannot be declared as multi-label:
+a flat learned class vocabulary alone cannot be distinguished from
+single-output classification. Such an estimator must instead be fitted through
+the wrapper.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.multiclass</span><span class="w"> </span><span class="kn">import</span> <span class="n">OneVsRestClassifier</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_prefit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">one_vs_rest</span> <span class="o">=</span> <span class="n">OneVsRestClassifier</span><span class="p">(</span><span class="n">LogisticRegression</span><span class="p">())</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">X_prefit</span><span class="p">,</span> <span class="n">y_prefit</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">declared</span> <span class="o">=</span> <span class="n">SklearnClassifier</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">one_vs_rest</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">missing_label</span><span class="o">=-</span><span class="mi">1</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">declared</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_prefit</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">declared</span><span class="o">.</span><span class="n">target_spec_</span><span class="o">.</span><span class="n">target_type</span> <span class="o">==</span> <span class="s2">"multi-label"</span>
+</pre></div>
+</div>
+</section>
+<section id="class-vocabularies-and-complete-rows">
+<h3>Class vocabularies and complete rows<a class="headerlink" href="#class-vocabularies-and-complete-rows" title="Link to this heading">#</a></h3>
+<p>Multi-label classification uses one binary class vocabulary for each label
+output. Explicit vocabularies allow fitting to start before both classes have
+been observed and also support non-numeric labels. The order in which a
+vocabulary is provided does not define the probability-column order. Each
+vocabulary is normalized to the same canonical order used by fitted
+<code class="docutils literal notranslate"><span class="pre">classes_</span></code>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">resolve_target_spec</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">string_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">"present"</span><span class="p">,</span> <span class="s2">"yes"</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">"absent"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">],</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spec</span> <span class="o">=</span> <span class="n">resolve_target_spec</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">string_y</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">task</span><span class="o">=</span><span class="s2">"classification"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">target_type</span><span class="o">=</span><span class="s2">"multi-label"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">classes</span><span class="o">=</span><span class="p">((</span><span class="s2">"present"</span><span class="p">,</span> <span class="s2">"absent"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">)),</span>
+<span class="gp">... </span>    <span class="n">missing_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">spec</span><span class="o">.</span><span class="n">classes</span> <span class="o">==</span> <span class="p">((</span><span class="s2">"absent"</span><span class="p">,</span> <span class="s2">"present"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"no"</span><span class="p">,</span> <span class="s2">"yes"</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>All label outputs must use classes of the same dtype kind because one array
+stores all outputs of a sample. Different outputs may still use different
+binary vocabularies within the same kind, for example <code class="docutils literal notranslate"><span class="pre">(&quot;no&quot;,</span> <span class="pre">&quot;yes&quot;)</span></code> next
+to <code class="docutils literal notranslate"><span class="pre">(&quot;off&quot;,</span> <span class="pre">&quot;always&quot;)</span></code>.</p>
+<p>Mixing dtype kinds is rejected during resolution, including strings with
+numbers, integers with floats, and booleans with integers. Otherwise, the array
+would coerce the outputs to a common dtype and could change the declared class
+labels. For example, the integer <code class="docutils literal notranslate"><span class="pre">0</span></code> of one output could be returned as the
+string <code class="docutils literal notranslate"><span class="pre">'0'</span></code>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mixed_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mixed_y</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"no"</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="s2">"yes"</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">resolve_target_spec</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="n">mixed_y</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">task</span><span class="o">=</span><span class="s2">"classification"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">target_type</span><span class="o">=</span><span class="s2">"multi-label"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">classes</span><span class="o">=</span><span class="p">((</span><span class="s2">"no"</span><span class="p">,</span> <span class="s2">"yes"</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+<span class="gp">... </span>    <span class="n">missing_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">ValueError</span><span class="w">:</span>
+</pre></div>
+</div>
+<p>Predictions use the dtype of the declared class labels, not the potentially
+wider dtype required by <code class="docutils literal notranslate"><span class="pre">missing_label</span></code>. For a single-output target,
+<code class="docutils literal notranslate"><span class="pre">predict</span></code> therefore returns the dtype of <code class="docutils literal notranslate"><span class="pre">classes_</span></code>. For a multi-label
+target, it returns the common dtype of the per-output vocabularies.</p>
+<p>A common case is integer classes together with the default
+<code class="docutils literal notranslate"><span class="pre">missing_label=np.nan</span></code>. The target array then uses <code class="docutils literal notranslate"><span class="pre">float64</span></code> so that it can
+contain <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>, while predictions use <code class="docutils literal notranslate"><span class="pre">int64</span></code> and remain valid wherever
+class labels are expected, for example as indices.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.classifier</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParzenWindowClassifier</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtype_X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtype_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtype_clf</span> <span class="o">=</span> <span class="n">ParzenWindowClassifier</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">dtype_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dtype_X</span><span class="p">,</span> <span class="n">dtype_y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtype_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dtype_X</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">dtype_clf</span><span class="o">.</span><span class="n">classes_</span><span class="o">.</span><span class="n">dtype</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">classes</span></code> is not specified, target resolution never assumes a <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1)</span></code>
+vocabulary. A label column with fewer than two observed classes therefore raises
+an error.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">under_observed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">resolve_target_spec</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="n">under_observed</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">task</span><span class="o">=</span><span class="s2">"classification"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">target_type</span><span class="o">=</span><span class="s2">"multi-label"</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">ValueError</span><span class="w">:</span>
+</pre></div>
+</div>
+<p>The current contract treats the multi-label target of a sample as one complete
+label vector. A row must therefore be either fully observed or fully missing.
+A partially observed row would require partial-label training or acquisition,
+which is not supported.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mixed_row_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">resolve_target_spec</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="n">mixed_row_y</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">task</span><span class="o">=</span><span class="s2">"classification"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">target_type</span><span class="o">=</span><span class="s2">"multi-label"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">classes</span><span class="o">=</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">ValueError</span><span class="w">:</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ambiguous-two-dimensional-classification">
+<h2>Ambiguous two-dimensional classification<a class="headerlink" href="#ambiguous-two-dimensional-classification" title="Link to this heading">#</a></h2>
+<p>For single-annotator classification, a two-dimensional <code class="docutils literal notranslate"><span class="pre">y</span></code> is ambiguous when
+<code class="docutils literal notranslate"><span class="pre">target_type=&quot;auto&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">classes=None</span></code>. Its columns could represent binary
+label outputs or distinct outputs of a future multi-output classification task.
+Binary-looking values do not resolve this ambiguity.</p>
+<p>Specify <code class="docutils literal notranslate"><span class="pre">target_type</span></code>, provide a flat or nested class vocabulary, or pass a
+fitted estimator whose <code class="docutils literal notranslate"><span class="pre">target_spec_</span></code> already resolves the target semantics.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">resolve_target_spec</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]),</span> <span class="n">task</span><span class="o">=</span><span class="s2">"classification"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">ValueError</span><span class="w">:</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">target_type=&quot;auto&quot;</span></code>, a flat class vocabulary resolves to single-output
+classification. A nested set of binary vocabularies resolves to multi-label
+classification. A nested vocabulary containing a non-binary output resolves to
+multi-output classification. This target type is recognized but is not yet
+supported by current components.</p>
+</section>
+<section id="single-output-column-vectors">
+<h2>Single-output column vectors<a class="headerlink" href="#single-output-column-vectors" title="Link to this heading">#</a></h2>
+<p>A target with shape <code class="docutils literal notranslate"><span class="pre">(n_samples,</span> <span class="pre">1)</span></code> is accepted once its semantics resolve to
+single-output. For classification, either an explicit
+<code class="docutils literal notranslate"><span class="pre">target_type=&quot;single-output&quot;</span></code> or a flat class vocabulary provides enough
+information. Classifiers and pool query strategies then convert the column to
+the canonical one-dimensional representation and emit a
+<code class="docutils literal notranslate"><span class="pre">DataConversionWarning</span></code>.</p>
+<p>A classification column with <code class="docutils literal notranslate"><span class="pre">target_type=&quot;auto&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">classes=None</span></code> remains
+an ambiguous two-dimensional target.</p>
+<p>For regression, both <code class="docutils literal notranslate"><span class="pre">target_type=&quot;auto&quot;</span></code> and an explicit
+<code class="docutils literal notranslate"><span class="pre">target_type=&quot;single-output&quot;</span></code> accept a column vector, preserving the existing
+regression behavior. This applies whenever the task is known, for example in a
+regressor or in a strategy that resolves its targets through a regressor.</p>
+<p>A task-agnostic strategy has neither a known task nor a class vocabulary.
+Therefore, it treats every bare two-dimensional target as ambiguous, regardless
+of whether the values are continuous or discrete. A target with more than one
+column is not single-output for either classification or regression.</p>
+</section>
+<section id="target-aware-masks-and-indices">
+<h2>Target-aware masks and indices<a class="headerlink" href="#target-aware-masks-and-indices" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="generated/api/skactiveml.utils.is_labeled.html#skactiveml.utils.is_labeled" title="skactiveml.utils.is_labeled"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_labeled()</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.utils.is_unlabeled.html#skactiveml.utils.is_unlabeled" title="skactiveml.utils.is_unlabeled"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_unlabeled()</span></code></a>,
+<a class="reference internal" href="generated/api/skactiveml.utils.labeled_indices.html#skactiveml.utils.labeled_indices" title="skactiveml.utils.labeled_indices"><code class="xref py py-func docutils literal notranslate"><span class="pre">labeled_indices()</span></code></a>, and
+<a class="reference internal" href="generated/api/skactiveml.utils.unlabeled_indices.html#skactiveml.utils.unlabeled_indices" title="skactiveml.utils.unlabeled_indices"><code class="xref py py-func docutils literal notranslate"><span class="pre">unlabeled_indices()</span></code></a> accept a keyword-only <code class="docutils literal notranslate"><span class="pre">target_type</span></code>
+argument.</p>
+<p>With the default <code class="docutils literal notranslate"><span class="pre">target_type=&quot;single-output&quot;</span></code>, their behavior remains
+elementwise, including for multi-annotator matrices. With
+<code class="docutils literal notranslate"><span class="pre">target_type=&quot;multi-label&quot;</span></code>, they require each row to be fully observed or
+fully missing and return sample-level masks or indices.</p>
+<p>These helpers do not accept <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>. Pass the concrete <code class="docutils literal notranslate"><span class="pre">target_type</span></code> from a
+resolved target specification.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_unlabeled</span><span class="p">,</span> <span class="n">unlabeled_indices</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_unlabeled</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">target_type</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">target_spec_</span><span class="o">.</span><span class="n">target_type</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[False, False, False, False, True, True]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unlabeled_indices</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">target_type</span><span class="o">=</span><span class="s2">"multi-label"</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[4, 5]</span>
+</pre></div>
+</div>
+</section>
+<section id="regression">
+<h2>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h2>
+<p>For currently supported regression, regressors accept <code class="docutils literal notranslate"><span class="pre">target_type=&quot;auto&quot;</span></code>
+and <code class="docutils literal notranslate"><span class="pre">target_type=&quot;single-output&quot;</span></code>. One-dimensional numeric targets resolve to
+single-output regression, and column vectors remain supported.</p>
+<p>Targets with multiple columns resolve to the recognized
+<code class="docutils literal notranslate"><span class="pre">target_type=&quot;multi-output&quot;</span></code> semantics. The specification itself is valid,
+but regressors reject it because multi-output regression is not yet a supported
+capability. Regression target specifications always have <code class="docutils literal notranslate"><span class="pre">classes=None</span></code>.</p>
+<p>A single-output regression target contains one value per sample, so <code class="docutils literal notranslate"><span class="pre">predict</span></code>
+returns an array of shape <code class="docutils literal notranslate"><span class="pre">(n_samples,)</span></code>. A wrapped estimator may instead
+return one prediction per sample as a column; this column is reduced to the
+shape required by the declared single-output target type.</p>
+<p>Predictions with several target columns are rejected rather than flattened.
+Flattening them would produce <code class="docutils literal notranslate"><span class="pre">n_samples</span> <span class="pre">*</span> <span class="pre">n_outputs</span></code> values and would no
+longer preserve one target value per sample.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">skactiveml.regressor</span><span class="w"> </span><span class="kn">import</span> <span class="n">SklearnRegressor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shape_X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shape_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shape_reg</span> <span class="o">=</span> <span class="n">SklearnRegressor</span><span class="p">(</span><span class="n">LinearRegression</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">shape_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">shape_X</span><span class="p">,</span> <span class="n">shape_y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shape_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">shape_X</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(3,)</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-annotators">
+<h2>Multiple annotators<a class="headerlink" href="#multiple-annotators" title="Link to this heading">#</a></h2>
+<p>Target type and annotation type are independent. In a target observation matrix
+with multi-annotator annotation type, the columns represent annotators that
+provide observations for the same single-output target. They do not represent
+separate label outputs.</p>
+<p>A sample may therefore contain both observed and missing annotator labels.
+Existing multi-annotator estimators and strategies retain the multi-annotator
+annotation type and continue to query sample-annotator pairs, so query results
+still identify <code class="docutils literal notranslate"><span class="pre">(sample,</span> <span class="pre">annotator)</span></code> pairs.</p>
+</section>
+<section id="errors-and-component-capabilities">
+<h2>Errors and component capabilities<a class="headerlink" href="#errors-and-component-capabilities" title="Link to this heading">#</a></h2>
+<p>Invalid target semantics raise an error during resolution. Examples include an
+unknown <code class="docutils literal notranslate"><span class="pre">target_type</span></code> or <code class="docutils literal notranslate"><span class="pre">target_type=&quot;multi-label&quot;</span></code> for regression.</p>
+<p>A different case is a valid target specification that a particular component
+does not support. This passes resolution and fails during capability checking.
+The resulting error reports both the requested specification and the supported
+combinations. The distinction indicates whether the target declaration itself
+must be corrected or a different component is required.</p>
+<p>After fitting, use <code class="docutils literal notranslate"><span class="pre">estimator.target_spec_</span></code> rather than inferring the semantics
+again from the shape of the target array. In particular, use its <code class="docutils literal notranslate"><span class="pre">target_type</span></code>
+and <code class="docutils literal notranslate"><span class="pre">annotation_type</span></code> to choose downstream behavior and its <code class="docutils literal notranslate"><span class="pre">classes</span></code> as the
+canonical class vocabulary for classification.</p>
+</section>
+<section id="recognized-future-semantics">
+<h2>Recognized future semantics<a class="headerlink" href="#recognized-future-semantics" title="Link to this heading">#</a></h2>
+<p>The target contract already recognizes multi-output classification and
+multi-output regression, although current components do not execute them.
+Partial-label querying and multi-label multi-annotator querying are also not yet
+supported.</p>
+<p>These are limits of current component capabilities and acquisition scope. They
+do not change the distinction between target type and annotation type, and
+acquisition granularity is not part of <code class="docutils literal notranslate"><span class="pre">TargetSpec</span></code>. Future support can
+therefore add the required component capabilities and an explicit acquisition
+model without changing the target semantics defined here.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="generated/api/skactiveml.exceptions.MappingError.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MappingError</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="contributing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contributing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#public-api">Public API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-multi-label-classification">Explicit multi-label classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-label-pool-strategy-capabilities">Multi-label pool strategy capabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimator-capability-for-multi-label-wrapping">Estimator capability for multi-label wrapping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-fitted-estimators">Pre-fitted estimators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-vocabularies-and-complete-rows">Class vocabularies and complete rows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguous-two-dimensional-classification">Ambiguous two-dimensional classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-output-column-vectors">Single-output column vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-aware-masks-and-indices">Target-aware masks and indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-annotators">Multiple annotators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-and-component-capabilities">Errors and component capabilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recognized-future-semantics">Recognized future semantics</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/target_semantics.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

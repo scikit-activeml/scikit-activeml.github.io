@@ -1,0 +1,33 @@
+﻿SkorchMixin
+===========
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.SkorchMixin
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkorchMixin.initialize
+   
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.SkorchMixin.initialize
+
+
+
+.. _sphx_glr_backref_skactiveml.base.SkorchMixin:
+
+.. minigallery:: skactiveml.base.SkorchMixin
+   :add-heading:

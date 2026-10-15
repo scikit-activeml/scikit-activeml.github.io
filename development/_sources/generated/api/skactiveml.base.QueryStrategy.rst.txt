@@ -1,0 +1,39 @@
+﻿QueryStrategy
+=============
+
+.. currentmodule:: skactiveml.base
+
+.. autoclass:: skactiveml.base.QueryStrategy
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~QueryStrategy.query
+   
+      ~QueryStrategy.get_metadata_routing
+      ~QueryStrategy.get_params
+      ~QueryStrategy.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.base.QueryStrategy.query
+
+.. automethod:: skactiveml.base.QueryStrategy.get_metadata_routing
+.. automethod:: skactiveml.base.QueryStrategy.get_params
+.. automethod:: skactiveml.base.QueryStrategy.set_params
+
+
+.. _sphx_glr_backref_skactiveml.base.QueryStrategy:
+
+.. minigallery:: skactiveml.base.QueryStrategy
+   :add-heading:

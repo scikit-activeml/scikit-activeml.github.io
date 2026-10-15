@@ -1,0 +1,41 @@
+﻿PeriodicSampling
+================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.PeriodicSampling
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PeriodicSampling.query
+      ~PeriodicSampling.update
+   
+      ~PeriodicSampling.get_metadata_routing
+      ~PeriodicSampling.get_params
+      ~PeriodicSampling.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.PeriodicSampling.query
+.. automethod:: skactiveml.stream.PeriodicSampling.update
+
+.. automethod:: skactiveml.stream.PeriodicSampling.get_metadata_routing
+.. automethod:: skactiveml.stream.PeriodicSampling.get_params
+.. automethod:: skactiveml.stream.PeriodicSampling.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.PeriodicSampling:
+
+.. minigallery:: skactiveml.stream.PeriodicSampling
+   :add-heading:

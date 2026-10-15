@@ -1,0 +1,53 @@
+﻿SkorchRegressor
+===============
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.SkorchRegressor
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SkorchRegressor.fit
+      ~SkorchRegressor.initialize
+      ~SkorchRegressor.partial_fit
+      ~SkorchRegressor.predict
+   
+      ~SkorchRegressor.get_metadata_routing
+      ~SkorchRegressor.get_params
+      ~SkorchRegressor.score
+      ~SkorchRegressor.set_fit_request
+      ~SkorchRegressor.set_params
+      ~SkorchRegressor.set_predict_request
+      ~SkorchRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.regressor.SkorchRegressor.fit
+.. automethod:: skactiveml.regressor.SkorchRegressor.initialize
+.. automethod:: skactiveml.regressor.SkorchRegressor.partial_fit
+.. automethod:: skactiveml.regressor.SkorchRegressor.predict
+
+.. automethod:: skactiveml.regressor.SkorchRegressor.get_metadata_routing
+.. automethod:: skactiveml.regressor.SkorchRegressor.get_params
+.. automethod:: skactiveml.regressor.SkorchRegressor.score
+.. automethod:: skactiveml.regressor.SkorchRegressor.set_fit_request
+.. automethod:: skactiveml.regressor.SkorchRegressor.set_params
+.. automethod:: skactiveml.regressor.SkorchRegressor.set_predict_request
+.. automethod:: skactiveml.regressor.SkorchRegressor.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.regressor.SkorchRegressor:
+
+.. minigallery:: skactiveml.regressor.SkorchRegressor
+   :add-heading:

@@ -1,0 +1,60 @@
+﻿NadarayaWatsonRegressor
+=======================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.NadarayaWatsonRegressor
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NadarayaWatsonRegressor.fit
+      ~NadarayaWatsonRegressor.predict
+      ~NadarayaWatsonRegressor.predict_target_distribution
+      ~NadarayaWatsonRegressor.sample_y
+   
+      ~NadarayaWatsonRegressor.get_metadata_routing
+      ~NadarayaWatsonRegressor.get_params
+      ~NadarayaWatsonRegressor.score
+      ~NadarayaWatsonRegressor.set_fit_request
+      ~NadarayaWatsonRegressor.set_params
+      ~NadarayaWatsonRegressor.set_predict_request
+      ~NadarayaWatsonRegressor.set_score_request
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NadarayaWatsonRegressor.METRICS
+   
+   
+
+
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.fit
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.predict
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.predict_target_distribution
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.sample_y
+
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.get_metadata_routing
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.get_params
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.score
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.set_fit_request
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.set_params
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.set_predict_request
+.. automethod:: skactiveml.regressor.NadarayaWatsonRegressor.set_score_request
+
+.. autoattribute:: skactiveml.regressor.NadarayaWatsonRegressor.METRICS
+
+.. _sphx_glr_backref_skactiveml.regressor.NadarayaWatsonRegressor:
+
+.. minigallery:: skactiveml.regressor.NadarayaWatsonRegressor
+   :add-heading:

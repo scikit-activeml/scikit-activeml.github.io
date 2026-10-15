@@ -1,0 +1,28 @@
+:mod:`skactiveml.regressor`
+===========================
+
+.. automodule:: skactiveml.regressor
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   regressor.NICKernelRegressor
+   regressor.NadarayaWatsonRegressor
+   regressor.SklearnRegressor
+   regressor.SklearnNormalRegressor
+   regressor.SkorchRegressor
+

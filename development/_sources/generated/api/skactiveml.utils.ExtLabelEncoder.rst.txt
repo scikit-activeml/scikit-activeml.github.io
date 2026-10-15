@@ -1,0 +1,45 @@
+﻿ExtLabelEncoder
+===============
+
+.. currentmodule:: skactiveml.utils
+
+.. autoclass:: skactiveml.utils.ExtLabelEncoder
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ExtLabelEncoder.fit
+      ~ExtLabelEncoder.fit_transform
+      ~ExtLabelEncoder.inverse_transform
+      ~ExtLabelEncoder.transform
+   
+      ~ExtLabelEncoder.get_metadata_routing
+      ~ExtLabelEncoder.get_params
+      ~ExtLabelEncoder.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.utils.ExtLabelEncoder.fit
+.. automethod:: skactiveml.utils.ExtLabelEncoder.fit_transform
+.. automethod:: skactiveml.utils.ExtLabelEncoder.inverse_transform
+.. automethod:: skactiveml.utils.ExtLabelEncoder.transform
+
+.. automethod:: skactiveml.utils.ExtLabelEncoder.get_metadata_routing
+.. automethod:: skactiveml.utils.ExtLabelEncoder.get_params
+.. automethod:: skactiveml.utils.ExtLabelEncoder.set_params
+
+
+.. _sphx_glr_backref_skactiveml.utils.ExtLabelEncoder:
+
+.. minigallery:: skactiveml.utils.ExtLabelEncoder
+   :add-heading:

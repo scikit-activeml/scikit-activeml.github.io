@@ -1,0 +1,41 @@
+﻿CognitiveDualQueryStrategyVarUn
+===============================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.CognitiveDualQueryStrategyVarUn
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CognitiveDualQueryStrategyVarUn.query
+      ~CognitiveDualQueryStrategyVarUn.update
+   
+      ~CognitiveDualQueryStrategyVarUn.get_metadata_routing
+      ~CognitiveDualQueryStrategyVarUn.get_params
+      ~CognitiveDualQueryStrategyVarUn.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyVarUn.query
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyVarUn.update
+
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyVarUn.get_metadata_routing
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyVarUn.get_params
+.. automethod:: skactiveml.stream.CognitiveDualQueryStrategyVarUn.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.CognitiveDualQueryStrategyVarUn:
+
+.. minigallery:: skactiveml.stream.CognitiveDualQueryStrategyVarUn
+   :add-heading:

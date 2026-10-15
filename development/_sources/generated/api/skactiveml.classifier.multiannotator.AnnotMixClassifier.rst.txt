@@ -1,0 +1,57 @@
+﻿AnnotMixClassifier
+==================
+
+.. currentmodule:: skactiveml.classifier.multiannotator
+
+.. autoclass:: skactiveml.classifier.multiannotator.AnnotMixClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AnnotMixClassifier.fit
+      ~AnnotMixClassifier.initialize
+      ~AnnotMixClassifier.partial_fit
+      ~AnnotMixClassifier.predict
+      ~AnnotMixClassifier.predict_proba
+      ~AnnotMixClassifier.score
+   
+      ~AnnotMixClassifier.get_metadata_routing
+      ~AnnotMixClassifier.get_params
+      ~AnnotMixClassifier.set_fit_request
+      ~AnnotMixClassifier.set_params
+      ~AnnotMixClassifier.set_predict_proba_request
+      ~AnnotMixClassifier.set_predict_request
+      ~AnnotMixClassifier.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.fit
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.initialize
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.partial_fit
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.predict
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.predict_proba
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.score
+
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.get_params
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.set_params
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.set_predict_proba_request
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.set_predict_request
+.. automethod:: skactiveml.classifier.multiannotator.AnnotMixClassifier.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.classifier.multiannotator.AnnotMixClassifier:
+
+.. minigallery:: skactiveml.classifier.multiannotator.AnnotMixClassifier
+   :add-heading:

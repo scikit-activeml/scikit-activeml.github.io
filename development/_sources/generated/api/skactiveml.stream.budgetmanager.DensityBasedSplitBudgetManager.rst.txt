@@ -1,0 +1,41 @@
+﻿DensityBasedSplitBudgetManager
+==============================
+
+.. currentmodule:: skactiveml.stream.budgetmanager
+
+.. autoclass:: skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DensityBasedSplitBudgetManager.query_by_utility
+      ~DensityBasedSplitBudgetManager.update
+   
+      ~DensityBasedSplitBudgetManager.get_metadata_routing
+      ~DensityBasedSplitBudgetManager.get_params
+      ~DensityBasedSplitBudgetManager.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager.query_by_utility
+.. automethod:: skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager.update
+
+.. automethod:: skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager.get_metadata_routing
+.. automethod:: skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager.get_params
+.. automethod:: skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager:
+
+.. minigallery:: skactiveml.stream.budgetmanager.DensityBasedSplitBudgetManager
+   :add-heading:

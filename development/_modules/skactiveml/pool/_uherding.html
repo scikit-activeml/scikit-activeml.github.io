@@ -1,0 +1,1418 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skactiveml.pool._uherding &#8212; scikit-activeml development documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="../../../_static/documentation_options.js?v=249f3023"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/skactiveml/pool/_uherding';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.19.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://scikit-activeml.github.io/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'development';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../../_static/filter_examples.js?v=95a029dd"></script>
+    <link rel="canonical" href="https://scikit-activeml.github.io/development/_modules/skactiveml/pool/_uherding.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="development" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-light" alt="scikit-activeml development documentation - Home"/>
+    <img src="../../../_static/scikit-activeml-logo.png" class="logo__image only-dark pst-js-only" alt="scikit-activeml development documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../target_semantics.html">
+    Target Semantics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/strategy_overview.html">
+    Strategy Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/sphinx_gallery_examples/index.html">
+    Visualizations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../generated/api/skactiveml.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../target_semantics.html">
+    Target Semantics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../contributing.html">
+    Contributing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/scikit-activeml/scikit-activeml/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Quick Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/scikit-activeml/scikit-activeml" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/scikit-activeml" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">skactiveml.pool._uherding</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for skactiveml.pool._uherding</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""</span>
+<span class="sd">Module implementing `UHerding`, a deep active learning strategy combining</span>
+<span class="sd">uncertainty and coverage.</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">expit</span><span class="p">,</span> <span class="n">softmax</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">clone</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">pairwise_distances</span><span class="p">,</span> <span class="n">pairwise_kernels</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">normalize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils.validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">column_or_1d</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..base</span><span class="w"> </span><span class="kn">import</span> <span class="n">SingleAnnotatorPoolQueryStrategy</span><span class="p">,</span> <span class="n">SkactivemlClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ExtLabelEncoder</span><span class="p">,</span>
+    <span class="n">MISSING_LABEL</span><span class="p">,</span>
+    <span class="n">check_scalar</span><span class="p">,</span>
+    <span class="n">check_type</span><span class="p">,</span>
+    <span class="n">labeled_indices</span><span class="p">,</span>
+    <span class="n">rand_argmax</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils._validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">_canonicalize_multilabel_probas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._target</span><span class="w"> </span><span class="kn">import</span> <span class="n">_fit_and_resolve_estimator_target_spec</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._uncertainty_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">uncertainty_scores</span>
+
+
+<div class="viewcode-block" id="UHerding">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.pool.UHerding.html#skactiveml.pool.UHerding">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">UHerding</span><span class="p">(</span><span class="n">SingleAnnotatorPoolQueryStrategy</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Uncertainty Herding (UHerding)</span>
+
+<span class="sd">    "Uncertainty Herding" (UHerding) is a query strategy [1]_ that</span>
+<span class="sd">    greedily maximizes an uncertainty-weighted coverage objective in feature</span>
+<span class="sd">    space. In addition to the greedy selection itself, the implementation</span>
+<span class="sd">    follows the parameter adaptation scheme of the paper:</span>
+
+<span class="sd">    - select a temperature based on calibration via train/validation splits of</span>
+<span class="sd">      the currently labeled set,</span>
+<span class="sd">    - adapt the Gaussian kernel radius to the current labeled feature space.</span>
+
+<span class="sd">    UHerding was proposed for single-output classification. Multi-label support</span>
+<span class="sd">    in this implementation is an extension and not part of the original</span>
+<span class="sd">    proposal in [1]_. For resolved multi-label targets, the temperature-scaled</span>
+<span class="sd">    probabilities are the per-output sigmoids `expit(logits / tau)` with the</span>
+<span class="sd">    per-output temperature `tau` instead of a softmax, whenever logits are</span>
+<span class="sd">    available, and the per-label uncertainty of</span>
+<span class="sd">    the label output `j` is computed by `method` from its positive-class</span>
+<span class="sd">    probability `p_j` alone</span>
+<span class="sd">    (cf. `uncertainty_scores`). `multilabel_aggregation_fn` reduces these</span>
+<span class="sd">    per-label scores along the label axis to the uncertainty weight of one</span>
+<span class="sd">    sample, which then scales that sample's coverage gains. The coverage</span>
+<span class="sd">    objective itself is unchanged, because it operates on the sample</span>
+<span class="sd">    representations only. Correlations between label outputs therefore</span>
+<span class="sd">    influence neither the uncertainty weight nor the coverage objective.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    method : 'least_confident' or 'margin_sampling' or 'entropy', \</span>
+<span class="sd">            default='margin_sampling'</span>
+<span class="sd">        Uncertainty definition applied to temperature-scaled probabilities.</span>
+<span class="sd">    predict_proba_dict : dict or None, default=None</span>
+<span class="sd">        Optional keyword arguments forwarded to `clf.predict_proba` to request</span>
+<span class="sd">        additional outputs such as logits and embeddings.</span>
+
+<span class="sd">        If `predict_proba_parser is None`, optional outputs are interpreted by</span>
+<span class="sd">        the default convention `(probas, logits, embeddings)`.</span>
+<span class="sd">        Typical usage with `SkorchClassifier` is therefore::</span>
+
+<span class="sd">            predict_proba_dict={"extra_outputs": ["logits", "emb"]}</span>
+
+<span class="sd">        If logits are not returned by `predict_proba`, `decision_function`</span>
+<span class="sd">        is used as a fallback when available, e.g. for scikit-learn logistic</span>
+<span class="sd">        regression models wrapped by `SklearnClassifier`.</span>
+<span class="sd">    predict_proba_parser : callable or None, default=None</span>
+<span class="sd">        Optional parser applied to the raw return value of</span>
+<span class="sd">        `clf.predict_proba(X, **predict_proba_dict)`.</span>
+
+<span class="sd">        The parser must return either `(probas, logits)` or</span>
+<span class="sd">        `(probas, logits, embeddings)`. `probas` may be `None`, in which case</span>
+<span class="sd">        they are computed from `logits` via softmax. `embeddings` may be</span>
+<span class="sd">        `None`, in which case the original samples are used.</span>
+
+<span class="sd">        If `None`, the default convention is used:</span>
+
+<span class="sd">        - array output: treated as `probas`,</span>
+<span class="sd">        - tuple output: treated as `(probas, logits, embeddings)`.</span>
+
+<span class="sd">    temperatures : float or array-like of shape (n_temperatures,) or None, \</span>
+<span class="sd">            default=None</span>
+<span class="sd">        Temperature specification for calibrating the uncertainty estimates.</span>
+<span class="sd">        Two behaviors are distinguished:</span>
+
+<span class="sd">        - A positive float or a length-one array-like is a fixed temperature</span>
+<span class="sd">          shared by every output. It is used directly, i.e. no calibration</span>
+<span class="sd">          train/validation split and no internal calibration refit take place.</span>
+<span class="sd">        - An array-like with more than one entry is a shared candidate grid</span>
+<span class="sd">          searched by expected calibration error on a validation split of the</span>
+<span class="sd">          currently labeled set. For a single-output target, one temperature is</span>
+<span class="sd">          selected. For a multi-label target, the grid is searched</span>
+<span class="sd">          independently per label output, yielding one selected temperature per</span>
+<span class="sd">          output.</span>
+
+<span class="sd">        If `None`, the candidate grid `np.logspace(-1, 1, 49)` is used.</span>
+<span class="sd">    validation_size : float or int, default=0.2</span>
+<span class="sd">        Validation size passed to the calibration train/validation split.</span>
+<span class="sd">    n_ece_bins : int, default=15</span>
+<span class="sd">        Number of bins used for the expected calibration error.</span>
+<span class="sd">    normalize_samples : bool, default=True</span>
+<span class="sd">        Flag whether to normalize feature vectors to unit length before</span>
+<span class="sd">        computing pairwise distances and kernels.</span>
+<span class="sd">    metric : str or callable, default='rbf'</span>
+<span class="sd">        Kernel used for the coverage objective.</span>
+<span class="sd">    metric_dict : dict or None, default=None</span>
+<span class="sd">        Optional keyword arguments passed to `pairwise_kernels`.</span>
+<span class="sd">    adaptive_sigma : bool, default=True</span>
+<span class="sd">        Flag whether to adapt the radius according to the minimum non-zero</span>
+<span class="sd">        labeled pairwise distance. This option requires `metric='rbf'`.</span>
+<span class="sd">    missing_label : scalar or string or np.nan or None, default=np.nan</span>
+<span class="sd">        Value to represent a missing label.</span>
+<span class="sd">    random_state : None or int or np.random.RandomState, default=None</span>
+<span class="sd">        The random state to use.</span>
+<span class="sd">    multilabel_aggregation_fn : callable, default=np.mean</span>
+<span class="sd">        Callable reducing the per-label uncertainty scores of one sample to</span>
+<span class="sd">        one uncertainty weight. It is only used for resolved multi-label</span>
+<span class="sd">        targets. It is called with the per-label scores of shape</span>
+<span class="sd">        `(n_samples, n_outputs)` and the label axis passed as the `axis`</span>
+<span class="sd">        keyword argument, and must return one score per sample within the</span>
+<span class="sd">        range of that sample's per-label scores, e.g. `np.mean`, `np.average`,</span>
+<span class="sd">        `np.median`, `np.min`, `np.max`, or a quantile. `np.sum` is not</span>
+<span class="sd">        supported, because its result grows with the number of label outputs.</span>
+<span class="sd">        Only the callability of the reduction is validated at runtime, so a</span>
+<span class="sd">        violating reduction silently changes the acquisition scale.</span>
+<span class="sd">    target_type : "auto" or "single-output" or "multi-label", default="auto"</span>
+<span class="sd">        Declared target type. The strategy supports single-output and</span>
+<span class="sd">        multi-label classification. A fitted classifier's target specification</span>
+<span class="sd">        is authoritative when available.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] W. Bae, G. Oliveira, and D. J. Sutherland.</span>
+<span class="sd">       "Uncertainty Herding: One Active Learning Method for All Label</span>
+<span class="sd">       Budgets." In Int. Conf. Learn. Represent., 2025.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">method</span><span class="o">=</span><span class="s2">"margin_sampling"</span><span class="p">,</span>
+        <span class="n">predict_proba_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">predict_proba_parser</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">temperatures</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">validation_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">n_ece_bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">normalize_samples</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">metric</span><span class="o">=</span><span class="s2">"rbf"</span><span class="p">,</span>
+        <span class="n">metric_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">adaptive_sigma</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">missing_label</span><span class="o">=</span><span class="n">MISSING_LABEL</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">multilabel_aggregation_fn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+        <span class="n">target_type</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="n">missing_label</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_dict</span> <span class="o">=</span> <span class="n">predict_proba_dict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_parser</span> <span class="o">=</span> <span class="n">predict_proba_parser</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span> <span class="o">=</span> <span class="n">temperatures</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">validation_size</span> <span class="o">=</span> <span class="n">validation_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_ece_bins</span> <span class="o">=</span> <span class="n">n_ece_bins</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">normalize_samples</span> <span class="o">=</span> <span class="n">normalize_samples</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metric</span> <span class="o">=</span> <span class="n">metric</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metric_dict</span> <span class="o">=</span> <span class="n">metric_dict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adaptive_sigma</span> <span class="o">=</span> <span class="n">adaptive_sigma</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">multilabel_aggregation_fn</span> <span class="o">=</span> <span class="n">multilabel_aggregation_fn</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_target_capabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">frozenset</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="p">(</span><span class="s2">"classification"</span><span class="p">,</span> <span class="s2">"single-output"</span><span class="p">,</span> <span class="s2">"single-annotator"</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">"classification"</span><span class="p">,</span> <span class="s2">"multi-label"</span><span class="p">,</span> <span class="s2">"single-annotator"</span><span class="p">),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="UHerding.query">
+<a class="viewcode-back" href="../../../generated/api/skactiveml.pool.UHerding.html#skactiveml.pool.UHerding.query">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">X</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">,</span>
+        <span class="n">clf</span><span class="p">,</span>
+        <span class="n">fit_clf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">candidates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">return_utilities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Determines for which candidate samples labels are to be queried.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, ...)</span>
+<span class="sd">            Training data set, usually complete, i.e., including the labeled</span>
+<span class="sd">            and unlabeled samples.</span>
+<span class="sd">        y : array-like of shape (n_samples,) or (n_samples, n_outputs)</span>
+<span class="sd">            Labels of the training data set (possibly including unlabeled ones</span>
+<span class="sd">            indicated by `self.missing_label`). For multi-label targets, a row</span>
+<span class="sd">            `y[i]` must either contain only observed labels or only</span>
+<span class="sd">            `missing_label` values, i.e., no mixing within a row.</span>
+<span class="sd">        clf : skactiveml.base.SkactivemlClassifier</span>
+<span class="sd">            Classifier implementing `fit` and `predict_proba`. For</span>
+<span class="sd">            temperature-scaled uncertainty estimation, the classifier should</span>
+<span class="sd">            either provide logits via `predict_proba` extras or implement</span>
+<span class="sd">            `decision_function`. Otherwise, the non-calibrated probabilities</span>
+<span class="sd">            are used as fallback. For multilabel classification,</span>
+<span class="sd">            `predict_proba` must return either shape `(n_samples, n_outputs)`</span>
+<span class="sd">            or a list of binary probability matrices with shape</span>
+<span class="sd">            `(n_samples, 2)` per output.</span>
+<span class="sd">        fit_clf : bool, default=True</span>
+<span class="sd">            Defines whether the classifier `clf` should be fitted on `X`, `y`,</span>
+<span class="sd">            and `sample_weight` before evaluating the acquisition function.</span>
+<span class="sd">            Independent of this flag, temporary cloned classifiers may still be</span>
+<span class="sd">            fitted internally to select the temperature parameter.</span>
+<span class="sd">        sample_weight : array-like of shape (n_samples,) or \</span>
+<span class="sd">                (n_samples, n_outputs), default=None</span>
+<span class="sd">            Weights of training samples in `X`. For two-dimensional `y`, one</span>
+<span class="sd">            weight per sample is supported. Per-target weights are forwarded</span>
+<span class="sd">            to `clf.fit` without additional validation and require estimator</span>
+<span class="sd">            support.</span>
+<span class="sd">        candidates : None or array-like of shape (n_candidates,), dtype=int \</span>
+<span class="sd">                or array-like of shape (n_candidates, ...), default=None</span>
+<span class="sd">            - If `candidates` is `None`, the unlabeled samples from `(X, y)`</span>
+<span class="sd">              are considered as candidates.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates,)` and of type</span>
+<span class="sd">              `int`, `candidates` is considered as the indices of the samples</span>
+<span class="sd">              in `(X, y)`.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates, ...)`, the</span>
+<span class="sd">              candidate samples are directly given in `candidates` (not</span>
+<span class="sd">              necessarily contained in `X`).</span>
+<span class="sd">        batch_size : int, default=1</span>
+<span class="sd">            The number of samples to be selected in one AL cycle.</span>
+<span class="sd">        return_utilities : bool, default=False</span>
+<span class="sd">            If `True`, also return the utilities based on the query strategy.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        query_indices : numpy.ndarray of shape (batch_size,)</span>
+<span class="sd">            The query indices indicate for which candidate sample a label is</span>
+<span class="sd">            to be queried, e.g., `query_indices[0]` indicates the first</span>
+<span class="sd">            selected sample.</span>
+
+<span class="sd">            - If `candidates` is `None` or of shape `(n_candidates,)`, the</span>
+<span class="sd">              indexing refers to the samples in `X`.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates, ...)`, the</span>
+<span class="sd">              indexing refers to the samples in `candidates`.</span>
+<span class="sd">        utilities : numpy.ndarray of shape (batch_size, n_samples) or \</span>
+<span class="sd">                numpy.ndarray of shape (batch_size, n_candidates)</span>
+<span class="sd">            The utilities of samples after each selected sample of the batch,</span>
+<span class="sd">            e.g., `utilities[0]` indicates the utilities used for selecting</span>
+<span class="sd">            the first sample (with index `query_indices[0]`) of the batch.</span>
+<span class="sd">            Utilities for labeled samples or already selected candidates are</span>
+<span class="sd">            set to `np.nan`.</span>
+
+<span class="sd">            - If `candidates` is `None`, the indexing refers to the samples</span>
+<span class="sd">              in `X`.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates,)` and of type</span>
+<span class="sd">              `int`, `utilities` refers to the samples in `X`.</span>
+<span class="sd">            - If `candidates` is of shape `(n_candidates, ...)`,</span>
+<span class="sd">              `utilities` refers to the indexing in `candidates`.</span>
+<span class="sd">        """</span>
+        <span class="c1"># Resolve through the classifier before acquisition state is changed.</span>
+        <span class="n">clf_eval</span><span class="p">,</span> <span class="n">target_spec</span> <span class="o">=</span> <span class="n">_fit_and_resolve_estimator_target_spec</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">clf</span><span class="p">,</span>
+            <span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="p">,</span>
+            <span class="n">fit_estimator</span><span class="o">=</span><span class="n">fit_clf</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+            <span class="n">estimator_name</span><span class="o">=</span><span class="s2">"clf"</span><span class="p">,</span>
+            <span class="n">fit_name</span><span class="o">=</span><span class="s2">"fit_clf"</span><span class="p">,</span>
+            <span class="n">estimator_types</span><span class="o">=</span><span class="p">(</span><span class="n">SkactivemlClassifier</span><span class="p">,),</span>
+        <span class="p">)</span>
+        <span class="n">is_multilabel</span> <span class="o">=</span> <span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span> <span class="o">==</span> <span class="s2">"multi-label"</span>
+
+        <span class="c1"># Determine candidate samples and validate parameters.</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">return_utilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
+            <span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="p">,</span>
+            <span class="n">candidates</span><span class="p">,</span>
+            <span class="n">batch_size</span><span class="p">,</span>
+            <span class="n">return_utilities</span><span class="p">,</span>
+            <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">X_cand</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform_candidates</span><span class="p">(</span>
+            <span class="n">candidates</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span>
+        <span class="p">)</span>
+        <span class="n">check_scalar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">normalize_samples</span><span class="p">,</span> <span class="s2">"normalize_samples"</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+        <span class="n">check_scalar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adaptive_sigma</span><span class="p">,</span> <span class="s2">"adaptive_sigma"</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+        <span class="n">check_scalar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_ece_bins</span><span class="p">,</span> <span class="s2">"n_ece_bins"</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">min_val</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">multilabel_aggregation_fn</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"`multilabel_aggregation_fn` must be callable."</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_dict</span><span class="p">,</span> <span class="s2">"predict_proba_dict"</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_parser</span><span class="p">,</span>
+            <span class="s2">"predict_proba_parser"</span><span class="p">,</span>
+            <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span>
+            <span class="n">indicator_funcs</span><span class="o">=</span><span class="p">[</span><span class="nb">callable</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metric_dict</span><span class="p">,</span> <span class="s2">"metric_dict"</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)))</span>
+        <span class="n">metric_dict</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">{}</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metric_dict</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">metric_dict</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adaptive_sigma</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metric</span> <span class="o">!=</span> <span class="s2">"rbf"</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"`adaptive_sigma=True` is only supported with "</span>
+                    <span class="s2">"`metric='rbf'`."</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="s2">"gamma"</span> <span class="ow">in</span> <span class="n">metric_dict</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"`'gamma' cannot be part of the `metric_dict` "</span>
+                    <span class="s2">"with `adaptive_sigma=True`."</span>
+                <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">validation_size</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">validation_size</span><span class="p">,</span> <span class="s2">"validation_size"</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">min_val</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">check_scalar</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">validation_size</span><span class="p">,</span>
+                <span class="s2">"validation_size"</span><span class="p">,</span>
+                <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">),</span>
+                <span class="n">min_inclusive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">max_inclusive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">min_val</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">max_val</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">49</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span><span class="p">):</span>
+            <span class="n">temperatures</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">temperatures</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">temperatures</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"`temperatures` must contain only positive values."</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">temperatures</span> <span class="o">=</span> <span class="n">column_or_1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"`temperatures` must contain at least one entry."</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">temperatures</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"`temperatures` must contain only positive values."</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Calibrate classifier by selecting a corresponding temperature.</span>
+        <span class="n">tau</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select_temperature</span><span class="p">(</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">clf</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span>
+            <span class="n">temperatures</span><span class="o">=</span><span class="n">temperatures</span><span class="p">,</span>
+            <span class="n">target_spec</span><span class="o">=</span><span class="n">target_spec</span><span class="p">,</span>
+            <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Infer probabilities and if available logits as well as embeddings.</span>
+        <span class="n">n_outputs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_spec</span><span class="o">.</span><span class="n">classes</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_multilabel</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">probas_cand</span><span class="p">,</span> <span class="n">logits_cand</span><span class="p">,</span> <span class="n">X_cand_repr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_predict_with_extras</span><span class="p">(</span>
+            <span class="n">clf_eval</span><span class="p">,</span> <span class="n">X_cand</span><span class="p">,</span> <span class="n">is_multilabel</span><span class="o">=</span><span class="n">is_multilabel</span><span class="p">,</span> <span class="n">n_outputs</span><span class="o">=</span><span class="n">n_outputs</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">X_cand_repr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">X_cand_repr</span> <span class="o">=</span> <span class="n">X_cand</span>
+        <span class="k">if</span> <span class="n">logits_cand</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">is_multilabel</span><span class="p">:</span>
+                <span class="n">probas_cand</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span><span class="n">logits_cand</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">probas_cand</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">logits_cand</span> <span class="o">/</span> <span class="n">tau</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Compute uncertainty scores by either using the original probability</span>
+        <span class="c1"># scores or the calibrated ones, if logits were available.</span>
+        <span class="n">unc_cand</span> <span class="o">=</span> <span class="n">uncertainty_scores</span><span class="p">(</span>
+            <span class="n">probas</span><span class="o">=</span><span class="n">probas_cand</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+            <span class="n">is_multilabel</span><span class="o">=</span><span class="n">is_multilabel</span><span class="p">,</span>
+            <span class="n">multilabel_aggregation_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">multilabel_aggregation_fn</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">unc_cand</span><span class="p">))</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">unc_cand</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">):</span>
+            <span class="c1"># Fall back to pure coverage if the uncertainty model carries no</span>
+            <span class="c1"># information, e.g. when only one class has been observed so far.</span>
+            <span class="n">unc_cand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">unc_cand</span><span class="p">)</span>
+
+        <span class="c1"># Get embeddings for the labeled samples.</span>
+        <span class="n">labeled_idx</span> <span class="o">=</span> <span class="n">labeled_indices</span><span class="p">(</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label_</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">X_labeled_repr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">labeled_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">X_labeled_repr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_predict_with_extras</span><span class="p">(</span>
+                <span class="n">clf_eval</span><span class="p">,</span>
+                <span class="n">X</span><span class="p">[</span><span class="n">labeled_idx</span><span class="p">],</span>
+                <span class="n">is_multilabel</span><span class="o">=</span><span class="n">is_multilabel</span><span class="p">,</span>
+                <span class="n">n_outputs</span><span class="o">=</span><span class="n">n_outputs</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">X_labeled_repr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">X_labeled_repr</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">labeled_idx</span><span class="p">]</span>
+
+        <span class="c1"># Normalize candidate and labeled samples to unit length.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalize_samples</span><span class="p">:</span>
+            <span class="n">X_cand_repr</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_cand_repr</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">X_labeled_repr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">X_labeled_repr</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_labeled_repr</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Compute kernel similarities, where the bandwidth is automatically</span>
+        <span class="c1"># tuned if an RBF kernel is employed.</span>
+        <span class="n">metric_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_metric_dict</span><span class="p">(</span>
+            <span class="n">X_cand_repr</span><span class="o">=</span><span class="n">X_cand_repr</span><span class="p">,</span>
+            <span class="n">X_labeled_repr</span><span class="o">=</span><span class="n">X_labeled_repr</span><span class="p">,</span>
+            <span class="n">metric_dict</span><span class="o">=</span><span class="n">metric_dict</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">K_cand</span> <span class="o">=</span> <span class="n">pairwise_kernels</span><span class="p">(</span>
+            <span class="n">X_cand_repr</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">metric</span><span class="p">,</span> <span class="o">**</span><span class="n">metric_dict</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">X_labeled_repr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_labeled_repr</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">K_cand_labeled</span> <span class="o">=</span> <span class="n">pairwise_kernels</span><span class="p">(</span>
+                <span class="n">X_cand_repr</span><span class="p">,</span> <span class="n">X_labeled_repr</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">metric</span><span class="p">,</span> <span class="o">**</span><span class="n">metric_dict</span>
+            <span class="p">)</span>
+            <span class="n">k_max</span> <span class="o">=</span> <span class="n">K_cand_labeled</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">k_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_cand_repr</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="c1"># Perform sequential batch selection.</span>
+        <span class="n">query_indices_cand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">utilities_cand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">batch_size</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_cand_repr</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+            <span class="n">gains</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">K_cand</span> <span class="o">-</span> <span class="n">k_max</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">utilities_cand</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">unc_cand</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">gains</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">utilities_cand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">query_indices_cand</span><span class="p">[:</span><span class="n">b</span><span class="p">]]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">query_indices_cand</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand_argmax</span><span class="p">(</span>
+                <span class="n">utilities_cand</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state_</span>
+            <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">k_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">k_max</span><span class="p">,</span> <span class="n">K_cand</span><span class="p">[:,</span> <span class="n">query_indices_cand</span><span class="p">[</span><span class="n">b</span><span class="p">]])</span>
+
+        <span class="c1"># Map queried indices and utilities back to the expected output.</span>
+        <span class="k">if</span> <span class="n">mapping</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">query_indices</span> <span class="o">=</span> <span class="n">query_indices_cand</span>
+            <span class="n">utilities</span> <span class="o">=</span> <span class="n">utilities_cand</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query_indices</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">query_indices_cand</span><span class="p">]</span>
+            <span class="n">utilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">batch_size</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">utilities</span><span class="p">[:,</span> <span class="n">mapping</span><span class="p">]</span> <span class="o">=</span> <span class="n">utilities_cand</span>
+
+        <span class="k">if</span> <span class="n">return_utilities</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">query_indices</span><span class="p">,</span> <span class="n">utilities</span>
+        <span class="k">return</span> <span class="n">query_indices</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_select_temperature</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">X</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">,</span>
+        <span class="n">clf</span><span class="p">,</span>
+        <span class="n">temperatures</span><span class="p">,</span>
+        <span class="n">target_spec</span><span class="p">,</span>
+        <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">is_multilabel</span> <span class="o">=</span> <span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span> <span class="o">==</span> <span class="s2">"multi-label"</span>
+        <span class="n">n_outputs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_spec</span><span class="o">.</span><span class="n">classes</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_multilabel</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="c1"># A scalar or length-one `temperatures` is one fixed temperature shared</span>
+        <span class="c1"># by every output, so no calibration split or refit is required.</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">temperatures</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">temperatures</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># Try to perform train-test split. If it not possilbe, return 1.0 as</span>
+        <span class="c1"># temperature.</span>
+        <span class="n">labeled_idx</span> <span class="o">=</span> <span class="n">labeled_indices</span><span class="p">(</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label_</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">labeled_idx</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_temperature</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">)</span>
+        <span class="n">y_labeled</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">labeled_idx</span><span class="p">]</span>
+        <span class="n">split_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"test_size"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">validation_size</span><span class="p">,</span>
+            <span class="s2">"random_state"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_state_</span><span class="p">,</span>
+            <span class="s2">"shuffle"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_multilabel</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_labeled</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">split_kwargs</span><span class="p">[</span><span class="s2">"stratify"</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_labeled</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">train_idx</span><span class="p">,</span> <span class="n">val_idx</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">labeled_idx</span><span class="p">,</span> <span class="o">**</span><span class="n">split_kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">split_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"stratify"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">train_idx</span><span class="p">,</span> <span class="n">val_idx</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+                    <span class="n">labeled_idx</span><span class="p">,</span> <span class="o">**</span><span class="n">split_kwargs</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_temperature</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_idx</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_idx</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_temperature</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">)</span>
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">train_idx</span><span class="p">]</span>
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">train_idx</span><span class="p">]</span>
+        <span class="n">X_val</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">val_idx</span><span class="p">]</span>
+        <span class="n">y_val</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">val_idx</span><span class="p">]</span>
+        <span class="n">sw_train</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">)[</span><span class="n">train_idx</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">sw_train</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">clf_cal</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="n">clf</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">clf_cal</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="n">clf</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">sw_train</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_temperature</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">logits_val</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_predict_with_extras</span><span class="p">(</span>
+            <span class="n">clf_cal</span><span class="p">,</span>
+            <span class="n">X_val</span><span class="p">,</span>
+            <span class="n">is_multilabel</span><span class="o">=</span><span class="n">is_multilabel</span><span class="p">,</span>
+            <span class="n">n_outputs</span><span class="o">=</span><span class="n">n_outputs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">logits_val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_temperature</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">)</span>
+
+        <span class="c1"># Select temperature by iterating over all candidates and selecting</span>
+        <span class="c1"># the one with the lowest expected calibration error. For a multi-label</span>
+        <span class="c1"># target, the shared candidate grid is searched independently per</span>
+        <span class="c1"># output, yielding one selected temperature per output.</span>
+        <span class="k">if</span> <span class="n">is_multilabel</span><span class="p">:</span>
+            <span class="n">y_val_encoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_multilabel_targets</span><span class="p">(</span>
+                <span class="n">y_val</span><span class="p">,</span> <span class="n">target_spec</span><span class="o">=</span><span class="n">target_spec</span>
+            <span class="p">)</span>
+            <span class="n">best_tau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">):</span>
+                <span class="n">y_val_j</span> <span class="o">=</span> <span class="n">y_val_encoded</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span>
+                <span class="n">logits_val_j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">logits_val</span><span class="p">[:,</span> <span class="n">j</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">logits_val_j</span><span class="p">))</span>
+                    <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_val_j</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">2</span>
+                <span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="n">best_ece_j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+                <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span>
+                    <span class="n">probas_j</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span><span class="n">logits_val_j</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+                    <span class="n">ece_j</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_expected_calibration_error</span><span class="p">(</span>
+                        <span class="n">probas</span><span class="o">=</span><span class="n">probas_j</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">y_val_j</span>
+                    <span class="p">)</span>
+                    <span class="k">if</span> <span class="n">ece_j</span> <span class="o">&lt;</span> <span class="n">best_ece_j</span><span class="p">:</span>
+                        <span class="n">best_tau</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+                        <span class="n">best_ece_j</span> <span class="o">=</span> <span class="n">ece_j</span>
+            <span class="k">return</span> <span class="n">best_tau</span>
+
+        <span class="n">best_tau</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">temperatures</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">best_ece</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        <span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span>
+            <span class="n">probas</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">logits_val</span> <span class="o">/</span> <span class="n">tau</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">ece</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expected_calibration_error</span><span class="p">(</span>
+                <span class="n">probas</span><span class="o">=</span><span class="n">probas</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">y_val</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="n">clf_cal</span><span class="o">.</span><span class="n">classes_</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">ece</span> <span class="o">&lt;</span> <span class="n">best_ece</span><span class="p">:</span>
+                <span class="n">best_tau</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+                <span class="n">best_ece</span> <span class="o">=</span> <span class="n">ece</span>
+        <span class="k">return</span> <span class="n">best_tau</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_encode_multilabel_targets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_observed</span><span class="p">,</span> <span class="n">target_spec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Encode observed multi-label targets via the resolved vocabularies.</span>
+
+<span class="sd">        Each label output may use its own binary class vocabulary, e.g.</span>
+<span class="sd">        `[["no", "yes"], ["off", "on"]]`, so raw observations are not</span>
+<span class="sd">        necessarily numeric. Calibration compares an observation to the</span>
+<span class="sd">        positive-class probability of its output and therefore requires the</span>
+<span class="sd">        encoded target, where `1` denotes the second class of the resolved,</span>
+<span class="sd">        i.e. canonically ordered, vocabulary. That is exactly the class whose</span>
+<span class="sd">        probability and logit column the acquisition logic consumes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y_observed : array-like of shape (n_observed_samples, n_outputs)</span>
+<span class="sd">            Wholly observed multi-label rows, e.g. the calibration split.</span>
+<span class="sd">        target_spec : skactiveml.utils.TargetSpec</span>
+<span class="sd">            The resolved target specification providing one binary class</span>
+<span class="sd">            vocabulary per label output.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        y_encoded : numpy.ndarray of shape (n_observed_samples, n_outputs)</span>
+<span class="sd">            The encoded observations as floating point values.</span>
+<span class="sd">        """</span>
+        <span class="n">label_encoder</span> <span class="o">=</span> <span class="n">ExtLabelEncoder</span><span class="p">(</span>
+            <span class="n">classes</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span>
+            <span class="n">missing_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">missing_label_</span><span class="p">,</span>
+            <span class="n">target_type</span><span class="o">=</span><span class="n">target_spec</span><span class="o">.</span><span class="n">target_type</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">label_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_observed</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_resolve_metric_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X_cand_repr</span><span class="p">,</span> <span class="n">X_labeled_repr</span><span class="p">,</span> <span class="n">metric_dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Computes adaptive sigma if required.</span>
+<span class="sd">        """</span>
+        <span class="c1"># Keep the metric paramters unchanged if no adaptive sigma is requried.</span>
+        <span class="n">metric_dict</span> <span class="o">=</span> <span class="n">metric_dict</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">adaptive_sigma</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">metric_dict</span>
+
+        <span class="k">if</span> <span class="n">X_labeled_repr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># If there are labeled samples compute minimum distance as sigma.</span>
+            <span class="n">distances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_distances</span><span class="p">(</span><span class="n">X_labeled_repr</span><span class="p">)</span>
+            <span class="n">reduce_fn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># If there are no labeled samples compute median distance between</span>
+            <span class="c1"># candidate samples as sigma.</span>
+            <span class="n">distances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_distances</span><span class="p">(</span><span class="n">X_cand_repr</span><span class="p">)</span>
+            <span class="n">reduce_fn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span>
+
+        <span class="n">sigma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce_to_sigma</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">reduce_fn</span><span class="p">)</span>
+
+        <span class="c1"># Transform sigma to the gamma parameter expected by the RBF kernel</span>
+        <span class="c1"># implementation in sklearn.</span>
+        <span class="n">metric_dict</span><span class="p">[</span><span class="s2">"gamma"</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">metric_dict</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_predict_with_extras</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">clf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">is_multilabel</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_outputs</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Helper function to streamline required predictions.</span>
+<span class="sd">        """</span>
+        <span class="n">predict_proba_dict</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">{}</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_dict</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_dict</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_dict</span><span class="p">)</span>
+        <span class="n">probas</span><span class="p">,</span> <span class="n">logits</span><span class="p">,</span> <span class="n">emb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_predict_output</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">logits</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decision_function_logits</span><span class="p">(</span>
+                <span class="n">clf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">is_multilabel</span><span class="o">=</span><span class="n">is_multilabel</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_multilabel</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">logits</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="ow">and</span> <span class="n">n_outputs</span> <span class="o">==</span> <span class="mi">1</span>
+                <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span>
+            <span class="p">):</span>
+                <span class="n">logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">logits</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+            <span class="c1"># Canonicalize both public multilabel probability formats before</span>
+            <span class="c1"># the acquisition logic consumes them.</span>
+            <span class="n">probas</span> <span class="o">=</span> <span class="n">_canonicalize_multilabel_probas</span><span class="p">(</span>
+                <span class="n">probas</span><span class="p">,</span>
+                <span class="n">n_samples</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span>
+                <span class="n">n_outputs</span><span class="o">=</span><span class="n">n_outputs</span><span class="p">,</span>
+                <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">logits</span> <span class="o">=</span> <span class="n">_canonicalize_multilabel_probas</span><span class="p">(</span>
+                <span class="n">logits</span><span class="p">,</span>
+                <span class="n">n_samples</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span>
+                <span class="n">n_outputs</span><span class="o">=</span><span class="n">n_outputs</span><span class="p">,</span>
+                <span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">validate_probabilities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">probas</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">logits</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">probas</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">logits</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span>
+                <span class="n">logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">logits</span><span class="p">),</span> <span class="n">logits</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">probas</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">logits</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">probas</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">probas</span><span class="p">,</span> <span class="n">logits</span><span class="p">,</span> <span class="n">emb</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_predict_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Helper function to streamline required predictions according to</span>
+<span class="sd">        user information.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_parser</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parsed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba_parser</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">"`predict_proba_parser` must return a tuple or list."</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">probas</span><span class="p">,</span> <span class="n">logits</span> <span class="o">=</span> <span class="n">parsed</span>
+                <span class="n">emb</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">probas</span><span class="p">,</span> <span class="n">logits</span><span class="p">,</span> <span class="n">emb</span> <span class="o">=</span> <span class="n">parsed</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">"`predict_proba_parser` must return "</span>
+                    <span class="s2">"`(probas, logits)` or `(probas, logits, embeddings)`."</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">probas</span><span class="p">,</span> <span class="n">logits</span><span class="p">,</span> <span class="n">emb</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"`predict_proba` returned an empty tuple."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">"`predict_proba` returned more than three outputs. Pass "</span>
+                <span class="s2">"`predict_proba_parser` to disambiguate them."</span>
+            <span class="p">)</span>
+
+        <span class="n">probas</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">emb</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">probas</span><span class="p">,</span> <span class="n">logits</span><span class="p">,</span> <span class="n">emb</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_expected_calibration_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probas</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Computes expected calibration error for determining the temperature.</span>
+<span class="sd">        """</span>
+        <span class="n">confidences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">probas</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pred_labels</span> <span class="o">=</span> <span class="n">classes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">probas</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="n">accuracies</span> <span class="o">=</span> <span class="n">pred_labels</span> <span class="o">==</span> <span class="n">y_true</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_ece_bins</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">ece</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+            <span class="k">if</span> <span class="n">right</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">confidences</span> <span class="o">&gt;=</span> <span class="n">left</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">confidences</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">confidences</span> <span class="o">&gt;=</span> <span class="n">left</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">confidences</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">bin_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+            <span class="n">bin_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">accuracies</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+            <span class="n">bin_conf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">confidences</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+            <span class="n">ece</span> <span class="o">+=</span> <span class="n">bin_weight</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bin_acc</span> <span class="o">-</span> <span class="n">bin_conf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ece</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_binary_expected_calibration_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probas</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Computes binary expected calibration error for multilabel targets.</span>
+<span class="sd">        """</span>
+        <span class="n">probas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">probas</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_ece_bins</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">ece</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+            <span class="k">if</span> <span class="n">right</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">probas</span> <span class="o">&gt;=</span> <span class="n">left</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">probas</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">probas</span> <span class="o">&gt;=</span> <span class="n">left</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">probas</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">bin_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+            <span class="n">bin_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_true</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+            <span class="n">bin_conf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">probas</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+            <span class="n">ece</span> <span class="o">+=</span> <span class="n">bin_weight</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bin_acc</span> <span class="o">-</span> <span class="n">bin_conf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ece</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_decision_function_logits</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">is_multilabel</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Helper function to compute logits from the decision function as a</span>
+<span class="sd">        common method in sklearn.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="s2">"decision_function"</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logits</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">logits</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">is_multilabel</span><span class="p">:</span>
+                <span class="n">logits</span> <span class="o">=</span> <span class="n">logits</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">logits</span><span class="p">),</span> <span class="n">logits</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">logits</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_default_temperature</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return the uncalibrated temperature, i.e. one value per output."""</span>
+        <span class="k">if</span> <span class="n">n_outputs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.0</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_outputs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_reduce_to_sigma</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">reduce_fn</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Helper function reducing a collection of pairwise distances to a</span>
+<span class="sd">        positive RBF scale `sigma`.</span>
+
+<span class="sd">        Degenerate collections, i.e., `None`, empty ones, and ones without any</span>
+<span class="sd">        finite positive entry, admit no estimable scale. Such pools, e.g., a</span>
+<span class="sd">        cold start with a single candidate or identical representations, are a</span>
+<span class="sd">        valid acquisition state and fall back to `sigma=1.0`.</span>
+<span class="sd">        """</span>
+        <span class="n">fallback</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">if</span> <span class="n">distances</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fallback</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+        <span class="c1"># Also drops `nan` entries, since any comparison to `nan` is `False`.</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="n">distances</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fallback</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reduce_fn</span><span class="p">(</span><span class="n">distances</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">sigma</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span> <span class="k">else</span> <span class="n">fallback</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_nonzero_distances</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Helper function for computing non-zero distances.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">X</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="n">pairwise_distances</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">triu_indices_from</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="n">distances</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">distances</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+﻿VariableUncertainty
+===================
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.VariableUncertainty
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VariableUncertainty.query
+      ~VariableUncertainty.update
+   
+      ~VariableUncertainty.get_metadata_routing
+      ~VariableUncertainty.get_params
+      ~VariableUncertainty.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.VariableUncertainty.query
+.. automethod:: skactiveml.stream.VariableUncertainty.update
+
+.. automethod:: skactiveml.stream.VariableUncertainty.get_metadata_routing
+.. automethod:: skactiveml.stream.VariableUncertainty.get_params
+.. automethod:: skactiveml.stream.VariableUncertainty.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.VariableUncertainty:
+
+.. minigallery:: skactiveml.stream.VariableUncertainty
+   :add-heading:

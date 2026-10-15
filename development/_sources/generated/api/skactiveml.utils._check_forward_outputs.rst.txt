@@ -1,0 +1,11 @@
+﻿\_check\_forward\_outputs
+=========================
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils._check_forward_outputs
+
+.. _sphx_glr_backref_skactiveml.utils._check_forward_outputs:
+
+.. minigallery:: skactiveml.utils._check_forward_outputs
+   :add-heading:
