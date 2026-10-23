@@ -1,0 +1,41 @@
+﻿Split
+=====
+
+.. currentmodule:: skactiveml.stream
+
+.. autoclass:: skactiveml.stream.Split
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Split.query
+      ~Split.update
+   
+      ~Split.get_metadata_routing
+      ~Split.get_params
+      ~Split.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.stream.Split.query
+.. automethod:: skactiveml.stream.Split.update
+
+.. automethod:: skactiveml.stream.Split.get_metadata_routing
+.. automethod:: skactiveml.stream.Split.get_params
+.. automethod:: skactiveml.stream.Split.set_params
+
+
+.. _sphx_glr_backref_skactiveml.stream.Split:
+
+.. minigallery:: skactiveml.stream.Split
+   :add-heading:

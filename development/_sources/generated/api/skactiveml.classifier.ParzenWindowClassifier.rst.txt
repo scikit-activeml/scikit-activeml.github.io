@@ -1,0 +1,60 @@
+﻿ParzenWindowClassifier
+======================
+
+.. currentmodule:: skactiveml.classifier
+
+.. autoclass:: skactiveml.classifier.ParzenWindowClassifier
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ParzenWindowClassifier.fit
+      ~ParzenWindowClassifier.predict
+      ~ParzenWindowClassifier.predict_freq
+      ~ParzenWindowClassifier.predict_proba
+      ~ParzenWindowClassifier.sample_proba
+      ~ParzenWindowClassifier.score
+   
+      ~ParzenWindowClassifier.get_metadata_routing
+      ~ParzenWindowClassifier.get_params
+      ~ParzenWindowClassifier.set_fit_request
+      ~ParzenWindowClassifier.set_params
+      ~ParzenWindowClassifier.set_score_request
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ParzenWindowClassifier.METRICS
+   
+   
+
+
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.fit
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.predict
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.predict_freq
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.predict_proba
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.sample_proba
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.score
+
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.get_metadata_routing
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.get_params
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.set_fit_request
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.set_params
+.. automethod:: skactiveml.classifier.ParzenWindowClassifier.set_score_request
+
+.. autoattribute:: skactiveml.classifier.ParzenWindowClassifier.METRICS
+
+.. _sphx_glr_backref_skactiveml.classifier.ParzenWindowClassifier:
+
+.. minigallery:: skactiveml.classifier.ParzenWindowClassifier
+   :add-heading:

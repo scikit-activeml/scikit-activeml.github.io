@@ -1,0 +1,47 @@
+:mod:`skactiveml.stream`
+========================
+
+.. automodule:: skactiveml.stream
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+  skactiveml.stream.budgetmanager
+
+Submodules
+----------
+
+.. list-table::
+  :header-rows: 0
+  :widths: 100
+
+  * - :mod:`skactiveml.stream.budgetmanager`
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   stream.StreamRandomSampling
+   stream.PeriodicSampling
+   stream.UncertaintyZliobaite
+   stream.FixedUncertainty
+   stream.VariableUncertainty
+   stream.Split
+   stream.StreamProbabilisticAL
+   stream.RandomVariableUncertainty
+   stream.StreamDensityBasedAL
+   stream.CognitiveDualQueryStrategy
+   stream.CognitiveDualQueryStrategyRan
+   stream.CognitiveDualQueryStrategyRanVarUn
+   stream.CognitiveDualQueryStrategyVarUn
+   stream.CognitiveDualQueryStrategyFixUn
+

@@ -1,0 +1,11 @@
+﻿check\_X\_y
+===========
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils.check_X_y
+
+.. _sphx_glr_backref_skactiveml.utils.check_X_y:
+
+.. minigallery:: skactiveml.utils.check_X_y
+   :add-heading:

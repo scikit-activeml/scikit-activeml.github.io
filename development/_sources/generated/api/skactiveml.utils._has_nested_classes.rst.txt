@@ -1,0 +1,11 @@
+﻿\_has\_nested\_classes
+======================
+
+.. currentmodule:: skactiveml.utils
+
+.. autofunction:: skactiveml.utils._has_nested_classes
+
+.. _sphx_glr_backref_skactiveml.utils._has_nested_classes:
+
+.. minigallery:: skactiveml.utils._has_nested_classes
+   :add-heading:

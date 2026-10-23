@@ -1,0 +1,39 @@
+﻿DiscriminativeAL
+================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.DiscriminativeAL
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DiscriminativeAL.query
+   
+      ~DiscriminativeAL.get_metadata_routing
+      ~DiscriminativeAL.get_params
+      ~DiscriminativeAL.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.DiscriminativeAL.query
+
+.. automethod:: skactiveml.pool.DiscriminativeAL.get_metadata_routing
+.. automethod:: skactiveml.pool.DiscriminativeAL.get_params
+.. automethod:: skactiveml.pool.DiscriminativeAL.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.DiscriminativeAL:
+
+.. minigallery:: skactiveml.pool.DiscriminativeAL
+   :add-heading:

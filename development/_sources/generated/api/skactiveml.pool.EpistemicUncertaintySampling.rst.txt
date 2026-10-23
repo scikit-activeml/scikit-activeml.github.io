@@ -1,0 +1,39 @@
+﻿EpistemicUncertaintySampling
+============================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.EpistemicUncertaintySampling
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~EpistemicUncertaintySampling.query
+   
+      ~EpistemicUncertaintySampling.get_metadata_routing
+      ~EpistemicUncertaintySampling.get_params
+      ~EpistemicUncertaintySampling.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.EpistemicUncertaintySampling.query
+
+.. automethod:: skactiveml.pool.EpistemicUncertaintySampling.get_metadata_routing
+.. automethod:: skactiveml.pool.EpistemicUncertaintySampling.get_params
+.. automethod:: skactiveml.pool.EpistemicUncertaintySampling.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.EpistemicUncertaintySampling:
+
+.. minigallery:: skactiveml.pool.EpistemicUncertaintySampling
+   :add-heading:

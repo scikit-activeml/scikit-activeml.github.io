@@ -1,0 +1,39 @@
+﻿ValueOfInformationEER
+=====================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.ValueOfInformationEER
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ValueOfInformationEER.query
+   
+      ~ValueOfInformationEER.get_metadata_routing
+      ~ValueOfInformationEER.get_params
+      ~ValueOfInformationEER.set_params
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.pool.ValueOfInformationEER.query
+
+.. automethod:: skactiveml.pool.ValueOfInformationEER.get_metadata_routing
+.. automethod:: skactiveml.pool.ValueOfInformationEER.get_params
+.. automethod:: skactiveml.pool.ValueOfInformationEER.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.ValueOfInformationEER:
+
+.. minigallery:: skactiveml.pool.ValueOfInformationEER
+   :add-heading:

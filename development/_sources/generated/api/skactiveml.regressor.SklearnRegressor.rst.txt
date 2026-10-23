@@ -1,0 +1,55 @@
+﻿SklearnRegressor
+================
+
+.. currentmodule:: skactiveml.regressor
+
+.. autoclass:: skactiveml.regressor.SklearnRegressor
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SklearnRegressor.fit
+      ~SklearnRegressor.partial_fit
+      ~SklearnRegressor.predict
+      ~SklearnRegressor.sample
+      ~SklearnRegressor.sample_y
+   
+      ~SklearnRegressor.get_metadata_routing
+      ~SklearnRegressor.get_params
+      ~SklearnRegressor.score
+      ~SklearnRegressor.set_fit_request
+      ~SklearnRegressor.set_params
+      ~SklearnRegressor.set_partial_fit_request
+      ~SklearnRegressor.set_score_request
+   
+   
+
+   
+   
+   
+
+
+.. automethod:: skactiveml.regressor.SklearnRegressor.fit
+.. automethod:: skactiveml.regressor.SklearnRegressor.partial_fit
+.. automethod:: skactiveml.regressor.SklearnRegressor.predict
+.. automethod:: skactiveml.regressor.SklearnRegressor.sample
+.. automethod:: skactiveml.regressor.SklearnRegressor.sample_y
+
+.. automethod:: skactiveml.regressor.SklearnRegressor.get_metadata_routing
+.. automethod:: skactiveml.regressor.SklearnRegressor.get_params
+.. automethod:: skactiveml.regressor.SklearnRegressor.score
+.. automethod:: skactiveml.regressor.SklearnRegressor.set_fit_request
+.. automethod:: skactiveml.regressor.SklearnRegressor.set_params
+.. automethod:: skactiveml.regressor.SklearnRegressor.set_partial_fit_request
+.. automethod:: skactiveml.regressor.SklearnRegressor.set_score_request
+
+
+.. _sphx_glr_backref_skactiveml.regressor.SklearnRegressor:
+
+.. minigallery:: skactiveml.regressor.SklearnRegressor
+   :add-heading:

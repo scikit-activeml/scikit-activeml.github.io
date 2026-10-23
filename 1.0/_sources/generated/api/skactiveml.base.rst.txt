@@ -1,0 +1,34 @@
+:mod:`skactiveml.base`
+======================
+
+.. automodule:: skactiveml.base
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   base.QueryStrategy
+   base.PoolQueryStrategy
+   base.SingleAnnotatorPoolQueryStrategy
+   base.MultiAnnotatorPoolQueryStrategy
+   base.BudgetManager
+   base.SingleAnnotatorStreamQueryStrategy
+   base.SkactivemlClassifier
+   base.ClassFrequencyEstimator
+   base.SkactivemlRegressor
+   base.ProbabilisticRegressor
+   base.SkorchMixin
+
