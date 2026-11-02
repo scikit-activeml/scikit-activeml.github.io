@@ -1,0 +1,36 @@
+﻿EpistemicUncertaintySampling
+============================
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.EpistemicUncertaintySampling
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~EpistemicUncertaintySampling.get_metadata_routing
+      ~EpistemicUncertaintySampling.get_params
+      ~EpistemicUncertaintySampling.query
+      ~EpistemicUncertaintySampling.set_params
+   
+   
+
+   
+   
+   
+
+
+.. note::
+
+   The logistic loss helpers used by this implementation are adapted from
+   ``scikit-learn`` under the BSD-3-Clause license. See
+   :ref:`license-scikit-learn` for the license text and notices.
+
+
+.. _sphx_glr_backref_skactiveml.pool.EpistemicUncertaintySampling:
+
+.. minigallery:: skactiveml.pool.EpistemicUncertaintySampling
+   :add-heading:

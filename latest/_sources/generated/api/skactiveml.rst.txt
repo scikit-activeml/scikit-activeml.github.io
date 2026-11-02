@@ -1,0 +1,22 @@
+===
+API
+===
+
+This is an overview of the API.
+
+.. toctree::
+  :titlesonly:
+  :includehidden:
+  :maxdepth: 4
+
+  skactiveml.base
+  skactiveml.pool
+  skactiveml.stream
+  skactiveml.classifier
+  skactiveml.regressor
+  skactiveml.visualization
+  skactiveml.utils
+  skactiveml.exceptions
+
+
+.. module:: skactiveml

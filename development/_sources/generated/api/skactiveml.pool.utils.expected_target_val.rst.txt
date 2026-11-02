@@ -1,0 +1,13 @@
+﻿expected\_target\_val
+=====================
+
+.. currentmodule:: skactiveml.pool.utils
+
+.. autofunction:: skactiveml.pool.utils.expected_target_val
+
+
+
+.. _sphx_glr_backref_skactiveml.pool.utils.expected_target_val:
+
+.. minigallery:: skactiveml.pool.utils.expected_target_val
+   :add-heading:

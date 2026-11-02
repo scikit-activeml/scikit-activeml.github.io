@@ -1,0 +1,30 @@
+:mod:`skactiveml.visualization`
+===============================
+
+.. automodule:: skactiveml.visualization
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Functions
+---------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: function.rst
+
+   visualization.plot_utilities
+   visualization.plot_decision_boundary
+   visualization.plot_contour_for_samples
+   visualization.plot_annotator_utilities
+   visualization.plot_stream_training_data
+   visualization.plot_stream_decision_boundary
+   visualization.mesh
+
