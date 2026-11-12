@@ -1,0 +1,24 @@
+:mod:`skactiveml.pool.utils`
+============================
+
+.. automodule:: skactiveml.pool.utils
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: skactiveml
+
+
+.. toctree::
+  :hidden:
+
+
+Classes
+-------
+
+.. autosummary::
+   :nosignatures:
+   :toctree: .
+   :template: class.rst
+
+   pool.utils.IndexClassifierWrapper
+

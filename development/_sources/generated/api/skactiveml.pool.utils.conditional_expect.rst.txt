@@ -1,0 +1,13 @@
+﻿conditional\_expect
+===================
+
+.. currentmodule:: skactiveml.pool.utils
+
+.. autofunction:: skactiveml.pool.utils.conditional_expect
+
+
+
+.. _sphx_glr_backref_skactiveml.pool.utils.conditional_expect:
+
+.. minigallery:: skactiveml.pool.utils.conditional_expect
+   :add-heading:

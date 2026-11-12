@@ -1,0 +1,48 @@
+﻿CostEmbeddingAL
+===============
+
+.. currentmodule:: skactiveml.pool
+
+.. autoclass:: skactiveml.pool.CostEmbeddingAL
+   :no-members:
+   :no-inherited-members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CostEmbeddingAL.query
+   
+      ~CostEmbeddingAL.get_metadata_routing
+      ~CostEmbeddingAL.get_params
+      ~CostEmbeddingAL.set_params
+   
+   
+
+   
+   
+   
+
+
+.. note::
+
+   This implementation includes code adapted from ``libact`` under the
+   BSD-2-Clause license and ``scikit-learn`` under the BSD-3-Clause license.
+   See :ref:`license-libact` and :ref:`license-scikit-learn` for the license
+   texts and notices.
+
+
+
+.. automethod:: skactiveml.pool.CostEmbeddingAL.query
+
+.. automethod:: skactiveml.pool.CostEmbeddingAL.get_metadata_routing
+.. automethod:: skactiveml.pool.CostEmbeddingAL.get_params
+.. automethod:: skactiveml.pool.CostEmbeddingAL.set_params
+
+
+.. _sphx_glr_backref_skactiveml.pool.CostEmbeddingAL:
+
+.. minigallery:: skactiveml.pool.CostEmbeddingAL
+   :add-heading:
